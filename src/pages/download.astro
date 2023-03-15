@@ -1,0 +1,153 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const PATH: string =
+    "https://github.com/PocketRelay/ServerRust/releases/latest/download/";
+---
+
+<Layout title="Downloads">
+    <main class="main">
+        <img
+            class="logo"
+            src="/logo-new-nameless.svg"
+            alt="Pocket Relay Logo"
+        />
+        <h1 class="title">Downloads</h1>
+        <a href="/" class="button return">Return Home</a>
+        <div class="content">
+            <div class="type">
+                <h2 class="type__title">Standard</h2>
+                <p class="type__type">SQLite</p>
+                <p class="type__text">
+                    The <b>SQLite</b> version of <b>Pocket Relay</b> this version
+                    requires no additional database setup and is the ideal choice
+                    for most
+                </p>
+                <table>
+                    <thead>
+                        <th>
+                            <td>Platform</td>
+                            <td>Link</td>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="/windows.svg" />
+                                Windows</td
+                            >
+                            <td>
+                                <a href={PATH + "pocket-relay-windows.exe"}>
+                                    Download
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="/linux.svg" />
+                                Linux</td
+                            >
+                            <td>
+                                <a href={PATH + "pocket-relay-linux"}
+                                    >Download</a
+                                >
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="type">
+                <h2 class="type__title">Advanced</h2>
+                <p class="type__type">MySQL</p>
+                <p class="type__text">
+                    The <b>MySQL</b> version which requires that you have a
+                    <b>MySQL</b> database to use. This version expects you to have
+                    some understanding of <b>MySQL</b> and a server prepared to use
+                    it with
+                </p>
+                <table>
+                    <thead>
+                        <th>
+                            <td>Platform</td>
+                            <td>Link</td>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="/windows.svg" />
+                                Windows</td
+                            >
+                            <td>
+                                <a
+                                    href={PATH +
+                                        "pocket-relay-windows-mysql.exe"}
+                                >
+                                    Download
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="/linux.svg" />
+                                Linux</td
+                            >
+                            <td>
+                                <a href={PATH + "pocket-relay-linux-mysql"}
+                                    >Download</a
+                                >
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    .main {
+        max-width: 1200px;
+        width: 100%;
+        margin: 1rem auto;
+    }
+
+    .title {
+        text-transform: uppercase;
+        color: #fff;
+        margin: 1rem 0;
+    }
+
+    .return {
+        margin-bottom: 1rem;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        border: 2px solid white;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+
+    .type {
+        padding: 1rem;
+    }
+
+    .type__title {
+        color: #fff;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        font-size: 1.75rem;
+    }
+
+    .type__type {
+        color: #888;
+        text-transform: none;
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+</style>

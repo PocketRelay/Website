@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", Arial, sans-serif;
+}
+body {
+    background-color: #000000;
+    color: #999;
+
+}
+
+p {
+    line-height: 1.5;
+}
+
+.button {
+    display: inline-block;
+    font-size: 1.25rem;
+    background-color: #fff;
+    color: #000;
+    padding: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.button__icon {
+    display: inline;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
