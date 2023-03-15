@@ -1,0 +1,228 @@
+---
+import "../styles/global.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/900.css";
+
+export interface Props {
+	title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title ?? "Document"} | Pocket Relay Guide</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<aside class="sidebar">
+				<img
+					class="sidebar__logo"
+					src="/logo-new-nameless.svg"
+					alt="Logo"
+				/>
+				<div class="sidebar__content-wrapper">
+					<div class="sidebar__content">
+						<a class="link link--cat" href="/guide">Introduction</a>
+
+						<a class="link link--cat" href="/guide/server"
+							>Create a server</a
+						>
+						<div class="group">
+							<a class="link" href="/guide/server#executable"
+								>Executable</a
+							>
+							<a class="link" href="/guide/server#docker"
+								>Docker</a
+							>
+							<a class="link" href="/guide/server#portforward"
+								>Port Forwarding</a
+							>
+						</div>
+
+						<a class="link link--cat" href="/guide/client"
+							>Join a server</a
+						>
+						<div class="group">
+							<a class="link" href="/guide/client#windows"
+								>Windows</a
+							>
+							<a class="link" href="/guide/client#manual"
+								>Manual</a
+							>
+						</div>
+
+						<a class="link link--cat" href="/guide/config"
+							>Configure</a
+						>
+						<div class="group">
+							<a class="link link--sub" href="/guide/config#ports"
+								>Server Ports</a
+							>
+							<div class="group">
+								<a class="link" href="/guide/config#ports1"
+									>Redirector</a
+								>
+								<a class="link" href="/guide/config#ports2"
+									>Main</a
+								>
+								<a class="link" href="/guide/config#ports3"
+									>HTTP</a
+								>
+								<a class="link" href="/guide/config#ports4"
+									>Telemetry</a
+								>
+								<a class="link" href="/guide/config#ports5"
+									>QoS</a
+								>
+							</div>
+							<a
+								class="link link--sub"
+								href="/guide/config#dashboard">Dashboard</a
+							>
+							<div class="group">
+								<a class="link" href="/guide/config#dashboard">
+									Super Admin
+								</a>
+							</div>
+							<a class="link link--sub" href="/guide/config#menu"
+								>Menu</a
+							>
+							<div class="group">
+								<a class="link" href="/guide/config#menu"
+									>Menu Message</a
+								>
+							</div>
+							<a class="link link--sub" href="/guide/config#gaw"
+								>Galaxy At War</a
+							>
+							<div class="group">
+								<a class="link" href="/guide/config#gaw1"
+									>Daily Decay</a
+								>
+								<a class="link" href="/guide/config#gaw2"
+									>Include Promotions</a
+								>
+							</div>
+							<a
+								class="link link--sub"
+								href="/guide/config#logging">Logging</a
+							>
+							<div class="group">
+								<a class="link" href="/guide/config#logging1"
+									>Logging Level</a
+								>
+								<a class="link" href="/guide/config#logging2"
+									>Logging Directory</a
+								>
+							</div>
+							<a class="link link--sub" href="/guide/config#retr"
+								>Retriever</a
+							>
+							<div class="group">
+								<a class="link" href="/guide/config#retr1"
+									>Enabled</a
+								>
+								<a class="link" href="/guide/config#retr2"
+									>Origin Fetch</a
+								>
+								<a class="link" href="/guide/config#retr3"
+									>Origin Fetch Data</a
+								>
+							</div>
+							<a class="link link--sub" href="/guide/config#db"
+								>Database</a
+							>
+							<div class="group">
+								<a class="link" href="/guide/config#db1"
+									>SQLite</a
+								>
+								<a class="link" href="/guide/config#db2"
+									>MySQL</a
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<main>
+				<slot />
+			</main>
+		</div>
+	</body>
+</html>
+
+<style>
+	body {
+		height: 100vh;
+		width: 100%;
+	}
+
+	.group {
+		margin-left: 0.5rem;
+		color: #fff;
+	}
+
+	.link {
+		display: block;
+		color: #999;
+		text-decoration: none;
+		padding: 0.25rem;
+	}
+
+	.link--cat {
+		color: #fff;
+		font-weight: bold;
+	}
+	.link--sub {
+		color: #c5c5c5;
+		font-weight: bold;
+	}
+
+	.wrapper {
+		display: flex;
+		flex-flow: row nowrap;
+		gap: 1rem;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	.sidebar {
+		display: flex;
+		flex-flow: column;
+		gap: 1rem;
+		background: #222;
+		padding: 0.5rem;
+	}
+
+	.sidebar__content-wrapper {
+		flex: auto;
+		overflow: auto;
+	}
+
+	.sidebar__content-wrapper::-webkit-scrollbar {
+		width: 5px;
+	}
+	.sidebar__content-wrapper::-webkit-scrollbar-thumb {
+		background-color: #999;
+		border-radius: 5px;
+	}
+
+	.sidebar__content {
+	}
+
+	.sidebar__logo {
+		display: block;
+		max-width: 200px;
+		margin: 1rem auto;
+		width: 100%;
+	}
+</style>
