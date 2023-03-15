@@ -36,13 +36,13 @@ const { title } = Astro.props;
 							>Create a server</a
 						>
 						<div class="group">
-							<a class="link" href="/guide/server#executable"
+							<a class="link" href="/guide/server#exec"
 								>Executable</a
 							>
 							<a class="link" href="/guide/server#docker"
 								>Docker</a
 							>
-							<a class="link" href="/guide/server#portforward"
+							<a class="link" href="/guide/server#port"
 								>Port Forwarding</a
 							>
 						</div>
@@ -152,7 +152,7 @@ const { title } = Astro.props;
 					</div>
 				</div>
 			</aside>
-			<main>
+			<main class="main">
 				<slot />
 			</main>
 		</div>
@@ -195,12 +195,21 @@ const { title } = Astro.props;
 		overflow: hidden;
 	}
 
+	.main {
+		flex: auto;
+		height: 100%;
+		overflow: auto;
+	}
+
 	.sidebar {
 		display: flex;
 		flex-flow: column;
 		gap: 1rem;
 		background: #222;
 		padding: 0.5rem;
+		flex: auto;
+		width: 100%;
+		max-width: 250px;
 	}
 
 	.sidebar__content-wrapper {
