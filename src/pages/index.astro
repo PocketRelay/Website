@@ -30,6 +30,14 @@ import Layout from "../layouts/Layout.astro";
 					>
 					Download
 				</a>
+				<a
+					href="https://github.com/PocketRelay"
+					class="button"
+					target="_blank"
+					rel="noreferrer"
+				>
+					GitHub
+				</a>
 			</div>
 		</div>
 	</main>
@@ -38,28 +46,23 @@ import Layout from "../layouts/Layout.astro";
 <style>
 	.heading {
 		display: flex;
-		flex-flow: row wraps;
+		justify-content: center;
+		flex-flow: column;
 		align-items: center;
-		justify-content: space-between;
+		text-align: center;
 		padding: 1rem 15%;
 
-		background: linear-gradient(rgba(12, 12, 12, 0.5), rgb(24, 24, 24)),
+		background: linear-gradient(rgba(12, 12, 12, 0.9), rgb(24, 24, 24)),
 			url("/heading.jpg") center;
 		background-size: cover;
 		height: 100vh;
-	}
-
-	@media screen and (max-width: 1500px) {
-		.heading {
-			justify-content: center;
-			flex-flow: column;
-		}
 	}
 
 	.links {
 		display: flex;
 		gap: 1rem;
 		flex-flow: row wrap;
+		justify-content: center;
 	}
 
 	.heading__content {

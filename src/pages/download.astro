@@ -7,105 +7,161 @@ const PATH: string =
 
 <Layout title="Downloads">
     <main class="main">
-        <img
-            class="logo"
-            src="/logo-new-nameless.svg"
-            alt="Pocket Relay Logo"
-        />
-        <h1 class="title">Downloads</h1>
-        <a href="/" class="button return">Return Home</a>
+        <div class="header">
+            <img
+                class="logo"
+                src="/logo-new-nameless.svg"
+                alt="Pocket Relay Logo"
+            />
+            <h1 class="title">Downloads</h1>
+            <a href="/" class="button return">Return Home</a>
+        </div>
+
         <div class="content">
             <div class="type">
-                <h2 class="type__title">Standard</h2>
-                <p class="type__type">SQLite</p>
-                <p class="type__text">
-                    The <b>SQLite</b> version of <b>Pocket Relay</b> this version
-                    requires no additional database setup and is the ideal choice
-                    for most
-                </p>
-                <table>
-                    <thead>
-                        <th>
-                            <td>Platform</td>
-                            <td>Link</td>
-                        </th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <img src="/windows.svg" />
-                                Windows</td
-                            >
-                            <td>
-                                <a href={PATH + "pocket-relay-windows.exe"}>
-                                    Download
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="/linux.svg" />
-                                Linux</td
-                            >
-                            <td>
-                                <a href={PATH + "pocket-relay-linux"}
-                                    >Download</a
-                                >
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div>
+                    <h2 class="type__title">Standard</h2>
+                    <p class="type__type">SQLite</p>
+                    <p class="type__text">
+                        The <b>SQLite</b> version of <b>Pocket Relay</b> this version
+                        requires no additional database setup and is the ideal choice
+                        for most
+                    </p>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <p class="platform">
+                            <img
+                                src="/windows.svg"
+                                alt="Windows"
+                                class="platform__icon"
+                            />
+                            Windows
+                        </p>
+                        <a
+                            class="link"
+                            href={PATH + "pocket-relay-windows.exe"}
+                        >
+                            Download
+                        </a>
+                    </div>
+                    <div class="item">
+                        <p class="platform">
+                            <img
+                                src="/linux.svg"
+                                alt="Linux"
+                                class="platform__icon"
+                            />
+                            Linux
+                        </p>
+                        <a class="link" href={PATH + "pocket-relay-linux"}>
+                            Download
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="type">
-                <h2 class="type__title">Advanced</h2>
-                <p class="type__type">MySQL</p>
-                <p class="type__text">
-                    The <b>MySQL</b> version which requires that you have a
-                    <b>MySQL</b> database to use. This version expects you to have
-                    some understanding of <b>MySQL</b> and a server prepared to use
-                    it with
-                </p>
-                <table>
-                    <thead>
-                        <th>
-                            <td>Platform</td>
-                            <td>Link</td>
-                        </th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <img src="/windows.svg" />
-                                Windows</td
-                            >
-                            <td>
-                                <a
-                                    href={PATH +
-                                        "pocket-relay-windows-mysql.exe"}
-                                >
-                                    Download
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="/linux.svg" />
-                                Linux</td
-                            >
-                            <td>
-                                <a href={PATH + "pocket-relay-linux-mysql"}
-                                    >Download</a
-                                >
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div>
+                    <h2 class="type__title">Advanced</h2>
+                    <p class="type__type">MySQL</p>
+                    <p class="type__text">
+                        The <b>MySQL</b> version which requires that you have a
+                        <b>MySQL</b> database to use. This version expects you to
+                        have some understanding of <b>MySQL</b> and a server prepared
+                        to use it with
+                    </p>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <p class="platform">
+                            <img
+                                src="/windows.svg"
+                                alt="Windows"
+                                class="platform__icon"
+                            />
+                            Windows
+                        </p>
+                        <a
+                            class="link"
+                            href={PATH + "pocket-relay-windows-mysql.exe"}
+                        >
+                            Download
+                        </a>
+                    </div>
+                    <div class="item">
+                        <p class="platform">
+                            <img
+                                src="/linux.svg"
+                                alt="Linux"
+                                class="platform__icon"
+                            />
+                            Linux
+                        </p>
+                        <a
+                            class="link"
+                            href={PATH + "pocket-relay-linux-mysql"}
+                        >
+                            Download
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 </Layout>
 
 <style>
+    body {
+        padding: 1rem 15%;
+
+        background: linear-gradient(rgba(12, 12, 12, 0.9), rgb(24, 24, 24)),
+            url("/heading.jpg") center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th:first-child {
+        text-align: left;
+    }
+
+    .link-item,
+    th:last-child {
+        text-align: right;
+    }
+
+    td {
+        padding: 1rem;
+    }
+
+    .item {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+        background-color: #222;
+    }
+
+    .platform {
+    }
+
+    .platform__icon {
+        vertical-align: middle;
+        margin-right: 0.5rem;
+    }
+
+    .items {
+        display: flex;
+        flex-flow: column;
+        gap: 1rem;
+    }
+
     .main {
         max-width: 1200px;
         width: 100%;
@@ -126,12 +182,29 @@ const PATH: string =
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
-        border: 2px solid white;
-        box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+
+        align-items: stretch;
+    }
+
+    .link {
+        color: #b2a1e4;
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 1rem;
+        color: #9f9f9f;
+        background-color: #333;
+        display: inline-block;
+        border-radius: 5px;
+        font-weight: bold;
+        text-transform: uppercase;
     }
 
     .type {
         padding: 1rem;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        gap: 1rem;
     }
 
     .type__title {
@@ -141,6 +214,11 @@ const PATH: string =
         text-align: center;
         margin-bottom: 0.5rem;
         font-size: 1.75rem;
+    }
+
+    .type__text {
+        font-size: 1.1rem;
+        color: #a5a5a5;
     }
 
     .type__type {
