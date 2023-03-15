@@ -32,3 +32,34 @@ p {
     margin-right: 0.5rem;
     vertical-align: middle;
 }
+
+.download {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #222;
+}
+
+.download__platform {
+}
+
+.download__platform__icon {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+
+.download__link {
+    color: #b2a1e4;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    color: #9f9f9f;
+    background-color: #333;
+    display: inline-block;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
