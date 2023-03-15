@@ -40,6 +40,27 @@ import Layout from "../layouts/Layout.astro";
 				</a>
 			</div>
 		</div>
+		<div class="block">
+			<div class="block__content">
+				<h2 class="block__title">What is Pocket Relay?</h2>
+				<p class="block__text">
+					<b>Pocket&nbsp;Relay</b> is a private server for the game
+					<b>Mass&nbsp;Effect&nbsp;3</b>. This private server pretends
+					to be all the different servers that the official game uses.
+					This allows you to play the <b>Mass&nbsp;Effect&nbsp;3</b> Multiplayer
+					privately, with your friends over LAN, or even play using a cracked
+					unoffical copy of the game.
+				</p>
+			</div>
+			<div class="block__img-wrapper">
+				<img
+					class="block__img"
+					src="/pocketrelay.jpg"
+					alt="Game players"
+					loading="lazy"
+				/>
+			</div>
+		</div>
 	</main>
 </Layout>
 
@@ -56,6 +77,36 @@ import Layout from "../layouts/Layout.astro";
 			url("/heading.jpg") center;
 		background-size: cover;
 		height: 100vh;
+	}
+
+	.block {
+		justify-content: space-between;
+		max-width: 1400px;
+		display: flex;
+		margin: 0 auto 15vh;
+		gap: 1rem;
+		align-items: center;
+		padding: 5rem;
+	}
+
+	.block__title {
+		margin-bottom: 1rem;
+		font-size: 2rem;
+		color: white;
+	}
+
+	.block__text {
+		font-size: 1.25rem;
+	}
+
+	.block__content {
+		max-width: 500px;
+	}
+
+	.block__img {
+		max-width: 700px;
+		width: 100%;
+		transform: perspective(300px) rotateX(5deg) rotateY(-5deg);
 	}
 
 	.links {
