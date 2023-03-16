@@ -3,27 +3,48 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
 ---
 
 <GuideLayout title="Home">
-    <main>
-        <h1>Pocket Relay Guide</h1>
-        <p>
+    <main class="guide">
+        <h1 class="guide__title">Pocket Relay Guide</h1>
+        <p class="guide__text">
             This is a guide for both creating and connecting to
             <b>Pocket Relay</b> servers. Please choose one of the guide pages below
             for your desired guide.
         </p>
 
-        <div>
-            <h2>I want to</h2>
-            <div>
-                <a href="/guide/server">
+        <div class="guide__block">
+            <h2 class="guide__step">I want to</h2>
+            <div class="actions">
+                <a class="action" href="/guide/server">
                     <h3>Create a server</h3>
                     <p>Guide for creating your own server</p>
                 </a>
-                <a href="/guide/client">
+                <a class="action" href="/guide/client">
                     <h3>Join a server</h3>
                     <p>Guide for joining an existing server</p>
                 </a>
             </div>
         </div>
+
+        <p class="guide__text">
+            You can also view the project on
+            <a
+                href="https://github.com/PocketRelay"
+                class="guide__link"
+                target="_blank"
+                rel="noreferrer"
+            >
+                GitHub
+            </a>
+            or view my other projects on my
+            <a
+                href="https://github.com/jacobtread"
+                class="guide__link"
+                target="_blank"
+                rel="noreferrer"
+            >
+                Personal&nbsp;GitHub
+            </a>
+        </p>
     </main>
 </GuideLayout>
 
