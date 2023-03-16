@@ -29,7 +29,7 @@ import Layout from "../layouts/Layout.astro";
 				</a>
 			</div>
 		</div>
-		<div class="block">
+		<div class="block block--split">
 			<div class="block__content">
 				<h2 class="block__title">What is Pocket Relay?</h2>
 				<p class="block__text">
@@ -50,6 +50,132 @@ import Layout from "../layouts/Layout.astro";
 				/>
 			</div>
 		</div>
+
+		<div class="structs-wrapper">
+			<div class="block">
+				<div class="text-center">
+					<h2 class="block__title">What goes into this project?</h2>
+					<p class="block__text">
+						<b>Pocket&nbsp;Relay</b> is made up of many different projects
+						that all help to make it as good as it is
+					</p>
+				</div>
+
+				<div class="structs">
+					<a
+						class="struct__part"
+						href="https://github.com/PocketRelay/Server"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<h4>Server</h4>
+						<p>The main monolith server that the runs the games</p>
+					</a>
+					<a
+						class="struct__part"
+						href="https://github.com/PocketRelay/Client"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<h4>Client</h4>
+						<p>The client tool used to connect to the server</p>
+					</a>
+					<a
+						class="struct__part"
+						href="https://github.com/PocketRelay/Dashboard"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<h4>Dashboard</h4>
+						<p>The dashboard for managing the server</p>
+					</a>
+
+					<a
+						class="struct__part"
+						href="https://github.com/jacobtread/blaze-ssl-async"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<h4>BlazeSSL</h4>
+						<p>SSL implementation for working with SSL3</p>
+					</a>
+					<a
+						class="struct__part"
+						href="https://github.com/jacobtread/BlazePK-rs"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<h4>BlazePK</h4>
+						<p>Packet system and packet router</p>
+					</a>
+
+					<a
+						class="struct__part"
+						href="https://github.com/jacobtread/interlink"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<h4>Interlink</h4>
+						<p>Async framework built for Pocket Relay</p>
+					</a>
+
+					<a
+						class="struct__part"
+						href="https://github.com/Erik-JS/masseffect-binkw32"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<h4>Binkw23</h4>
+						<p>Proxy DDL making this whole thing possible</p>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="block block--split">
+			<div class="block__content">
+				<h2 class="block__title">Credits</h2>
+				<p class="block__text">
+					<b>Pocket&nbsp;Relay</b> is only possible because of the following
+					people who have contributed whether it be directly or indirectly
+				</p>
+			</div>
+
+			<div class="credits">
+				<a
+					class="credit"
+					href="https://github.com/GamerClassN7/"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<span class="credit__name">GamerClassN7</span>
+
+					<p>
+						Provided a copy of the Origin version of Mass Effect 3
+						which allowed me to implement Origin support in
+						<b>Pocket&nbsp;Relay</b> along with lots of help testing
+						and finding bugs
+					</p>
+				</a>
+				<a
+					class="credit"
+					href="https://github.com/PrivateServerEmulator/ME3PSE"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<span class="credit__name">Warranty Voider & Erik JS</span>
+
+					<p>
+						Sourced the redirector certificate and binkw32 from
+						their <b>ME3PSE</b> project
+					</p>
+				</a>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<span>Copyright &copy; 2022 - 2023 Jacob Read</span>
+		</footer>
 	</main>
 </Layout>
 
@@ -69,13 +195,27 @@ import Layout from "../layouts/Layout.astro";
 	}
 
 	.block {
-		justify-content: space-between;
 		max-width: 1400px;
-		display: flex;
 		margin: 0 auto 15vh;
-		gap: 1rem;
-		align-items: center;
 		padding: 5rem;
+	}
+
+	.structs-wrapper {
+		background: linear-gradient(
+				rgb(24, 24, 24),
+				rgba(12, 12, 12, 0.9),
+				rgb(24, 24, 24)
+			),
+			url("/heading.jpg") center;
+		background-size: cover;
+		width: 100%;
+	}
+
+	.block--split {
+		display: flex;
+		gap: 1rem;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	.block__title {
@@ -86,6 +226,10 @@ import Layout from "../layouts/Layout.astro";
 
 	.block__text {
 		font-size: 1.25rem;
+	}
+
+	.text-center {
+		text-align: center;
 	}
 
 	.block__content {
@@ -127,5 +271,60 @@ import Layout from "../layouts/Layout.astro";
 	.heading__text {
 		color: #999;
 		font-size: 1.25rem;
+	}
+
+	.footer {
+		display: block;
+		padding: 1rem;
+		text-align: center;
+		background-color: #111;
+	}
+	.credits {
+		display: flex;
+		flex-flow: column;
+		gap: 0.5rem;
+		max-width: 600px;
+		width: 100%;
+		margin: 1rem auto;
+	}
+
+	.credit {
+		text-align: left;
+		margin-bottom: 0.5rem;
+		text-decoration: none;
+		color: #999;
+	}
+
+	.credit__name {
+		color: #fff;
+		display: block;
+		font-weight: bold;
+		margin-bottom: 0.5rem;
+	}
+
+	.structs {
+		padding: 1rem;
+		display: flex;
+		flex-flow: row wrap;
+		gap: 1rem;
+		margin-top: 1rem;
+		justify-content: center;
+	}
+
+	.struct__part {
+		padding: 1rem;
+		border: 2px dashed #444;
+		text-decoration: none;
+		max-width: 300px;
+		width: 100%;
+	}
+
+	.struct__part h4 {
+		color: #fff;
+		margin-bottom: 0.5rem;
+	}
+
+	.struct__part p {
+		color: #999;
 	}
 </style>
