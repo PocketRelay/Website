@@ -1,0 +1,56 @@
+---
+import GuideLayout from "../../../layouts/GuideLayout.astro";
+---
+
+<GuideLayout title="Server Setup">
+    <main>
+        <h1>Port Forwarding</h1>
+        <p>
+            If you would like to make your server accessible from outside your
+            local network you will need to port forward on your router the
+            following are the ports that you will need to forward.
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Protocol</th>
+                    <th>Port</th>
+                    <th>What</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>TCP</td>
+                    <td>42127</td>
+                    <td>Redirector server</td>
+                </tr>
+                <tr>
+                    <td>TCP</td>
+                    <td>14219</td>
+                    <td>Main server</td>
+                </tr>
+                <tr>
+                    <td>TCP</td>
+                    <td>80</td>
+                    <td>HTTP server</td>
+                </tr>
+                <tr>
+                    <td>TCP</td>
+                    <td>9988</td>
+                    <td>Telemetry server</td>
+                </tr>
+                <tr>
+                    <td>UDP</td>
+                    <td>17499</td>
+                    <td>QoS server</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            If you have changed any of the ports in your configuration file then
+            you will need to forward those changed ports instead
+        </p>
+    </main>
+</GuideLayout>
+
+<style></style>

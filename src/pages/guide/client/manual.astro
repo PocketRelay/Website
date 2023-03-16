@@ -1,0 +1,76 @@
+---
+import GuideLayout from "../../../layouts/GuideLayout.astro";
+---
+
+<GuideLayout title="Windows Client Setup">
+    <main>
+        <h1>Manual</h1>
+        <p>
+            This section is for manually setting up your Mass Effect 3 client
+            and computer to work with Pocket Relay servers this tutorial is for
+            both Windows and Linux
+        </p>
+
+        <div>
+            <h2>1) Add host file entry</h2>
+            <p>
+                First you must add a entry to the system hosts file in order to
+                send the traffic that would normally go to the Official servers
+                to the Pocket Relay server address
+            </p>
+
+            <div>
+                <h4>
+                    <img
+                        src="/windows.svg"
+                        alt="Windows"
+                        class="platform__icon"
+                    />
+                    Windows
+                </h4>
+
+                <p>
+                    Open Notepad as a Administrator and open the following file
+                </p>
+
+                <span>C:/Windows/System32/drivers/etc/hosts</span>
+            </div>
+
+            <div>
+                <h4>
+                    <img src="/linux.svg" alt="Linux" class="platform__icon" />
+
+                    Linux
+                </h4>
+                <p>
+                    Or If you are using linux. Use your desired text editor with
+                    sudo to modify the following file instead
+                </p>
+
+                <span>/etc/hosts</span>
+            </div>
+
+            <p>Add the following line to the bottom of the hosts file</p>
+
+            <pre><code>SERVER_IP_ADDRESS gosredirector.ea.com</code></pre>
+
+            <p>
+                But replace `SERVER_IP_ADDRESS` with the IP address of the
+                Pocket Relay server you want to connect to
+            </p>
+        </div>
+
+        <div>
+            <h2>2) Patch Game</h2>
+            <p>
+                Download the zip file from
+                <a href="/downloads/blinkw32.zip">Here</a>
+                and extract both the <span>binkw32.dll</span> and
+                <span>binkw23.dll</span> into the same folder as MassEffect3.exe
+                replacing any existing files
+            </p>
+        </div>
+    </main>
+</GuideLayout>
+
+<style></style>
