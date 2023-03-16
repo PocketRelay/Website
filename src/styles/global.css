@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: "Inter", Arial, sans-serif;
 }
+
 body {
     background-color: #181818;
     color: #999;
@@ -42,8 +43,6 @@ p {
     background-color: #222;
 }
 
-.download__platform {
-}
 
 .download__platform__icon {
     vertical-align: middle;
@@ -62,4 +61,55 @@ p {
     border-radius: 5px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.guide {
+    padding: 1rem;
+
+}
+
+.guide__title {
+    margin-bottom: 1rem;
+    color: #FFF;
+}
+
+.guide__text {
+    color: #9f9f9f;
+    max-width: 800px;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.guide__step {
+    margin: 1rem 0;
+    color: #FFF;
+}
+
+.code {
+    padding: 1rem;
+    display: block;
+    margin: 1rem 0;
+    background-color: #000;
+}
+
+.above {
+    display: block;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #111;
+    border: 1px solid #333;
+}
+
+.platform__title {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.platform__title__icon {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+.guide__link {
+    color: #b2a1e4;
 }

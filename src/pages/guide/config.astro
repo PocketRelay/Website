@@ -3,30 +3,32 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
 ---
 
 <GuideLayout title="Home">
-    <main>
-        <h1>Configuration Guide</h1>
-        <p>
+    <main class="guide">
+        <h1 class="guide__title">Configuration Guide</h1>
+        <p class="guide__text">
             You can configure certain components and settings for the server
             using Environment Variables. These can either be set as system
             environment variables or stored in a <span>.env</span> file in the same
             directory or a parent directory to the Pocket Relay executable.
         </p>
 
-        <p>
+        <p class="guide__text">
             The list of environment variables, their default values, and
             descriptions are listed below. There is also a default environment
             variables file named <span>.env.example</span> stored in the root of
             this repository.
         </p>
 
-        <p>
+        <p class="guide__text">
             Any environment variables that you don't provide a value for or
             provide an invalid value for will automatically use the default
             values. In some cases the server startup will be cancelled for an
             invalid value (I.e. invalid database details)
         </p>
 
-        <p>The types of environment variables are listed below</p>
+        <p class="guide__text">
+            The types of environment variables are listed below
+        </p>
 
         <table>
             <thead>
@@ -60,16 +62,16 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
             </tbody>
         </table>
 
-        <div id="ports">
-            <h2>Server Ports</h2>
+        <div id="ports" class="guide__block">
+            <h2 class="guide__step" class="guide">Server Ports</h2>
 
-            <p>
+            <p class="guide__text">
                 This section contains the enviroment variables for configuring
                 what ports each server will use.
             </p>
 
             <div id="ports1">
-                <h3>Redirector Port</h3>
+                <h3 class="guide__step">Redirector Port</h3>
 
                 <div>
                     <div>
@@ -88,14 +90,14 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                     </div>
                 </div>
 
-                <p>
+                <p class="guide__text">
                     <b>📌 WARNING 📌</b> This port should not be changed unless the
                     server is being run inside a Docker container or some other solution
                     where the port 42127 is being publicly connected to otherwise
                     the Mass Effect 3 client wont be able to connect
                 </p>
 
-                <p>
+                <p class="guide__text">
                     This is the port used by the <b>Redirector</b> server which is
                     what the Mass Effect 3 client uses to get the port and address
                     information for the Main server
@@ -103,7 +105,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
             </div>
 
             <div id="ports2">
-                <h3>Main Port</h3>
+                <h3 class="guide__step">Main Port</h3>
 
                 <div>
                     <div>
@@ -122,7 +124,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                     </div>
                 </div>
 
-                <p>
+                <p class="guide__text">
                     This is the port used by the <b>Main</b> server you can set this
                     port to any port you would like as its port is served through
                     the redirector. This server is responsible for handling the majority
@@ -131,7 +133,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
             </div>
 
             <div id="ports3">
-                <h3>HTTP Port</h3>
+                <h3 class="guide__step">HTTP Port</h3>
                 <div>
                     <div>
                         <span>Key</span>
@@ -149,7 +151,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                     </div>
                 </div>
 
-                <p>
+                <p class="guide__text">
                     This is the port of the <b>HTTP</b> server this is used for things
                     like Galaxy At War, Store Images, Banner Images, and the server
                     API. Using port 80 will make it easiest to use using port 80
@@ -159,7 +161,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
             </div>
 
             <div id="ports4">
-                <h3>Telemetry Port</h3>
+                <h3 class="guide__step">Telemetry Port</h3>
                 <div>
                     <div>
                         <span>Key</span>
@@ -177,7 +179,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                     </div>
                 </div>
 
-                <p>
+                <p class="guide__text">
                     This is the port of the <b>Telemetry</b> server this server is
                     not a required portion of the game but it log telemetry recieved
                     from the client if debug logging is enabled
@@ -185,7 +187,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
             </div>
 
             <div id="ports5">
-                <h3>QoS Port</h3>
+                <h3 class="guide__step">QoS Port</h3>
                 <div>
                     <div>
                         <span>Key</span>
@@ -203,7 +205,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                     </div>
                 </div>
 
-                <p>
+                <p class="guide__text">
                     This is the port of the <b>Quality of Service</b> server this
                     is used to obtain your public IP address so that other players
                     outside of your network can make a connection to you
@@ -212,7 +214,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
         </div>
 
         <div id="dashboard">
-            <h2>Dashboard</h2>
+            <h2 class="guide__step">Dashboard</h2>
             <p>Configuration for the dashboard</p>
 
             <div>
@@ -229,13 +231,13 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                     </div>
                 </div>
 
-                <p>
+                <p class="guide__text">
                     In order to grant other users admin access and to have any
                     admin access on the dashboard you must set the email address
                     of a user to become the super user
                 </p>
 
-                <p>
+                <p class="guide__text">
                     Super user access will be granted whenever the server starts
                     up and checks if the access is missing and updates
                     accordingly
@@ -244,10 +246,10 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
         </div>
 
         <div id="menu">
-            <h2>Menu</h2>
+            <h2 class="guide__step">Menu</h2>
             <p>This section contains configuration for the Main menu</p>
             <div>
-                <h3>Menu Message</h3>
+                <h3 class="guide__step">Menu Message</h3>
                 <div>
                     <div>
                         <span>Key</span>
@@ -267,7 +269,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                     </div>
                 </div>
 
-                <p>
+                <p class="guide__text">
                     This is the message that is displayed in the scrolling text
                     on the Main Menu in the Mass Effect 3 client. You can use
                     the {'<font color="COLOR"> </font>'} to use hex color codes and
@@ -303,13 +305,13 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
         </div>
 
         <div id="gaw">
-            <h2>Galaxy At War</h2>
-            <p>
+            <h2 class="guide__step">Galaxy At War</h2>
+            <p class="guide__text">
                 This section contains configuration for the Galaxy at War
                 system.
             </p>
             <div id="gaw1">
-                <h3>Daily Decay Amount</h3>
+                <h3 class="guide__step">Daily Decay Amount</h3>
                 <div>
                     <div>
                         <span>Key</span>
@@ -326,20 +328,20 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                         <span>0.0</span>
                     </div>
                 </div>
-                <p>
+                <p class="guide__text">
                     This value is the percentage decay that the Galaxy At War
                     values will gain for each day passed.
                 </p>
 
-                <p>0.5 = -1% each day passed</p>
+                <p class="guide__text">0.5 = -1% each day passed</p>
 
-                <p>
+                <p class="guide__text">
                     The value of zero means the Galaxy At War percentage will
                     not decay as days pass
                 </p>
             </div>
             <div id="gaw2">
-                <h3>Include Promotions</h3>
+                <h3 class="guide__step">Include Promotions</h3>
                 <div>
                     <div>
                         <span>Key</span>
@@ -356,7 +358,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                         <span>true</span>
                     </div>
                 </div>
-                <p>
+                <p class="guide__text">
                     This variable determines whether player class promotions
                     will be included in the Galaxy At Rating. true means
                     promotions are included and false means they are not
@@ -364,8 +366,8 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
             </div>
         </div>
         <div id="logging">
-            <h2>Logging</h2>
-            <p>
+            <h2 class="guide__step">Logging</h2>
+            <p class="guide__text">
                 This section contains the configuration for the logging system.
                 The server log file will be in the <span>data/logs</span> directory
                 and is named <span>server.log</span>
@@ -388,7 +390,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                         <span>info</span>
                     </div>
                 </div>
-                <p>
+                <p class="guide__text">
                     This is the logging level that should be logged. The server
                     will only print logs that are equal to or above the current
                     log level. Below is a list of the different log levels in
@@ -422,7 +424,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                 </div>
             </div>
             <div id="logging2">
-                <h3>Logging Directory</h3>
+                <h3 class="guide__step">Logging Directory</h3>
                 <div>
                     <div>
                         <span>Key</span>
@@ -439,21 +441,21 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                         <span>data/logs</span>
                     </div>
                 </div>
-                <p>
+                <p class="guide__text">
                     This is the path to the folder where server log files should
                     be stored.
                 </p>
             </div>
         </div>
         <div id="retr">
-            <h2>Retriever</h2>
-            <p>
+            <h2 class="guide__step">Retriever</h2>
+            <p class="guide__text">
                 This section contains the configuration for the retriever system
                 which is used to retrieve information from the official game
                 servers.
             </p>
             <div id="retr1">
-                <h3>Enabled</h3>
+                <h3 class="guide__step">Enabled</h3>
                 <div>
                     <div>
                         <span>Key</span>
@@ -470,14 +472,14 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                         <span>true</span>
                     </div>
                 </div>
-                <p>
+                <p class="guide__text">
                     This variable determines whether the retriever system is
                     enabled or not. Setting this to false will make features
                     such as Origin authentication disabled.
                 </p>
             </div>
             <div id="retr2">
-                <h3>Origin Fetch</h3>
+                <h3 class="guide__step">Origin Fetch</h3>
                 <div>
                     <div>
                         <span>Key</span>
@@ -494,7 +496,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                         <span>true</span>
                     </div>
                 </div>
-                <p>
+                <p class="guide__text">
                     This variable determines whether Origin accounts are able to
                     be authenticated. This authentication uses the retriever
                     system to authenticate on the official servers in order to
@@ -503,7 +505,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                 </p>
             </div>
             <div id="retr3">
-                <h3>Origin Fetch Data</h3>
+                <h3 class="guide__step">Origin Fetch Data</h3>
                 <div>
                     <div>
                         <span>Key</span>
@@ -520,7 +522,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                         <span>true</span>
                     </div>
                 </div>
-                <p>
+                <p class="guide__text">
                     This variable determines whether all the associated player
                     data for Origin accounts should be copied over from the
                     official server when first logging into an Origin account.
@@ -530,13 +532,13 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
             </div>
         </div>
         <div id="db">
-            <h2>Database</h2>
-            <p>
+            <h2 class="guide__step">Database</h2>
+            <p class="guide__text">
                 This section contains the configuration for the database
                 depending on which server type you are using.
             </p>
             <div id="db1">
-                <h3>SQLite Database</h3>
+                <h3 class="guide__step">SQLite Database</h3>
                 <div>
                     <div>
                         <span>Key</span>
@@ -553,7 +555,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                         <span>data/app.db</span>
                     </div>
                 </div>
-                <p>
+                <p class="guide__text">
                     If you are using the SQLite version (Default) of Pocket
                     Relay then this variable determines where the database file
                     is saved to. By default this is data/app.db relative to the
@@ -561,7 +563,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                 </p>
             </div>
             <div id="db2">
-                <h3>MySQL Database</h3>
+                <h3 class="guide__step">MySQL Database</h3>
                 <div>
                     <div>
                         <span>Key</span>
@@ -578,7 +580,7 @@ import GuideLayout from "../../layouts/GuideLayout.astro";
                         <span>mysql://username:password@host/database</span>
                     </div>
                 </div>
-                <p>
+                <p class="guide__text">
                     If you are using the MySQL version of Pocket Relay then this
                     variable determines the connection url for the database.
                 </p>

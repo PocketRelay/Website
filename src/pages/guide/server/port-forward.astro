@@ -3,9 +3,9 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
 ---
 
 <GuideLayout title="Server Setup">
-    <main>
-        <h1>Port Forwarding</h1>
-        <p>
+    <main class="guide">
+        <h1 class="guide__title">Port Forwarding</h1>
+        <p class="guide__text">
             If you would like to make your server accessible from outside your
             local network you will need to port forward on your router the
             following are the ports that you will need to forward.
@@ -46,7 +46,7 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
                 </tr>
             </tbody>
         </table>
-        <p>
+        <p class="guide__text">
             If you have changed any of the ports in your configuration file then
             you will need to forward those changed ports instead
         </p>

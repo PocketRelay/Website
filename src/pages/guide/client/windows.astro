@@ -3,17 +3,17 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
 ---
 
 <GuideLayout title="Windows Client Setup">
-    <main>
-        <h1>Windows</h1>
-        <p>
+    <main class="guide">
+        <h1 class="guide__title">Windows</h1>
+        <p class="guide__text">
             This section is for if you are using Windows and would like to use
             the Client tool to automatically setup your game to work with Pocket
             Relay
         </p>
 
-        <div>
-            <h2>1) Download Client</h2>
-            <p>
+        <div class="guide__block">
+            <h2 class="guide__step">1) Download Client</h2>
+            <p class="guide__text">
                 You can download the latest client release from the link below.
                 The client is portable and doesn't require any installation,
                 simply download it and run it.
@@ -36,29 +36,29 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
                 >
             </div>
 
-            <p>
+            <p class="guide__text">
                 Keep it somewhere you remember as you will need to use this tool
                 to switch back to the official servers and to revert changes if
                 you want to uninstall
             </p>
         </div>
 
-        <div>
-            <h2>2) Run Client</h2>
-            <p>
+        <div class="guide__block">
+            <h2 class="guide__step">2) Run Client</h2>
+            <p class="guide__text">
                 Next open the executable by Double Clicking it or Right Click +
                 Run As Administrator
             </p>
 
-            <p>
+            <p class="guide__text">
                 📌 Make sure you run the application as administrator. This
                 should be the default automatically but if not make sure you run
                 it as admin otherwise the application will not be able to update
                 the files on its own
             </p>
 
-            <div>
-                <p>
+            <div class="guide__block--img">
+                <p class="guide__text">
                     After the application starts up you will see the following
                     screen or something similar to this (It may look slightly
                     different in the future)
@@ -68,11 +68,11 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
             </div>
         </div>
 
-        <div>
-            <h2>3) Patch Game</h2>
+        <div class="guide__block">
+            <h2 class="guide__step">3) Patch Game</h2>
 
-            <div>
-                <p>
+            <div class="guide__block--img">
+                <p class="guide__text">
                     First you will need to patch your game to do this press the
                     "Patch Game" button and the following file picker window
                     will appear
@@ -80,8 +80,8 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
                 <img src="/guide/client-patch.jpg" alt="Client patch window" />
             </div>
 
-            <div>
-                <p>
+            <div class="guide__block--img">
+                <p class="guide__text">
                     In this window naviagte to your Mass Effect 3 executable
                     this will be in the game folder then
                     <span>Binaries/Win32/MassEffect3.exe</span>. Select the
@@ -95,29 +95,31 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
                 />
             </div>
 
-            <p>Press "Ok" to go back to the home screen</p>
+            <p class="guide__text">Press "Ok" to go back to the home screen</p>
         </div>
 
-        <div>
-            <h2>4) Connection URL</h2>
-            <p>
+        <div class="guide__block">
+            <h2 class="guide__step">4) Connection URL</h2>
+            <p class="guide__text">
                 The server hoster will know this connection URL ask them to
                 provide you with this. If you are the server hoster refer to
-                <a href="/guide/server#url">4) Connection URL</a> in the server guide.
+                <a class="guide__link" href="/guide/server#url"
+                    >4) Connection URL</a
+                > in the server guide.
             </p>
 
-            <p>
+            <p class="guide__text">
                 Enter this value into the text field named "Connection URL" then
                 press the "Set" button
             </p>
 
-            <p>
+            <p class="guide__text">
                 Note: The server must be running when you press set otherwise
                 the client will be unable to detect the server
             </p>
 
-            <div>
-                <p>
+            <div class="guide__block">
+                <p class="guide__text">
                     If the client was able to successfully connect to the server
                     you will get the following message.
                 </p>
@@ -127,10 +129,10 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
             <p>Press "Ok" to return to the home screen</p>
         </div>
 
-        <div>
-            <h2>5) All Done</h2>
+        <div class="guide__block">
+            <h2 class="guide__step">5) All Done</h2>
             <div>
-                <p>
+                <p class="guide__text">
                     Your game will now be able to connect to the Pocket Relay
                     server that you've setup. When you first open the game. The
                     client screen should now look like the following
@@ -139,13 +141,13 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
                 <img src="/guide/client-home-set.jpg" alt="Client set window" />
             </div>
 
-            <p>
+            <p class="guide__text">
                 Note: If the server IP address changes or you wish to connect to
                 a different server you will need to change it and press "Set"
                 again to update the connection
             </p>
 
-            <p>
+            <p class="guide__text">
                 If you were already logged into the Official servers and are
                 using a Cracked game client you will get a message saying
                 connection failed simply press okay and then the multiplayer
@@ -153,15 +155,15 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
                 can create a new account
             </p>
 
-            <p>
+            <p class="guide__text">
                 You can now close this client application as you do not need to
                 keep it running
             </p>
         </div>
 
-        <div>
-            <h2>6) Offical Servers</h2>
-            <p>
+        <div class="guide__block">
+            <h2 class="guide__step">6) Offical Servers</h2>
+            <p class="guide__text">
                 If you would like to switch back to the official servers while
                 still keeping the patch you can do so by only pressing "Remove"
                 to remove the Pocket Relay server connection and if you restart
@@ -169,14 +171,14 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
             </p>
         </div>
 
-        <div>
-            <h2>7) Uninstalling</h2>
-            <p>
+        <div class="guide__block">
+            <h2 class="guide__step">7) Uninstalling</h2>
+            <p class="guide__text">
                 To uninstall Pocket relay open the client and select "Remove" to
                 remove the redirect then "Remove Patch" to remove the Patch from
                 the game.
             </p>
-            <p>
+            <p class="guide__text">
                 If you've followed the automatic install guide you do not need
                 to continue reading you are finished.
             </p>

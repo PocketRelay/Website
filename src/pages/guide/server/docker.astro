@@ -3,33 +3,37 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
 ---
 
 <GuideLayout title="Server Setup">
-    <main>
-        <h1>Docker</h1>
+    <main class="guide">
+        <h1 class="guide__title">Docker</h1>
 
-        <p>
+        <p class="guide__text">
             This section is for users looking to run the server within a Docker
             container. If you aren't using this check out the
-            <a href="#exec">Executable Section</a>
+            <a class="guide__link" href="/guide/server/executable"
+                >Executable Section</a
+            >
         </p>
 
-        <p>
+        <p class="guide__text">
             Optionally if you are using Docker you can use the following command
             to create a new Pocket Relay server from the docker image or
             configure a container in Docker Desktop for the
             <span>jacobtread/pocket-relay:latest</span> image
         </p>
 
-        <pre><code>docker run -d -p 80:80/tcp -p 14219:14219/tcp -p 42127:42127/tcp -p 9988:9988/tcp -p 17499:17499/udp jacobtread/pocket-relay:latest</code></pre>
+        <pre
+            class="code"><code>docker run -d -p 80:80/tcp -p 14219:14219/tcp -p 42127:42127/tcp -p 9988:9988/tcp -p 17499:17499/udp jacobtread/pocket-relay:latest</code></pre>
 
-        <p>
+        <p class="guide__text">
             The <span>-p</span> arguments bind the ports for the servers running
             inside the image. The exposed port 42127 must always stay the same or
             else clients will be unable to connect to the server.
         </p>
 
-        <p>
-            See the <a href="/guide/config">Configuration Guide</a> for changing
-            ports and other settings
+        <p class="guide__text">
+            See the <a class="guide__link" href="/guide/config"
+                >Configuration Guide</a
+            > for changing ports and other settings
         </p>
     </main>
 </GuideLayout>

@@ -4,37 +4,42 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
 ---
 
 <GuideLayout title="Server Setup">
-    <main>
-        <h1>Executable</h1>
-        <p>
+    <main class="guide">
+        <h1 class="guide__title">Executable</h1>
+        <p class="guide__text">
             This section is for if you are running the server directly from an
             executable. You can find a section for running the server within a
             Docker container at the bottom of this page
         </p>
 
-        <div>
-            <h2>1) Download Executable</h2>
-            <p>
+        <div class="guide__block">
+            <h2 class="guide__step">1) Download Executable</h2>
+            <p class="guide__text">
                 Pre compiled binary downloads are available below. But if you
                 would like to compile from source manually see the
 
-                <a href="/guide/building">Building Guide</a>
+                <a class="guide__link" href="/guide/building">Building Guide</a>
             </p>
 
-            <p>
+            <p class="guide__text">
                 You can view the latest releases of the server on github at
-                <a href="https://github.com/PocketRelay/Server/releases/latest">
+                <a
+                    class="guide__link"
+                    href="https://github.com/PocketRelay/Server/releases/latest"
+                >
                     Here
                 </a> or you can use the download links below to directly download
                 the latest version for your platform
             </p>
 
-            <ServerDownloads />
+            <div class="above">
+                <ServerDownloads />
+            </div>
         </div>
 
-        <div>
-            <h2>2) Move to its own directory</h2>
-            <p>
+        <div class="guide__block">
+            <h2 class="guide__step">2) Move to its own directory</h2>
+            <p class="guide__text">
                 Move the binary file to its own directory in order to not
                 interfere with or overlap with other files and folders. All the
                 Pocket Relay data files will be stored in a "data" folder
@@ -42,19 +47,19 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
             </p>
         </div>
 
-        <div>
-            <h2>3) Launching</h2>
-            <p>
+        <div class="guide__block">
+            <h2 class="guide__step">3) Launching</h2>
+            <p class="guide__text">
                 Now you can launch the server executable. The steps below show
                 the different ways of doing this for the different platforms
             </p>
             <div>
-                <div>
-                    <h4>
+                <div class="above">
+                    <h4 class="platform__title">
                         <img
                             src="/windows.svg"
                             alt="Windows"
-                            class="platform__icon"
+                            class="platform__title__icon"
                         />
                         Windows
                     </h4>
@@ -65,15 +70,15 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
                         Click + Open or through the terminal using
                     </p>
 
-                    <pre><code>./pocket-relay.exe</code></pre>
+                    <pre class="code"><code>./pocket-relay.exe</code></pre>
                 </div>
 
-                <div>
-                    <h4>
+                <div class="above">
+                    <h4 class="platform__title">
                         <img
                             src="/linux.svg"
                             alt="Linux"
-                            class="platform__icon"
+                            class="platform__title__icon"
                         />
 
                         Linux
@@ -85,30 +90,31 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
                         following command
                     </p>
 
-                    <pre><code>chmod +x ./pocket-relay</code></pre>
+                    <pre class="code"><code>chmod +x ./pocket-relay</code></pre>
 
                     <p>
                         Then you can start the server with the following command
                     </p>
 
-                    <pre><code>./pocket-relay</code></pre>
+                    <pre class="code"><code>./pocket-relay</code></pre>
 
                     <p>
                         Note with the default configuration you will need to run
-                        the <pre><code>./pocket-relay</code></pre> command as <pre><code>sudo ./pocket-relay</code></pre>
-                        as the default configuration uses port 80 for the HTTP server.
-                        If you are already running an Apache HTTP server or another
-                        app is using port 80 you will either need to change it in
-                        the configuration file to another port such as 8080 or 3000
-                        or stop the other apps
+                        the command above using sudo on linux as it requires
+                        binding port 80 for the HTTP server. If you are already
+                        running an Apache HTTP server or another app is using
+                        port 80 you will either need to change it in the
+                        configuration file to another port such as 8080 or 3000
+                        or stop the other apps.
                     </p>
+                    <pre class="code"><code>sudo ./pocket-relay</code></pre>
                 </div>
             </div>
         </div>
 
         <div id="url">
-            <h2>4) Connection URL</h2>
-            <p>
+            <h2 class="guide__step">4) Connection URL</h2>
+            <p class="guide__text">
                 Now that your server is up and running the server will output
                 the connection urls into the log. You can find this log in the
                 terminal you are using to run the server or in the log file at <span
@@ -117,9 +123,10 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
                 should see a message like the one below
             </p>
 
-            <pre><code>[2022-11-28T15:14:35.555306400+13:00 INFO pocket_relay] Connection URLS (LAN: 192.168.88.251, WAN: IP_REDACTED, LOCAL: 127.0.0.1)</code></pre>
+            <pre
+                class="code"><code>[2022-11-28T15:14:35.555306400+13:00 INFO pocket_relay] Connection URLS (LAN: 192.168.88.251, WAN: IP_REDACTED, LOCAL: 127.0.0.1)</code></pre>
 
-            <p>
+            <p class="guide__text">
                 The connections URLs are filtered by the interface and seperated
                 with commas. Below is table showing which IP is which
                 corresponds to which usage
@@ -161,23 +168,24 @@ import GuideLayout from "../../../layouts/GuideLayout.astro";
                 </tbody>
             </table>
 
-            <p>
+            <p class="guide__text">
                 If you would like to make your server available over
                 <b>WAN</b> you will need to Port Forward the ports listed in
-                <a href="#port">Port Forwarding</a>
+                <a class="guide__link" href="/guide/server/port-forward">
+                    Port Forwarding
+                </a>
             </p>
         </div>
 
         <div>
-            <h2>5) Further Configuration</h2>
-            <p>
+            <h2 class="guide__step">5) Further Configuration</h2>
+            <p class="guide__text">
                 If you would like to further configure your server changing
-                things such as the Menu Message you can check out the <a
-                    href="/guide/config">Configuration Guide</a
-                >
+                things such as the Menu Message you can check out the
+                <a class="guide__link" href="/guide/config">
+                    Configuration Guide
+                </a>
             </p>
         </div>
     </main>
 </GuideLayout>
-
-<style></style>
