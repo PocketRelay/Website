@@ -86,11 +86,15 @@ p {
 }
 
 
-.guide__block {
-    margin: 5vh 0;
-}
 
 .code {
+    padding: 1rem;
+    display: block;
+    margin: 1rem 0;
+    background-color: #000;
+}
+
+.astro-code {
     padding: 1rem;
     display: block;
     margin: 1rem 0;

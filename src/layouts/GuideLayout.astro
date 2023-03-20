@@ -5,7 +5,7 @@ import "@fontsource/inter/500.css";
 import "@fontsource/inter/900.css";
 
 export interface Props {
-	title?: string;
+  title?: string;
 }
 
 const { title } = Astro.props;
@@ -13,263 +13,241 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="/apple-touch-icon.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="/favicon-32x32.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="/favicon-16x16.png"
-		/>
-		<link rel="manifest" href="/site.webmanifest" />
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Pocket Relay" />
-		<meta
-			property="og:description"
-			content="Mass Effect 3 private server emulator"
-		/>
-		<meta property="og:url" content="https://pocket-relay.pages.dev/" />
-		<meta property="og:image" content="/logo.svg" />
-		<meta name="author" content="Jacobtread" />
-		<meta
-			name="description"
-			content="Mass Effect 3 private server emulator"
-		/>
-		<meta name="keywords" content="me3,masseffect3,privateserver" />
-		<meta name="theme-color" content="#7ed380" />
-		<title>{title ?? "Document"} | Pocket Relay Guide</title>
-	</head>
-	<body>
-		<div class="wrapper">
-			<aside class="sidebar">
-				<a href="/">
-					<img class="sidebar__logo" src="/logo.svg" alt="Logo" />
-				</a>
-				<p>By Jacobtread</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pocket Relay" />
+    <meta
+      property="og:description"
+      content="Mass Effect 3 private server emulator"
+    />
+    <meta property="og:url" content="https://pocket-relay.pages.dev/" />
+    <meta property="og:image" content="/logo.svg" />
+    <meta name="author" content="Jacobtread" />
+    <meta name="description" content="Mass Effect 3 private server emulator" />
+    <meta name="keywords" content="me3,masseffect3,privateserver" />
+    <meta name="theme-color" content="#7ed380" />
+    <title>{title ?? "Document"} | Pocket Relay Guide</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside class="sidebar">
+        <a href="/">
+          <img class="sidebar__logo" src="/logo.svg" alt="Logo" />
+        </a>
+        <p>By Jacobtread</p>
 
-				<div class="sidebar__content-wrapper">
-					<div class="sidebar__content">
-						<a class="link link--cat" href="/guide">Introduction</a>
+        <div class="sidebar__content-wrapper">
+          <div class="sidebar__content">
+            <a class="link link--cat" href="/guide">Introduction</a>
 
-						<a class="link link--cat" href="/guide/server">
-							Create a server
-						</a>
-						<div class="group">
-							<a class="link" href="/guide/server/executable">
-								Executable
-							</a>
-							<a class="link" href="/guide/server/docker">
-								Docker
-							</a>
-							<a class="link" href="/guide/server/port-forward">
-								Port Forwarding
-							</a>
-							<a class="link" href="/guide/server/building">
-								Manual Building
-							</a>
-						</div>
+            <a class="link link--cat" href="/guide/server"> Create a server</a>
+            <div class="group">
+              <a class="link" href="/guide/server/executable"> Executable</a>
+              <a class="link" href="/guide/server/docker"> Docker</a>
+              <a class="link" href="/guide/server/port-forward">
+                Port Forwarding
+              </a>
+              <a class="link" href="/guide/server/building"> Manual Building</a>
+            </div>
 
-						<a class="link link--cat" href="/guide/client">
-							Join a server
-						</a>
-						<div class="group">
-							<a class="link" href="/guide/client/windows">
-								Windows
-							</a>
-							<a class="link" href="/guide/client/manual">
-								Manual
-							</a>
-						</div>
+            <a class="link link--cat" href="/guide/client"> Join a server</a>
+            <div class="group">
+              <a class="link" href="/guide/client/windows"> Windows</a>
+              <a class="link" href="/guide/client/manual"> Manual</a>
+            </div>
 
-						<a class="link link--cat" href="/guide/config">
-							Configure
-						</a>
-						<div class="group">
-							<a
-								class="link link--sub"
-								href="/guide/config#ports"
-							>
-								Server Ports
-							</a>
-							<div class="group">
-								<a class="link" href="/guide/config#ports1">
-									Redirector
-								</a>
-								<a class="link" href="/guide/config#ports2">
-									Main
-								</a>
-								<a class="link" href="/guide/config#ports3">
-									HTTP
-								</a>
-								<a class="link" href="/guide/config#ports4">
-									Telemetry
-								</a>
-								<a class="link" href="/guide/config#ports5">
-									QoS
-								</a>
-							</div>
-							<a
-								class="link link--sub"
-								href="/guide/config#dashboard">Dashboard</a
-							>
-							<div class="group">
-								<a class="link" href="/guide/config#dashboard">
-									Super Admin
-								</a>
-							</div>
-							<a class="link link--sub" href="/guide/config#menu">
-								Menu
-							</a>
-							<div class="group">
-								<a class="link" href="/guide/config#menu">
-									Menu Message
-								</a>
-							</div>
-							<a class="link link--sub" href="/guide/config#gaw">
-								Galaxy At War
-							</a>
-							<div class="group">
-								<a class="link" href="/guide/config#gaw1">
-									Daily Decay
-								</a>
-								<a class="link" href="/guide/config#gaw2">
-									Include Promotions
-								</a>
-							</div>
-							<a
-								class="link link--sub"
-								href="/guide/config#logging">Logging</a
-							>
-							<div class="group">
-								<a class="link" href="/guide/config#logging1">
-									Logging Level
-								</a>
-								<a class="link" href="/guide/config#logging2">
-									Logging Directory
-								</a>
-							</div>
-							<a class="link link--sub" href="/guide/config#retr">
-								Retriever
-							</a>
-							<div class="group">
-								<a class="link" href="/guide/config#retr1">
-									Enabled
-								</a>
-								<a class="link" href="/guide/config#retr2">
-									Origin Fetch
-								</a>
-								<a class="link" href="/guide/config#retr3">
-									Origin Fetch Data
-								</a>
-							</div>
-							<a class="link link--sub" href="/guide/config#db">
-								Database
-							</a>
-							<div class="group">
-								<a class="link" href="/guide/config#db1">
-									SQLite
-								</a>
-								<a class="link" href="/guide/config#db2">
-									MySQL
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</aside>
-			<main class="main">
-				<slot />
-			</main>
-		</div>
-	</body>
+            <a class="link link--cat" href="/guide/config"> Configure</a>
+            <div class="group">
+              <a class="link link--sub" href="/guide/config#ports">
+                Server Ports
+              </a>
+              <a class="link link--sub" href="/guide/config#ports">
+                Server Ports
+              </a>
+              <div class="group">
+                <a class="link" href="/guide/config#ports1"> Redirector</a>
+                <a class="link" href="/guide/config#ports2"> Main</a>
+                <a class="link" href="/guide/config#ports3"> HTTP</a>
+                <a class="link" href="/guide/config#ports4"> Telemetry</a>
+                <a class="link" href="/guide/config#ports5"> QoS</a>
+              </div>
+              <a class="link link--sub" href="/guide/config#dashboard"></a>
+              Dashboard
+            </div>
+            <div class="group">
+              <a class="link" href="/guide/config#dashboard">Super Admin</a>
+            </div>
+            <a class="link link--sub" href="/guide/config#menu">Menu</a>
+            <div class="group">
+              <a class="link" href="/guide/config#menu">Menu Message</a>
+            </div>
+            <a class="link link--sub" href="/guide/config#gaw">
+              Galaxy At War
+            </a>
+            <div class="group">
+              <a class="link" href="/guide/config#gaw1">Daily Decay</a>
+              <a class="link" href="/guide/config#gaw2"> Include Promotions</a>
+            </div>
+            <a class="link link--sub" href="/guide/config#logging">Logging</a>
+            <div class="group">
+              <a class="link" href="/guide/config#logging1">Logging Level</a>
+              <a class="link" href="/guide/config#logging2">
+                Logging Directory
+              </a>
+            </div>
+            <a class="link link--sub" href="/guide/config#retr">Retriever</a>
+            <div class="group">
+              <a class="link" href="/guide/config#retr1">Enabled</a>
+              <a class="link" href="/guide/config#retr2">Origin Fetch</a>
+              <a class="link" href="/guide/config#retr3"> Origin Fetch Data</a>
+            </div>
+            <a class="link link--sub" href="/guide/config#db">Database</a>
+            <div class="group">
+              <a class="link" href="/guide/config#db1">SQLite</a>
+              <a class="link" href="/guide/config#db2">MySQL</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <main class="main guide">
+        <slot />
+      </main>
+    </div>
+  </body>
 </html>
 
+<style is:global>
+  .main h1 {
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .main p {
+    color: #9f9f9f;
+    max-width: 800px;
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+
+  .main blockquote > p {
+    font-size: 1rem;
+    padding: 0.5rem;
+    background-color: #222222;
+  }
+
+  .main h2 {
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .main a {
+    color: #b2a1e4;
+  }
+
+  ul {
+    list-style-position: inside;
+  }
+
+  ul > li > ol,
+  ol > li > ul {
+    margin-left: 1rem;
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+
+  .main hr {
+    margin: 2rem 0;
+    border-color: #111;
+    width: 2rem;
+  }
+</style>
+
 <style>
-	body {
-		height: 100vh;
-		width: 100%;
-	}
+  body {
+    height: 100vh;
+    width: 100%;
+  }
 
-	.group {
-		margin-left: 0.5rem;
-		color: #fff;
-	}
+  .guide {
+    padding: 1rem;
+  }
 
-	.link {
-		display: block;
-		color: #999;
-		text-decoration: none;
-		padding: 0.25rem;
-	}
+  .group {
+    margin-left: 0.5rem;
+    color: #fff;
+  }
 
-	.link--cat {
-		color: #fff;
-		font-weight: bold;
-	}
-	.link--sub {
-		color: #c5c5c5;
-		font-weight: bold;
-	}
+  .link {
+    display: block;
+    color: #999;
+    text-decoration: none;
+    padding: 0.25rem;
+  }
 
-	.wrapper {
-		display: flex;
-		flex-flow: row nowrap;
-		gap: 1rem;
-		width: 100%;
-		height: 100vh;
-		overflow: hidden;
-	}
+  .link--cat {
+    color: #fff;
+    font-weight: bold;
+  }
+  .link--sub {
+    color: #c5c5c5;
+    font-weight: bold;
+  }
 
-	.main {
-		flex: auto;
-		height: 100%;
-		overflow: auto;
-	}
+  .wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-	.sidebar {
-		display: flex;
-		flex-flow: column;
-		gap: 1rem;
-		background: #222;
-		padding: 0.5rem;
-		flex: auto;
-		width: 100%;
-		max-width: 250px;
-	}
+  .main {
+    flex: auto;
+    height: 100%;
+    overflow: auto;
+  }
 
-	.sidebar__content-wrapper {
-		flex: auto;
-		overflow: auto;
-	}
+  .sidebar {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+    background: #222;
+    padding: 0.5rem;
+    flex: auto;
+    width: 100%;
+    max-width: 250px;
+  }
 
-	.sidebar__content-wrapper::-webkit-scrollbar {
-		width: 5px;
-	}
-	.sidebar__content-wrapper::-webkit-scrollbar-thumb {
-		background-color: #999;
-		border-radius: 5px;
-	}
+  .sidebar__content-wrapper {
+    flex: auto;
+    overflow: auto;
+  }
 
-	.sidebar__content {
-	}
+  .sidebar__content-wrapper::-webkit-scrollbar {
+    width: 5px;
+  }
+  .sidebar__content-wrapper::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 5px;
+  }
 
-	.sidebar__logo {
-		display: block;
-		max-width: 200px;
-		margin: 1rem auto;
-		width: 100%;
-	}
+  .sidebar__content {
+  }
+
+  .sidebar__logo {
+    display: block;
+    max-width: 200px;
+    margin: 1rem auto;
+    width: 100%;
+  }
 </style>
