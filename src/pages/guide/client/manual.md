@@ -3,7 +3,7 @@ layout: "@layouts/GuideLayout.astro"
 title: "Manual"
 ---
 
-# Manual
+# Manual Client Setup
 
 This section is for manually setting up your Mass Effect 3 client and your computer to work with Pocket Relay servers this tutorial is for both Windows and Linux
 
