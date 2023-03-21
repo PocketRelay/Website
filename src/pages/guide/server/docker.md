@@ -42,13 +42,13 @@ services:
       # HTTP Server port
       - 80:80/tcp
       # Main Server port
-      - 14219:14219/tcp
+      - 42128:42128/tcp
       # Reidrector Server port
       - 42127:42127/tcp
       # Telemetry Server port
-      - 9988:9988/tcp
+      - 42129:42129/tcp
       # Quality of Service port
-      - 17499:17499/udp
+      - 42130:42130/udp
     image: jacobtread/pocket-relay:latest
 ```
 
@@ -59,5 +59,5 @@ services:
 If you would like to use just the `docker run` command you can use the following command to start a new **Pocket Relay** container and expose the nessicary ports
 
 ```bash
-docker run -d -p 80:80/tcp -p 14219:14219/tcp -p 42127:42127/tcp -p 9988:9988/tcp -p 17499:17499/udp jacobtread/pocket-relay:latest
+docker run -d -p 80:80/tcp -p 42128:42128/tcp -p 42127:42127/tcp -p 42129:42129/tcp -p 42130:42130/udp jacobtread/pocket-relay:latest
 ```
