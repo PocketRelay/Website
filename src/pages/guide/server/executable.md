@@ -5,6 +5,8 @@ title: "Executable"
 
 # Executable
 
+[Back](/guide/server)
+
 This guide contains instructions for creating a server and launching it. If you have already setup your server through other means such as [Docker](/guide/server/docker) or [Manual Building](/guide/server/building) you can skip down
 to the [Launching](#3-launching) step.
 
@@ -118,6 +120,6 @@ Your credentials for the Dashboard will be the same as the credentials you use t
 
 > Note you will either need to use a cracked account to login to the Dashboard or use an Admin account to assign a password to your Origin account
 
-In order to access the **Admin** functionality of the Dashboard to do thing like editing player data you will need to assign a **Super Admin** user to do this you must use the [Configuration Guide](/guide/config) to set the [Super Admin Email](/guide/config#super-admin-email) key to the email address of the account you want to give **Super Admin** access to.
+In order to access the **Admin** functionality of the Dashboard to do thing like editing player data you will need to assign a **Super Admin** user to do this you must use the [Configuration Guide](/guide/config) to set the [Super Admin](/guide/config/dashboard) property to the email of the account you want to give **Super Admin** access to.
 
 **Super Admins** have access to give **Admin** to other users but **Admins** cannot give or remove access. Your **Super Admin** account has elivated privilleges over all the other server accounts and has access to the server logs

@@ -5,6 +5,8 @@ title: "Port Forward"
 
 # Port Forwarding
 
+[Back](/guide/server)
+
 If you would like to make your server accessible from outside your local network you will need to port forward on your router the following are the ports that you will need to forward.
 
 | Protocol | Port  | What                      |

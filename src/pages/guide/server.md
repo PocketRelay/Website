@@ -5,6 +5,8 @@ title: "Create a server"
 
 # Server Setup Guide
 
+[Back](/guide)
+
 How would you like to run your server? If you don't have any knowledge with **Docker** or would just like to run the server as a executable file you can choose [Executable](/guide/server/executable)
 
 - [Executable](/guide/server/executable) Guide for running the server as an executable

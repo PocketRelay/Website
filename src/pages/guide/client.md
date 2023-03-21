@@ -5,6 +5,8 @@ title: "Client Setup"
 
 # Client Setup Guide
 
+[Back](/guide)
+
 Please choose your setup method below. If you are not using Windows
 you must use the **Manual** method
 

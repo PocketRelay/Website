@@ -5,6 +5,8 @@ title: "Building"
 
 # Building Server Guide
 
+[Back](/guide/server)
+
 This guide is for manually building the server binary
 
 - [Requirements](#requirements) Programs required to follow this guide

@@ -65,10 +65,7 @@ const { title } = Astro.props;
 
             <a class="link link--cat" href="/guide/config"> Configure</a>
             <div class="group">
-              <a class="link link--sub" href="/guide/config#ports">
-                Server Ports
-              </a>
-              <a class="link link--sub" href="/guide/config#ports">
+              <a class="link link--sub" href="/guide/config/ports">
                 Server Ports
               </a>
               <div class="group">
@@ -82,9 +79,10 @@ const { title } = Astro.props;
               Dashboard
             </div>
             <div class="group">
-              <a class="link" href="/guide/config#dashboard">Super Admin</a>
+              <a class="link" href="/guide/config#dashboard">Super Email</a>
+              <a class="link" href="/guide/config#dashboard">Super Password</a>
             </div>
-            <a class="link link--sub" href="/guide/config#menu">Menu</a>
+            <a class="link link--sub" href="/guide/config/menu">Menu</a>
             <div class="group">
               <a class="link" href="/guide/config#menu">Menu Message</a>
             </div>
@@ -98,20 +96,12 @@ const { title } = Astro.props;
             <a class="link link--sub" href="/guide/config#logging">Logging</a>
             <div class="group">
               <a class="link" href="/guide/config#logging1">Logging Level</a>
-              <a class="link" href="/guide/config#logging2">
-                Logging Directory
-              </a>
             </div>
             <a class="link link--sub" href="/guide/config#retr">Retriever</a>
             <div class="group">
               <a class="link" href="/guide/config#retr1">Enabled</a>
               <a class="link" href="/guide/config#retr2">Origin Fetch</a>
               <a class="link" href="/guide/config#retr3"> Origin Fetch Data</a>
-            </div>
-            <a class="link link--sub" href="/guide/config#db">Database</a>
-            <div class="group">
-              <a class="link" href="/guide/config#db1">SQLite</a>
-              <a class="link" href="/guide/config#db2">MySQL</a>
             </div>
           </div>
         </div>
@@ -157,7 +147,9 @@ const { title } = Astro.props;
   }
 
   ul > li > ol,
-  ol > li > ul {
+  ol > li > ul,
+  ul > li > ul,
+  ol > li > ol {
     margin-left: 1rem;
   }
 
