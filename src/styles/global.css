@@ -134,6 +134,7 @@ p {
     color: #999;
 }
 
+
 .actions {
     display: flex;
     gap: 1rem;
@@ -147,10 +148,15 @@ p {
     text-decoration: none;
 }
 
-.action h3 {
+.action__title {
     font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0rem;
     color: #fff;
+}
+
+.action__text {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0 !important;
 }
 
 table {

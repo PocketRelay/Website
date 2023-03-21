@@ -28,6 +28,10 @@ This guide is for manually building the server binary
 
 ## Crates.io
 
+![License](https://img.shields.io/github/license/PocketRelay/ServerRust?style=for-the-badge)
+![Cargo Version](https://img.shields.io/crates/v/pocket-relay?style=for-the-badge)
+![Build](https://img.shields.io/github/actions/workflow/status/PocketRelay/ServerRust/rust.yml?style=for-the-badge)
+
 If you have Cargo installed you can automatically download, compile, and install the latest version of the server. Note this can be quite intensive and isn't
 recommended for lower end devices. You can install with cargo using the following
 command:
@@ -103,4 +107,4 @@ target/release
 
 If you are on Windows the file will be named `pocket-relay.exe` and if you are on Linux it will be named `pocket-relay`
 
-Now you can use that binary the same way as the pre-built binaries. Refer back to the Server Executable guide for what to do next
+Now you can use that binary the same way as the pre-built binaries. Refer back to the [Server Executable Guide](/guide/server/executable) for what to do next
