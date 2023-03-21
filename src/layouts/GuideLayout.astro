@@ -151,13 +151,20 @@ const { title } = Astro.props;
     color: #b2a1e4;
   }
 
-  ul {
+  ul,
+  ol {
     list-style-position: inside;
   }
 
   ul > li > ol,
   ol > li > ul {
     margin-left: 1rem;
+  }
+
+  h3 > img,
+  h2 > img {
+    vertical-align: middle;
+    margin-right: 0.5rem;
   }
 
   li {
@@ -168,6 +175,10 @@ const { title } = Astro.props;
     margin: 2rem 0;
     border-color: #111;
     width: 2rem;
+  }
+
+  .main img {
+    max-width: 800px;
   }
 </style>
 

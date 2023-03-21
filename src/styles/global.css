@@ -152,3 +152,41 @@ p {
     margin-bottom: 0.5rem;
     color: #fff;
 }
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 700px;
+}
+
+thead tr {
+    background-color: #5251ac;
+    color: #ffffff;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 1rem;
+}
+
+td>img {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+tbody tr {
+    background-color: #1f1f1f;
+}
+
+
+tbody tr:nth-of-type(even) {
+    background-color: #222;
+}
+
+
+tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
