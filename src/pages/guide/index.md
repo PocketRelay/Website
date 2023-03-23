@@ -5,6 +5,8 @@ title: "Introduction"
 
 # Pocket Relay Guide
 
+[Back](/)
+
 This is a guide for both creating and connecting to **Pocket Relay** servers. Please choose one of the guide pages below
 for your desired guide.
 
@@ -21,6 +23,10 @@ for your desired guide.
     <a class="action" href="/guide/client">
         <h3 class="action__title">Join a server</h3>
         <p class="action__text">Guide for joining a server</p>
+    </a>   
+     <a class="action" href="/guide/config">
+        <h3 class="action__title">Configure</h3>
+        <p class="action__text">Guide for configuring a server</p>
     </a>
 </div>
 

@@ -69,7 +69,7 @@ Then you can start the server with the following command
 ./pocket-relay
 ```
 
-> Note: The default server configuration uses port 80 for the HTTP server. On Linux this will require that you run the previous command using sudo. If you would like to change the HTTP port see the [Configuration](/guide/config#ports-http)
+> Note: The default server configuration uses port 80. On Linux this will require that you run the previous command using sudo. If you would like to change the port see the [Configuration](/guide/config/port)
 
 ---
 
@@ -98,7 +98,7 @@ The _Connection URLs_ message contains different urls there are usually LAN, WAN
 | **WAN**   | The person is trying to connect to you remotely from another network                                |
 | **LOCAL** | The IP address you can use if the server is running on the same computer that you are using to play |
 
-If you are planning to use **WAN** you need to make sure that all the server ports are portforwarded. For a list of the ports that you need to forward see the [Port Forwarding](/guide/server/port-forward) Guide
+If you are planning to use **WAN** you need to make sure that the server port is portforwarded. This port is port 80 unless you've changed it in the configuration and this port is using TCP
 
 At this point you can head over the [Client Guide](/guide/client) to learn how to join the server
 

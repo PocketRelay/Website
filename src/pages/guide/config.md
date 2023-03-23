@@ -5,14 +5,11 @@ title: "Configuration"
 
 # Configuration
 
+[Back](/guide)
+
 Check out the configuration sections below
 
-- [Server Ports](/guide/config/ports) Configure server ports
-  - [Redirector](/guide/config/ports#redirector) Redirector server port
-  - [Main](/guide/config/ports#main) Main server port
-  - [Telemetry](/guide/config/ports#telemetry) Telemetry server port
-  - [Quality of Service](/guide/config/ports#quality-of-service) Quality of Service server port
-  - [HTTP](/guide/config/ports#http) HTTP server port
+- [Server Port](/guide/config/port) Configure the server port
 - [Dashboard](/guide/config/dashboard) Configure server dashboard
   - [Super Email](/guide/config/dashboard#super-email) Super admin email address
   - [Super Password](/guide/config/dashboard#super-password) Super admin email address
@@ -30,19 +27,16 @@ Server configuration is loaded from a file named `config.json` in the same folde
 
 By default this file will not exist. You will have to create it manually see the default configuration below.
 
+If you are running the server within a Docker container you will need to use the `PR_CONFIG_JSON`
+environment variable providing the config JSON as the variable
+
 Use the different configuration sections linked above to modify the default configuration to your liking
 
 ## Default Configuration
 
 ```json
 {
-  "ports": {
-    "redirector": 42127,
-    "main": 42128,
-    "telemetry": 42129,
-    "qos": 42130,
-    "http": 80
-  },
+  "port": 80,
   "dashboard": {
     "super_email": "example@example.com",
     "super_password": "password"

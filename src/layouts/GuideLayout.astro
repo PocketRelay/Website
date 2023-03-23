@@ -36,97 +36,18 @@ const { title } = Astro.props;
     <title>{title ?? "Document"} | Pocket Relay Guide</title>
   </head>
   <body>
-    <div class="wrapper">
-      <aside class="sidebar">
-        <a href="/">
-          <img class="sidebar__logo" src="/logo.svg" alt="Logo" />
-        </a>
-        <p>By Jacobtread</p>
-
-        <div class="sidebar__content-wrapper">
-          <div class="sidebar__content">
-            <a class="link link--cat" href="/guide">Introduction</a>
-
-            <a class="link link--cat" href="/guide/server"> Create a server</a>
-            <div class="group">
-              <a class="link" href="/guide/server/executable"> Executable</a>
-              <a class="link" href="/guide/server/docker"> Docker</a>
-              <a class="link" href="/guide/server/port-forward">
-                Port Forwarding
-              </a>
-              <a class="link" href="/guide/server/building"> Manual Building</a>
-            </div>
-
-            <a class="link link--cat" href="/guide/client"> Join a server</a>
-            <div class="group">
-              <a class="link" href="/guide/client/windows"> Windows</a>
-              <a class="link" href="/guide/client/manual"> Manual</a>
-            </div>
-
-            <a class="link link--cat" href="/guide/config"> Configure</a>
-            <div class="group">
-              <a class="link link--sub" href="/guide/config/ports">
-                Server Ports
-              </a>
-              <div class="group">
-                <a class="link" href="/guide/config/ports#redirector">
-                  Redirector
-                </a>
-                <a class="link" href="/guide/config/ports#main">Main</a>
-                <a class="link" href="/guide/config/ports#telemetry">
-                  Telemetry
-                </a>
-                <a class="link" href="/guide/config/ports#quality-of-service">
-                  QoS
-                </a>
-                <a class="link" href="/guide/config/ports#http">HTTP</a>
-              </div>
-            </div>
-            <a class="link link--sub" href="/guide/config/dashboard">
-              Dashboard
-            </a>
-            <div class="group">
-              <a class="link" href="/guide/config/dashboard#super-email">
-                Super Email
-              </a>
-              <a class="link" href="/guide/config/dashboard#super-password">
-                Super Password
-              </a>
-            </div>
-            <a class="link link--sub" href="/guide/config/menu">Menu Message</a>
-
-            <a class="link link--sub" href="/guide/config/gaw">
-              Galaxy At War
-            </a>
-            <div class="group">
-              <a class="link" href="/guide/config/gaw#daily-decay">
-                Daily Decay
-              </a>
-              <a class="link" href="/guide/config/gaw#include-promotions">
-                Include Promotions
-              </a>
-            </div>
-            <a class="link link--sub" href="/guide/config/logging">Logging</a>
-
-            <a class="link link--sub" href="/guide/config/retriever">
-              Retriever
-            </a>
-            <div class="group">
-              <a class="link" href="/guide/config/retriever#enabled">Enabled</a>
-              <a class="link" href="/guide/config/retriever#origin-fetch">
-                Origin Fetch
-              </a>
-              <a class="link" href="/guide/config/retriever#origin-fetch-data">
-                Origin Fetch Data
-              </a>
-            </div>
-          </div>
-        </div>
-      </aside>
-      <main class="main guide">
-        <slot />
-      </main>
-    </div>
+    <header class="header">
+      <a href="/">
+        <img class="header__logo" src="/logo.svg" alt="Logo" />
+      </a>
+      <a class="link" href="/guide">Introduction</a>
+      <a class="link" href="/guide/server"> Create a server</a>
+      <a class="link" href="/guide/client"> Join a server</a>
+      <a class="link" href="/guide/config"> Configure</a>
+    </header>
+    <main class="main guide">
+      <slot />
+    </main>
   </body>
 </html>
 
@@ -192,9 +113,20 @@ const { title } = Astro.props;
 </style>
 
 <style>
-  body {
-    height: 100vh;
-    width: 100%;
+  .header {
+    background-color: #111;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-flow: row;
+    gap: 1rem;
+  }
+
+  .header__logo {
+    max-height: 32px;
+    margin-bottom: 0.5rem;
   }
 
   .guide {
@@ -208,66 +140,13 @@ const { title } = Astro.props;
 
   .link {
     display: block;
-    color: #999;
+    color: #fff;
     text-decoration: none;
+    font-weight: bold;
     padding: 0.25rem;
   }
-
-  .link--cat {
-    color: #fff;
-    font-weight: bold;
-  }
-  .link--sub {
-    color: #c5c5c5;
-    font-weight: bold;
-  }
-
-  .wrapper {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 1rem;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-
   .main {
-    flex: auto;
     height: 100%;
     overflow: auto;
-  }
-
-  .sidebar {
-    display: flex;
-    flex-flow: column;
-    gap: 1rem;
-    background: #222;
-    padding: 0.5rem;
-    flex: auto;
-    width: 100%;
-    max-width: 250px;
-  }
-
-  .sidebar__content-wrapper {
-    flex: auto;
-    overflow: auto;
-  }
-
-  .sidebar__content-wrapper::-webkit-scrollbar {
-    width: 5px;
-  }
-  .sidebar__content-wrapper::-webkit-scrollbar-thumb {
-    background-color: #999;
-    border-radius: 5px;
-  }
-
-  .sidebar__content {
-  }
-
-  .sidebar__logo {
-    display: block;
-    max-width: 200px;
-    margin: 1rem auto;
-    width: 100%;
   }
 </style>
