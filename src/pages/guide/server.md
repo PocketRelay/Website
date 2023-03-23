@@ -11,7 +11,6 @@ How would you like to run your server? If you don't have any knowledge with **Do
 
 - [Executable](/guide/server/executable) Guide for running the server as an executable
 - [Docker](/guide/server/docker) Guide for running the server within Docker
-- [Port Forwarding](/guide/server/port-forward) Port forwarding port information
 - [Manual Building](/guide/server/building) Manual building guide
 
 ---
