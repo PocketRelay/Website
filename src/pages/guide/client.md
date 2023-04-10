@@ -26,9 +26,12 @@ This guide will only work on Windows
 
 In order to use the automatic client tool you must first download it from the link below:
 
-| Platform                                    | Link                                                                                               |
-| ------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| ![Windows Icon](/icons/windows.svg) Windows | [Download](https://github.com/PocketRelay/Client/releases/latest/download/pocket-relay-client.exe) |
+| Platform                                           | Link                                                                                                      |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| ![Windows Icon](/icons/windows.svg) Windows        | [Download](https://github.com/PocketRelay/Client/releases/latest/download/pocket-relay-client.exe)        |
+| ![Windows Icon](/icons/windows.svg) Windows Native | [Download](https://github.com/PocketRelay/Client/releases/latest/download/pocket-relay-client-native.exe) |
+
+> The Windows Native version of the client is the same in functionality as the non-native version however its UI is less appealing but it only uses 3mb of ram instead of the 30mb that the normal version uses. It's up to your preference for which you decide.
 
 > Make sure you keep this executable somewhere you will remember, as you will need to use this tool any time you want to connect to a Pocket Relay server
 
