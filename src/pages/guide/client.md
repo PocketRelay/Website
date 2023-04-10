@@ -95,8 +95,49 @@ You **MUST** leave the app running while you play Mass Effect. Closing the app w
 
 You should now be able to connect to the **Pocket Relay** server that you specified.
 
-If you were already logged into the _Official_ servers and you are using a Cracked game client you will get a message saying connection failed when you first open the game, You can ignore this message and press okay
-then the multiplayer button and you will then be prompted to login where you can create yourself a new **Pocket Relay** account. (The menu says EA account as thats baked into the game code and the server can't change it)
+If you are using a cracked game or _Origin Unlinker_ continue reading the next section.
+
+## 6) Playing with Cracked
+
+If you are using a cracked game client you will likely see the following message after starting the game
+
+![ME3 Login Error](/guide/me-error.png)
+
+This error is because the game attempted to login with the account details from the official server which don't exist on the Pocket Relay server. Simply press "OK" (You may be prompted with this screen twice)
+
+You should be taken back to the main menu screen where you can push one of the two following buttons to visit the login prompt
+
+![ME3 Multiplayer Button](/guide/me-multiplayer.png)
+
+Or
+
+![ME3 Multiplayer Button Alternative](/guide/me-multiplayer-alt.png)
+
+After clicking this button you should see the following screen asking you to login
+
+![ME3 Login](/guide/me-login.png)
+
+If you've already previously created an account on this server you can simply enter the email and password and press login.
+
+Otherwise to create an account press "Create an Origin Account (EA)"
+
+You should then see the following screen:
+
+![ME3 Create](/guide/me-create.png)
+
+On this screen enter your email and password, you can leave all the other fields as is because they will not be stored by the Pocket Relay server. Once you've entered your details press the "Accept" button.
+
+> This screen mentions it's creating an "Origin Account" however it's not actually. This text is just part of the game and cannot be changed by Pocket Relay
+
+After pressing "Accept" you should see the following screen
+
+![ME3 Accept](/guide/me-accept.png)
+
+Here you simply press "I Have Read and Accept Both Documents" after this you should see the following screen
+
+![ME3 Done](/guide/me-done.png)
+
+On this screen you can press "Continue" and you should be taken to the main menu if you pressed the second button or the select character screen if you pressed "Multiplayer". From this point on you can continue as normal
 
 ---
 
