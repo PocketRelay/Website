@@ -17,8 +17,10 @@ This guide will only work on Windows
 3. [Patch Game](#3-patch-game) Instruction for patching the game
 4. [Connection URL](#4-connection-url) Instruction for using the Connection URL
 5. [All Done](#5-all-done) End of the guide
-6. [Official Servers](#6-official-servers) Guide for reverting to the official servers
-7. [Uninstalling](#7-uninstalling) Guide to uninstall Pocket Relay
+6. [Playing with Cracked](#6-playing-with-cracked) Playing with cracked accounts
+7. [Origin Unlinker](#7-origin-unlinker) Unlinking Origin game from Origin
+8. [Official Servers](#8-official-servers) Guide for reverting to the official servers
+9. [Uninstalling](#9-uninstalling) Guide to uninstall Pocket Relay
 
 ---
 
@@ -97,6 +99,8 @@ You should now be able to connect to the **Pocket Relay** server that you specif
 
 If you are using a cracked game or _Origin Unlinker_ continue reading the next section.
 
+If you have an **Origin** copy of the game and would like to play offline or create "cracked" accounts to play with you can follow the [Origin Unlinker Section](#7-origin-unlinker) which explains how to do this
+
 ## 6) Playing with Cracked
 
 If you are using a cracked game client you will likely see the following message after starting the game
@@ -141,16 +145,30 @@ On this screen you can press "Continue" and you should be taken to the main menu
 
 ---
 
-## 6) Official Servers
+## 7) Origin Unlinker
+
+If you would like to make your Origin copy of the game act like the cracked game (Allow you to create and login to different accounts in game rather than being locked into your Origin account)
+
+This is also useful if you would like to play offline as the server cannot handle Origin accounts offline
+
+You can use the _Origin Unlinker ASI Plugin_
+
+To install this plugin simply download the ME3OriginUnlinker.asi file from [Here](https://github.com/PocketRelay/ME3-ASI/raw/master/ME3OriginUnlinker/Release/ME3OriginUnlinker.asi) and place the ME3OriginUnlinker.asi file into the same directory as your MassEffect3.exe file.
+
+To remove this plugin simply delete the ME3OriginUnlinker.asi file
+
+## 8) Official Servers
 
 If you would like to connect back to the official servers all you have to do is close the app.
 
-If your game is running you will need to close it and open it again after closing **Pocket Relay Client** in order for it to switch to the Official servers
+If your game is running you will need to close it and open it again after closing **Pocket Relay Client** in order for it to switch to the Official servers.
+
+> Note if you have installed the Origin Unlinker Plugin you will need to remove that in order to login properly with Origin
 
 This does not remove the patch if you would like to remove the patch you must push the "Remove Patch" button however you don't need to do this to play on the official servers.
 
 ---
 
-## 7) Uninstalling
+## 9) Uninstalling
 
 If you would like to uninstall **Pocket Relay** press the "Remove Patch" buttons and then it is completely uninstalled and at this point you can delete the client exe files
