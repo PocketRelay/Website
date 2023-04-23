@@ -28,4 +28,3 @@ The menu message also has some placeholder variables that you can use. The serve
 | ----------- | ------------------------- |
 | {v}         | The server version number |
 | {n}         | The player account name   |
-| {ip}        | The player IP address     |
