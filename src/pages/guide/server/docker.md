@@ -53,3 +53,13 @@ If you would like to use just the `docker run` command you can use the following
 ```bash
 docker run -d -p 80:80/tcp jacobtread/pocket-relay:latest
 ```
+
+---
+
+## Updating 
+
+When a new version of Pocket Relay is released you will need to update the image using
+
+```bash
+docker pull jacobtread/pocket-relay:latest
+```
