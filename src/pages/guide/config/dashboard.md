@@ -7,13 +7,14 @@ title: "Dashboard"
 
 [Back](/guide/config)
 
-The dashboard config section contains the details of the account which should be given Super Admin
+The dashboard config section contains the details of the account which should be given Super Admin and other dashboard options
 
 ```json
 {
   "dashboard": {
     "super_email": "example@example.com",
-    "super_password": "password"
+    "super_password": "password",
+    "disable_registration": "false"
   }
 }
 ```
