@@ -48,3 +48,16 @@ This field is optional but helpful if you wan't to use an **Origin** account as 
 to this on startup delete it from your configuration.
 
 If the [Super Email](#super-email) property is set and the account exists that accounts password will be set to the provided password when the server starts up.
+
+## Disable dashboard account registration 
+
+```json
+"disable_registration": false
+```
+
+You can use this field to disable registering accounts through the dashboard (Only allows player to create account in-game) this can be useful
+if you are running a public server and dont want people who arent using the server creating accounts
+
+Change this config value to `true` in order to prevent accounts from registering through the dashboard
+
+> This feature is not yet release but will be available in v0.5.7 
