@@ -14,7 +14,7 @@ The dashboard config section contains the details of the account which should be
   "dashboard": {
     "super_email": "example@example.com",
     "super_password": "password",
-    "disable_registration": "false"
+    "disable_registration": false
   }
 }
 ```
