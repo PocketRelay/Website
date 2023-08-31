@@ -10,43 +10,23 @@ title: "Building"
 This guide is for manually building the server binary
 
 - [Requirements](#requirements) Programs required to follow this guide
-- [Crates.io](#cratesio) Guide for installing through crates.io
 - [Combined Answer](#combined-answer) Combined quick answer to skip all the steps
   1. [Clone Repository](#1-clone-repository) First step to clone the git repository
   2. [Directory](#2-directory) Move to the source directory
   3. [Compiling](#3-compiling) Start compiling the source code
   4. [Server Binary](#4-server-binary) Finding the server binary
 
+![License](https://img.shields.io/github/license/PocketRelay/ServerRust?style=for-the-badge)
+![Build](https://img.shields.io/github/actions/workflow/status/PocketRelay/ServerRust/rust.yml?style=for-the-badge)
+
 ---
 
 ## Requirements
 
-- **Rust & Cargo** Rust version 1.65.0 or greater is required in order to compile the server you can install both of these using Rustup which you can install using the guide [Here](https://www.rust-lang.org/learn/get-started)
+- **Rust & Cargo** Rust version 1.65.0 or newer is required in order to compile the server you can install both of these using Rustup which you can install using the guide [Here](https://www.rust-lang.org/learn/get-started)
 - **Git** Git is required to clone the github repository to your system. You can ignore this step if you manually download the latest source archive from github directly [Here](https://github.com/PocketRelay/ServerRust/archive/refs/heads/master.zip)
 
 > If you are using the source zip directly then extract it to a folder and skip the "Clone Repository" step
-
----
-
-## Crates.io
-
-![License](https://img.shields.io/github/license/PocketRelay/ServerRust?style=for-the-badge)
-![Cargo Version](https://img.shields.io/crates/v/pocket-relay?style=for-the-badge)
-![Build](https://img.shields.io/github/actions/workflow/status/PocketRelay/ServerRust/rust.yml?style=for-the-badge)
-
-If you have Cargo installed you can automatically download, compile, and install the latest version of the server. Note this can be quite intensive and isn't
-recommended for lower end devices. You can install with cargo using the following
-command:
-
-```bash
-cargo install pocket-relay
-```
-
-When a new version of **Pocket Relay** is released you can run the same command
-and cargo will automatically install the newest version.
-
-After the command finishes running the server will be available through the `pocket-relay` command
-which you can use to start it and you're done.
 
 ---
 
