@@ -40,7 +40,7 @@ Use the different configuration sections linked above to modify the default conf
   "dashboard": {
     "super_email": "",
     "super_password": "",
-    "disable_registration": false,
+    "disable_registration": false
   },
   "menu_message": "<font color='#B2B2B2'>Pocket Relay</font> - <font color='#FFFF66'>Logged as: {n}</font>",
   "galaxy_at_war": {
