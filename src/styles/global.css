@@ -87,18 +87,12 @@ p {
 
 
 
-.code {
-    padding: 1rem;
-    display: block;
-    margin: 1rem 0;
-    background-color: #000;
-}
-
 .astro-code {
     padding: 1rem;
     display: block;
-    margin: 1rem 0;
-    background-color: #000;
+    border-radius: 0.5rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .above {

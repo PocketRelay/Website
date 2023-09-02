@@ -1,0 +1,10 @@
+---
+layout: ../layouts/Layout.astro
+---
+
+import ExtendedCodeBlock from "../components/ExtendedCodeBlock.astro";
+
+import exampleConfig from "../../examples/config.json?raw";
+import { Code } from "astro:components";
+
+<ExtendedCodeBlock name="config.json" code={exampleConfig} lang="json" />
