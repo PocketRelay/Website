@@ -1,0 +1,15 @@
+---
+title: "Configuration"
+description: "Guide for configuring your server"
+
+section: "Server"
+order: 6
+---
+
+{/* TODO: Config generation tool */}
+import ExtendedCodeBlock from "../../../components/ExtendedCodeBlock.astro";
+
+import exampleConfig from "../../../../examples/config.json?raw";
+import { Code } from "astro:components";
+
+<ExtendedCodeBlock name="config.json" code={exampleConfig} lang="json" />

@@ -5,7 +5,9 @@ const guideCollection = defineCollection({
     type: "content",
     schema: z.object({
         title: z.string(),
-        description: z.string().optional()
+        description: z.string().optional(),
+        section: z.string().optional(),
+        order: z.number().optional(),
     })
 
 });
