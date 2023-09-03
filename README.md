@@ -1,11 +1,41 @@
-<img src="https://raw.githubusercontent.com/PocketRelay/.github/main/assets/logo-new-text.svg" width="100%" height="160px">
+# Website
 
-# Pocket Relay Website
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-[Discord Server (discord.gg/yvycWW8RgR)](https://discord.gg/yvycWW8RgR)
+### Installation
 
-[Website (pocket-relay.pages.dev)](https://pocket-relay.pages.dev/)
+```
+$ yarn
+```
 
-This is the Website for the [Pocket Relay](https://github.com/PocketRelay) project. This website includes a Guide for installing and using **Pocket Relay** servers.
+### Local Development
 
-This website is built using [Astro (astro.build)](https://astro.build/)
+```
+$ yarn start
+```
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
