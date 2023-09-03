@@ -63,8 +63,10 @@ If you change the server port in the config.json file make sure to change the do
 
 You can directly create a server using the docker run command below. As mentioned in the caution note make sure that config.json exists in the same folder as you are running this command. The container will bind to the current folder you are in and will store the server data there
 
+This version doesn't support locally binding a configuration file, so you will be stuck using the default configuration unless you use the docker compose example above:
+
 ```shell
-docker run -d -p 80:80/tcp -v ./config.json:/app/config.json -v ./data:/app/data jacobtread/pocket-relay:latest
+docker run -d -p 80:80/tcp -v ./data:/app/data jacobtread/pocket-relay:latest
 ```
 
 
