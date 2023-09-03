@@ -71,3 +71,9 @@ docker run -d -p 80:80/tcp -v ./data:/app/data jacobtread/pocket-relay:latest
 
 
 ## Updating
+
+In order to update the server version to the latest you can use the following command:
+
+```shell
+docker pull jacobtread/pocket-relay:latest
+```
