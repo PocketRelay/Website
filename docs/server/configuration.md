@@ -25,6 +25,7 @@ Below is the default configuration
 ```json title=config.json
 {
   "port": 80,
+  "reverse_proxy": false,
   "dashboard": {
     "super_email": "",
     "super_password": "",
@@ -79,6 +80,20 @@ Using any server port below 1024 on Linux will require that you launch the serve
 :::note
 Changing this port will require that you specify the port in both the Connection URL and when accessing the dashboard from the browser 
 :::
+
+---
+
+## Reverse Proxy
+
+This property configures whether the server is behind a reverse proxy or not. If you are using
+a reverse proxy you should set this to `true`. If you don't set this to `true` and you are using
+a reverse proxy clients will **NOT** be able to connect to eachother
+
+```json 
+{
+  "reverse_proxy": false
+}
+```
 
 ---
 
