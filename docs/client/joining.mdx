@@ -29,8 +29,7 @@ Firstly, you must download the client program from one of the links below:
 
 :::info
 The _Windows Native_ version of the client listed below is a lightweight variant that uses less
-resources which may be more ideal for lower end computers. This alternative version uses 3mb of RAM
-instead of the 30mb that the normal version uses however it is less aesthetically pleasing
+resources and is smaller, however it is less aesthetically pleasing (RAM Usage: Normal ~30mb, Native ~3mb)
 :::
 
 | Variant                       | Link                                                                                                      |
@@ -88,7 +87,7 @@ import clientBaseNativeImage from "./img/client-base-native.png";
 
 > As new versions are released the appearance may differ
 
-<Tabs>
+<Tabs groupId="client-variant">
   <TabItem value="client" label="Client" default>
     <img src={clientBaseImage} alt="Client home screen"></img>
   </TabItem>
@@ -104,16 +103,20 @@ Click on the tab above to see the screenshot for your specific version
 ## 3) Patch Game
 
 :::note
+You only need to do this step when you are first setting up the client, the patch will stick around until you either remove it manually or use the **"Remove patch"** button.
+
+You do **NOT** need to remove this patch to play on the official servers, it will not affect this.
+:::
+
+:::note ME3 Tweaks Mod Manager
 If you are using ME3 Tweaks Mod Manager and have the Bink Bypass for Mass Effect 3 already then you
-can skip this step
+can skip this step as they are the same thing.
 
 > ME3 Tweaks Mod Manager Bink Bypasses
 
 ![ME3 Tweaks Bink Bypass Menu](./img/me3-tweaks-bink.png)
 
 :::
-
-You only need to do this step when you are first setting up, the patch will stick around until you remove it manually or using the **"Remove patch"** button.
 
 In order for Mass Effect 3 to communicate with Pocket Relay you will need to patch your game using
 a Binkw32 Bypass for an explaination behind this see the [Client Technical Overview](../technical/client)
@@ -123,7 +126,7 @@ To get started push the **"Patch"** button below:
 import clientPatchImage from "./img/client-patch.png";
 import clientPatchNativeImage from "./img/client-patch-native.png";
 
-<Tabs>
+<Tabs groupId="client-variant">
   <TabItem value="client" label="Client" default>
     <img src={clientPatchImage} alt="Client patch button"></img>
   </TabItem>
@@ -149,3 +152,39 @@ After this you should have a pop-up window appear saying "Sucessfully patched ga
 ![Client Patched](./img/client-patched.jpg)
 
 ## 4) Connection URL
+
+In order to connect to a **Pocket Relay** server you must enter the "Connection URL" for the server into the input box.
+
+Enter your server connection URL into this box (You should have been provided this by the person running the server you are trying to connect to). If you
+are running your own server refer to the **Connection URL** section in the server documentation for how to find it.
+
+import clientUrlImage from "./img/client-url.png";
+import clientUrlNativeImage from "./img/client-url-native.png";
+
+<Tabs groupId="client-variant">
+  <TabItem value="client" label="Client" default>
+    <img src={clientUrlImage} alt="Client url input"></img>
+  </TabItem>
+  <TabItem value="client-native" label="Native Client">
+    <img src={clientUrlNativeImage} alt="Native client url input"></img>
+  </TabItem>
+</Tabs>
+
+After you have entered the server connection URL into the box press the **"Set"** button and you should connect to the server.
+
+## 5) Done
+
+After pressing "Set" the Pocket Relay Client should now show a "Connected: " message under the URL box this means you're now
+connected and you can go start **Mass Effect 3** to play on the server.
+
+import clientConnectedImage from "./img/client-connected.png";
+import clientConnectedNativeImage from "./img/client-connected-native.png";
+
+<Tabs groupId="client-variant">
+  <TabItem value="client" label="Client" default>
+    <img src={clientConnectedImage} alt="Client connected"></img>
+  </TabItem>
+  <TabItem value="client-native" label="Native Client">
+    <img src={clientConnectedNativeImage} alt="Native client connected"></img>
+  </TabItem>
+</Tabs>
