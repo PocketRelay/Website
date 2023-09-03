@@ -1,0 +1,104 @@
+---
+sidebar_position: 2
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+
+# Executable
+
+Creating a server using the server executable
+
+## 1) Download server
+
+First, you must download the server executable for your desired platform below:
+
+:::info
+If you would prefer to compile your own binary rather than using the pre-built binaries below
+you can follow the [Manual Building](./manual-building) guide
+:::
+
+import WindowsIcon from "../../src/components/icons/WindowsIcon";
+import LinuxIcon from "../../src/components/icons/LinuxIcon";
+
+| Variant                | Link                                                                                                |
+| ---------------------- | --------------------------------------------------------------------------------------------------- |
+| <WindowsIcon/> Windows | [Download](https://github.com/PocketRelay/Server/releases/latest/download/pocket-relay-windows.exe) |
+| <LinuxIcon/> Linux     | [Download](https://github.com/PocketRelay/Server/releases/latest/download/pocket-relay-linux)       |
+
+## 2) Creating a server folder
+
+As the server is going to create itself a data folder you are going to want to place the server executable in its own folder with no other files.
+
+The server will generate its own "data" folder in this folder
+
+## 3) Starting the server
+
+<Tabs groupId="platform">
+  <TabItem value="windows" label="Windows" default>
+    <p>
+      When using Windows you can either open the executable as your normally
+      would any other .exe file or you can launch it through a terminal using
+      the following command:
+    </p>
+    <CodeBlock language="sh">./pocket-relay.exe</CodeBlock>
+  </TabItem>
+  <TabItem value="linux" label="Linux">
+    <p>
+      When using linux you must first make the program executable. You can do
+      this using the following command:
+    </p>
+    <CodeBlock language="sh">chmod +x ./pocket-relay</CodeBlock>
+    <p>You can then start the server with the following command</p>
+    <CodeBlock language="sh">./pocket-relay</CodeBlock>
+  </TabItem>
+</Tabs>
+
+:::caution
+By default the server uses port 80, this port may already be in use on your system if it is
+you will either need to stop the other application using port 80 or change this port
+
+If you are using Linux port 80 will require using "sudo" to start the application
+
+To change this port see [Configuration](./configuration)
+:::
+
+## 4) Connection URL
+
+Now that your server is up and running it will output possible **Connection URLs** that you can use, these Connection URLs will also appear
+in the server log file (server.log). You will need to provide one of these Connection URLs to anyone who you would like to join the server.
+
+You can find the server log file at the following path (Relative to the folder that the server executable is stored in)
+
+```
+data/server.log
+```
+
+:::caution
+Server log files can contain personal access tokens, so it is recommened you do **NOT** post them publicly anywhere, only sharing them with
+the **Pocket Relay** developer if you need to debug an issue
+:::
+
+Within the server log file you should see a line similar to the following:
+
+```log
+[2022-11-28T15:14:35.555306400+13:00 INFO pocket_relay] Connection URLS (LAN: 192.168.88.251, WAN: IP_REDACTED, LOCAL: 127.0.0.1)
+```
+
+In order to determine which Connection URL you should give to someone see the table below:
+
+| Type  | Who you should give it to                                               |
+| ----- | ----------------------------------------------------------------------- |
+| LAN   | Someone who is on the same wifi network as you                          |
+| WAN   | Someone on a different wifi network i.e over the internet               |
+| LOCAL | Can be used if the server is running on the same computer as the client |
+
+:::info
+If you are looking to use your **WAN** address you will need to portforward the server port (TCP) in your
+router or the host that you are using, the default port is 80.
+:::
+
+## Done
+
+This is the end of the executable server setup guide. From here you can check out the [Configuration](./configuration) guide to further configure your server
