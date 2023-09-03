@@ -6,11 +6,17 @@ sidebar_position: 4
 
 Configure your server 
 
+:::note
+**Every**time you change the configuration you must restart the server before the changes will be applied
+:::
+
 :::info
 The server configuration is loaded from a file named **config.json** this file is in the same folder as the server executable **NOT** the data folder.
 :::
 
 This configuration file will **NOT** be created for you. You will have to manually create the config.json file on your own.
+
+
 
 ## Default Configuration
 
