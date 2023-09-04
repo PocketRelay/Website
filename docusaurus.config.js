@@ -61,6 +61,7 @@ const config = {
         logo: {
           alt: "Pocket Relay Logo",
           src: "img/logo.svg",
+          srcDark: "img/logo-dark.svg",
         },
         items: [
           {
