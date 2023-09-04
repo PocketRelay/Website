@@ -3,10 +3,7 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
-
 import Logo from "../../static/img/logo.svg";
-
 import styles from "./index.module.css";
 
 function HomepageHeader() {
