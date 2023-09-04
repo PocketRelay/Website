@@ -116,6 +116,12 @@ connects to the main server
 
 ### QOS
 
+With the official server there is not one but instead many different QOS servers in different regions. These servers are used both to measure connection speeds to different regions but also to determine the public address for clients so that clients can connect to eachother.
+
 ### Telemetry
+
+The official server has telemetry servers that recieve client telemetry messages from the Mass Effect 3 game there are messages for all sorts of things like Killing Enemies, Viewing specific menus, Unlocking challenges, Changing Characters, Client loaded DLC, etc. 
+
+For **Pocket Relay** this special message format is handled locally and then forwarded-on to the server over an HTTP endpoint
 
 ### HTTP
