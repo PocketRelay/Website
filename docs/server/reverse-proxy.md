@@ -70,6 +70,4 @@ http {
 
 ## Configuring Traefik
 
-**Traefik** already supports the X-Real-IP header out of the box so you don't need to enable that, however you do need to enable Web Socket Support you can do this by checking the "Websockets Support" checkbox in the "Edit Proxy Host" screen.
-
-![Traefik websocket checkbox](./img/traefik-ws-checkbox.png)
+**Traefik** already supports the X-Real-IP header out of the box so you don't need to enable that, however you do need to enable Web Socket Support
