@@ -29,11 +29,10 @@ function HomepageHeader() {
 }
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      title={`Home`}
+      description="Pocket Relay is a server that has been created in order to emulate the functionality of the official game servers to allow you to play the Mass Effect 3 multiplayer seperate from the official server. This allows you create LAN games, play multiplayer offline, or even host your own public server."
     >
       <HomepageHeader />
       <main></main>
