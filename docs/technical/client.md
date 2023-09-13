@@ -32,8 +32,6 @@ Pocket Relay uses this patch in order to disable the certificate verification of
 
 The patch included in the current Pocket Relay Client comes from https://github.com/Erik-JS/masseffect-binkw32 
 
-The [Experimental Embedded Client](../client/embedded-client) extends this `binkw32.dll` concept by directly integrating the Pocket Relay client into the DLL and hooking additional functions in order to better redirect the game
-
 ## Proxing
 
 Documentation unfinished
@@ -50,7 +48,7 @@ The normal client implementation makes use of the Windows system [Hosts file](ht
 It does this by pointing the `gosredirector.ea.com` address to `127.0.0.1` (Localhost) rather than its actual address.
 
 :::tip Experimental Version
-There is an experimental version of the client named _Embedded Client_ which doesn't require admin privilleges you can view the documentation for it [Here](../client/embedded-client) this works by rather than modifying the hosts file it instead directly hooks into the games host resolution function
+There is an experimental version of the client named _Plugin Client_ which doesn't require admin privilleges you can view the documentation for it [Here](../client/plugin-client) this works by rather than modifying the hosts file it instead directly hooks into the games host resolution function through an ASI plugin
 :::
 
 ## Components
