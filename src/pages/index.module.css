@@ -4,10 +4,12 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 15% 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(rgba(12, 12, 12, .7), rgb(24, 24, 24)), url(/img/heading.jpg) center;
+  flex: auto;
 }
 
 @media screen and (max-width: 996px) {
@@ -22,4 +24,17 @@
   justify-content: center;
 }
 
-.logo {}
+.logo {
+  fill: #fff;
+  width: 100%;
+}
+
+.heroTitle {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.heroSubTitle {
+  color: #fff;
+  font-size: 1.5rem;
+}
