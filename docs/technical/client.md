@@ -67,10 +67,8 @@ packets are encoded with the binary TDF format
 Clients request the main server instance information from this server using a packet like the below:
 
 ```yaml
-Component: Redirector (0x5)
-Command: GetServerInstance (0x1)
-Type: Request
-ID: 0
+Official: Send
+Request (0): Redirector->GetServerInstance (0x0005->0x0001)
 Content: {
   "BSDK": "3.15.6.0",             # Version of BlazeSDK this client is using 
   "BTIM": "Dec 21 2012 12:47:10", # Possible the time this build was created or the BlazeSDK build time
@@ -91,10 +89,8 @@ Content: {
 The redirector server then repsonds with:
 
 ```yaml
-Component: Redirector (0x5)
-Command: GetServerInstance (0x1)
-Type: Response
-ID: 0
+Official: Receive
+Response (0): Redirector->GetServerInstance (0x0005->0x0001)
 Content: {
   "ADDR": Union("VALU", 0, {
       "HOST": "gsprodblapp-02.ea.com", # The host address of the main server
