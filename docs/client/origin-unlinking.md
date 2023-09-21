@@ -20,7 +20,7 @@ If you are using ME3 Tweaks Mod Manager see [ME3 Tweaks Mod Manager](#me3-tweaks
 Un-linking from Origin does **NOT** remove the requirement for having Origin installed, this only applies to within the game, Origin/EA Desktop will still be required for the game to launch
 :::
 
-Once you've unlinked from Origin check out the [Unlinked Accounts](./unlinked-accounts) guide for creating and logging into unlinked accounts
+Once you've unlinked from Origin check out the [Unlinked Accounts](unlinked-accounts.md) guide for creating and logging into unlinked accounts
 
 ## Manual Guide
 

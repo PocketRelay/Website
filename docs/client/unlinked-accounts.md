@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Creating an unlinked account in-game
 
-When using an Unlinked copy whether it be because you've followed [Origin Unlinking](./origin-unlinking.md) or because you're using an "Unofficial" copy of the game this guide shows creating and logging into accounts in-game 
+When using an Unlinked copy whether it be because you've followed [Origin Unlinking](origin-unlinking.md) or because you're using an "Unofficial" copy of the game this guide shows creating and logging into accounts in-game 
 
 
 ## Initial Error

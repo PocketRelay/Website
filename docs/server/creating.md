@@ -6,14 +6,14 @@ sidebar_position: 1
 
 Guide for creating your own **Pocket Relay** server
 
-For normal server setup follow the [Executable](./executable) guide. Alternatively if you would like to create a server running within Docker you can follow the [Docker](./docker) guide.
+For normal server setup follow the [Executable](executable.mdx) guide. Alternatively if you would like to create a server running within Docker you can follow the [Docker](docker.md) guide.
 
-If you would like to compile the server executable yourself you can follow the [Manual Building](./manual-building) guide.
+If you would like to compile the server executable yourself you can follow the [Manual Building](manual-building.md) guide.
 
-Once you've setup your server check out [Configuration](./configuration) to configure settings for your server.
+Once you've setup your server check out [Configuration](configuration.md) to configure settings for your server.
 
 :::caution Reverse Proxy Setup
 If you intend to place your Pocket Relay server behind a reverse proxy be sure to follow the
-[Reverse Proxy](./reverse-proxy) guide
+[Reverse Proxy](reverse-proxy.md) guide
 :::
 

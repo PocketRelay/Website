@@ -15,7 +15,7 @@ Currently this guide only has an example for **Nginx**, and **Traefik**, if you 
 ## Configuring Nginx
 
 :::tip
-If you are using the Nginx reverse proxy within Docker through docker-compose you can use the [Docker Compose Reverse Proxy](./docker/#docker-compose-reverse-proxy) example as a base for your setup
+If you are using the Nginx reverse proxy within Docker through docker-compose you can use the [Docker Compose Reverse Proxy](docker.md#docker-compose-reverse-proxy) example as a base for your setup
 :::
 
 :::info
