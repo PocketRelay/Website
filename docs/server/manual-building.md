@@ -75,4 +75,4 @@ target/release
 If you are on Windows the file will be named pocket-relay.exe and if you are on Linux it will be named pocket-relay
 :::
 
-Now you can use that binary the same way as the pre-built binaries. Refer back to the [Executable](executable.md) guide for what to do next
+Now you can use that binary the same way as the pre-built binaries. Refer back to the [Executable](executable.mdx) guide for what to do next
