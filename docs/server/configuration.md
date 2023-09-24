@@ -97,6 +97,59 @@ a reverse proxy clients will **NOT** be able to connect to eachother
 
 ---
 
+## QoS
+
+> QoS configuration is only present in server v0.5.10 and above
+
+This property configures the QoS server that the game will use
+
+:::info
+This is important if you are hosting a **WAN** server as some users may not be able
+to connect to each-other if you don't use the "official" QoS servers due to a current
+server limitation
+:::
+
+
+### Official
+
+Specifying the "qos" configuration below will tell clients to use the official QoS server, you will
+likely want to use this option if you are hosting a **WAN** server (Theres no reason to use the official server if you are hosting a **LAN** or **Extended LAN** network) 
+
+Using the official QoS server fixes a bug that prevents some players from joining each other on your server.
+
+```json
+{
+  "qos": {
+    "type": "official"
+  }
+}
+```
+
+### Local
+
+Specifying the "qos" configuration below will tell clients to use the built in QoS server. This works if you are only hosting a **LAN**/**Extended LAN** server, if you are creating a **WAN** server you should use the [Official](#official) QoS server instead
+
+```json
+{
+  "qos": {
+    "type": "local"
+  }
+}
+```
+### Custom
+
+Specifying the "qos" configuration below will tell clients to use the provided custom QoS server. This is undocumented and only added for future use or a fallback if the official server address becomes unavailable
+
+```json
+{
+  "qos": {
+    "type": "custom",
+    "host": "example.com",
+    "port": 17899
+  }
+}
+```
+
 ## Dashboard
 
 ```json
