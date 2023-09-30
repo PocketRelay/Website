@@ -12,8 +12,8 @@ If you would like to compile the server executable yourself you can follow the [
 
 Once you've setup your server check out [Configuration](configuration.md) to configure settings for your server.
 
-:::info 
-If you intend to host a **WAN** server (One where players outside of your local network can join and player together) see the [WAN](wan.md) guide
+:::caution WAN Servers 
+If you intend to host a **WAN** server (a.k.a One where players outside of your local network can join and player together) its important that you view the [WAN](wan.md) guide
 :::
 
 :::caution Reverse Proxy Setup

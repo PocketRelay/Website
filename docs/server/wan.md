@@ -6,6 +6,14 @@ sidebar_position: 8
 
 Information for users planning on hosting **WAN** servers
 
+:::caution 
+If you are exposing your Pocket Relay server to the internet you are expected to have an existing understanding of cyber security and server hosting. This guide does not show you how to setup a secure/hardened setup, rather it just shows you what is required in order to make your server
+work with Pocket Relay, you are expected to configure your servers properly yourself.
+
+If you expose your Pocket Relay server to the internet anyone with the Connection URL will be able to connect to it (Unless you specificly prevent them with things such as firewalls or IP whitelisting on your server). 
+
+If you would like to expose your server but only want authorized users to access it you can see the [Client Certificate Auth](#client-certificate-auth) section for how to use client certificates for cryptographic authentication
+:::
 
 ## Joining issues
 
