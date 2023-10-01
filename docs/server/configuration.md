@@ -20,10 +20,15 @@ This configuration file will **NOT** be created for you. You will have to manual
 
 ## Default Configuration
 
-Below is the default configuration
+Below is the default configuration, you can omit any of the fields below from the configuration and their default values will be used instead
+
+:::info
+You can find all the descriptions for each of the configuration options under this section
+:::
 
 ```json title=config.json
 {
+  "host": "0.0.0.0",
   "port": 80,
   "reverse_proxy": false,
   "dashboard": {
@@ -58,6 +63,22 @@ This variable accepts the raw JSON and not a path to a file. i.e the following
 PR_CONFIG_JSON={"port": 80}
 ```
 :::
+
+---
+
+## Server Host
+
+> Requires upcoming server version v0.5.11
+
+The server host property configures which address the server will listen for connections on, by default 
+the server will listen for connections on any interface using 0.0.0.0, you can change this by specifying
+the specific IP to listen on.
+
+```json 
+{
+  "host": "0.0.0.0"
+}
+```
 
 ---
 
