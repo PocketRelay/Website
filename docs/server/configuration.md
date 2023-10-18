@@ -171,6 +171,45 @@ Specifying the "qos" configuration below will tell clients to use the provided c
 }
 ```
 
+### Disabled
+
+> Requires upcoming server version v0.5.11
+
+Specifying the "qos" configuration below will tell clients not to use a QoS server at all. This will disable public IP address resolution and can be good if you're only playing locally and don't want clients to resolve their public addresses
+
+```json
+{
+  "qos": {
+    "type": "disabled"
+  }
+}
+```
+
+### Hamachi
+
+> Requires upcoming server version v0.5.11
+
+Specifying the "qos" configuration below will treat the networking of clients as one which is within a Hamachi virtual network. You cannot use this option if you want anyone to connect from outside hamachi as they won't be able to join other players.
+
+
+```json
+{
+  "qos": {
+    "type": "hamachi",
+    "host": "25.54.101.58"
+  }
+}
+```
+
+:::info
+Set the "host" field to be the Hamachi virtual address, visible for the person hosting the Hamachi network (They also need to be running the server), specifically the
+**IPv4** adddress **NOT** the IPv6 *(IPv6 is not supported by Pocket Relay)*
+
+![Hamachi virtual address](./img/config-hamachi.png)
+:::
+
+
+
 ## Dashboard
 
 ```json
