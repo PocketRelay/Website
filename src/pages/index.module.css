@@ -37,4 +37,7 @@
 .heroSubTitle {
   color: #fff;
   font-size: 1.5rem;
+  max-width: 48rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }

@@ -14,7 +14,11 @@ function HomepageHeader() {
         <Logo className={styles.logo} />
 
         <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
-        <p className={styles.heroSubTitle}>{siteConfig.tagline}</p>
+        <p className={styles.heroSubTitle}>
+          Private server for Mass Effect 3, create and run your own server
+          whether it be, to play over LAN with your friends or publicly with
+          others.
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
