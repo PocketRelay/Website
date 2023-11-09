@@ -39,7 +39,7 @@ it and press the **"Install ASI"** button to install it:
 
 After that you should now be unlinked from **Origin** and next time you launch the game you will be able to login using the in-game menu.
 
-You can revert this at any time by heading back to the "ASI Manager" screen and pressing **"Uninstall ASI"** on the **"Origin UnlinkeR"** ASI mod
+You can revert this at any time by heading back to the "ASI Manager" screen and pressing **"Uninstall ASI"** on the **"Origin Unlinker"** ASI mod
 
 ![Origin unlinker tweak remove](./img/me3-tweaks-origin-unlinker-rem.png)
 
