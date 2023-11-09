@@ -106,58 +106,7 @@ import clientBaseNativeImage from "./img/client-base-native.png";
 Click on the tab above to see the screenshot for your specific version
 :::
 
-## 3) Patch Game
-
-:::note
-You only need to do this step when you are first setting up the client, the patch will stick around until you either remove it manually or use the **"Remove patch"** button.
-
-You do **NOT** need to remove this patch to play on the official servers, it will not affect this.
-:::
-
-:::note ME3 Tweaks Mod Manager
-If you are using ME3 Tweaks Mod Manager and have the Bink Bypass for Mass Effect 3 already then you
-can skip this step as they are the same thing.
-
-> ME3 Tweaks Mod Manager Bink Bypasses
-
-![ME3 Tweaks Bink Bypass Menu](./img/me3-tweaks-bink.png)
-
-:::
-
-In order for Mass Effect 3 to communicate with Pocket Relay you will need to patch your game using
-a Binkw32 Bypass for an explaination behind this see the [Client Technical Overview](../technical/client#bink-patch)
-
-To get started push the **"Patch"** button below:
-
-import clientPatchImage from "./img/client-patch.png";
-import clientPatchNativeImage from "./img/client-patch-native.png";
-
-<Tabs groupId="client-variant">
-  <TabItem value="client" label="Client" default>
-    <img src={clientPatchImage} alt="Client patch button"></img>
-  </TabItem>
-  <TabItem value="client-native" label="Native Client">
-    <img src={clientPatchNativeImage} alt="Native client patch button"></img>
-  </TabItem>
-</Tabs>
-
-After pushing the **Patch** button Windows will open a file picker (This may look slightly different depending on your version of Windows)
-
-With this file picker window you should browse to your **Mass Effect 3** game folder and find the **MasseEffect3.exe** file.
-
-:::tip
-This file should be at `{YOUR GAME FOLDER}/Binaries/Win32/MassEffect3.exe`.
-:::
-
-Once you've found the file select it and press **"Open"**
-
-![File picker](./img/patch-file-picker.jpg)
-
-After this you should have a pop-up window appear saying "Sucessfully patched game". You can press **"Ok"** on this message to dismiss it
-
-![Client Patched](./img/client-patched.jpg)
-
-## 4) Connection URL
+## 3) Connection URL
 
 In order to connect to a **Pocket Relay** server you must enter the "Connection URL" for the server into the input box.
 
@@ -178,7 +127,7 @@ import clientUrlNativeImage from "./img/client-url-native.png";
 
 After you have entered the server connection URL into the box press the **"Set"** button and you should connect to the server.
 
-## 5) Done
+## 4) Done
 
 After pressing "Set" the Pocket Relay Client should now show a "Connected: " message under the URL box this means you're now
 connected and you can go start **Mass Effect 3** to play on the server.
