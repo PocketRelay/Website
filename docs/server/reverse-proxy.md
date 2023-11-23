@@ -23,8 +23,6 @@ If you would like to expose your server but only want authorized users to access
 
 ### Configuring Nginx
 
-
-
 :::tip
 If you are using the Nginx reverse proxy within Docker through docker-compose you can use the [Docker Compose Reverse Proxy](docker.md#docker-compose-reverse-proxy) example as a base for your setup
 :::
@@ -77,6 +75,58 @@ http {
 
 ```
 
+#### Sub directories
+
+
+
+If you'd like to host the server within a subdirectory you can change the location portion to look like this:
+
+
+```conf
+location /test/ {
+    # Remove the /test/ sub directory prefix from the url before it gets to the server
+    rewrite /test/(.*) /$1 break;
+
+    # ^..the other configuration from previous example
+}
+
+```
+
+If you change the server sub directory in order for the dashboard to work you will need to recompile the dashboard sources
+to use a different base url, you can do this by cloning the repository from https://github.com/PocketRelay/Dashboard, installing
+the dependencies, then updating the `svelte.config.js` file like the following:
+
+```js
+
+import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/kit/vite';
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
+	// for more information about preprocessors
+	preprocess: vitePreprocess(),
+
+	kit: {
+		adapter: adapter({
+			fallback: "index.html"
+		}),
+		prerender: {
+			entries: [],
+		},
+        // ADD THIS SECTION HERE
+        paths: {
+            // Replace /test with the sub directory you used above in nginx 
+            base: "/test"
+        }
+	}
+};
+
+export default config;
+```
+
+Once you've updated the config you can build the dashboard sources. Then copy the built sources from the `build`
+directory into a new folder name `public` in the server `data` folder (`data/public`) 
 
 
 ### Configuring Traefik
