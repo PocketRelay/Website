@@ -135,7 +135,7 @@ directory into a new folder name `public` in the server `data` folder (`data/pub
 
 ## Client Certificate Auth
 
-> Requires client version v0.2.8 or greater, only supported by the client tool and not yet supported by the plugin client variant
+> Requires client version v0.2.8 or greater for the standalone tool, and version v0.0.4 or later for the asi plugin
 
 When using a reverse proxy like Nginx you can force clients to provide a client "identity" to authorize using the server. This can be helpful if you want to expose your server but only want to allow certain people access to the server.
 
@@ -194,6 +194,12 @@ identities.
 You should place the `pocket-relay-identity.p12` file in the same folder as your `pocket-relay-client.exe`, like the following:
 
 ![Client identity](./img/client-identity.png)
+
+
+:::note
+If you are using the asi plugin client version put the file next to your `MassEffect3.exe` instead
+:::
+
 
 Make sure your identity file is named exactly `pocket-relay-identity.p12` otherwise it will **NOT** be loaded.
 
