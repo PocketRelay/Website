@@ -298,8 +298,8 @@ The menu message also has some placeholder variables that you can use. The serve
 
 | Placeholder | Description               |
 | ----------- | ------------------------- |
-| {v}         | The server version number |
-| {n}         | The player account name   |
+| `{v}`       | The server version number |
+| `{n}`       | The player account name   |
 
 ---
 
