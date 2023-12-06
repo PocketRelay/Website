@@ -6,6 +6,8 @@ sidebar_position: 6
 
 Guide for manually compiling the server executable from source
 
+Keep in mind when manually building the server, the master branch contains the latest changes which can be untested or not intented for general use, its recommened you checkout a specific release tag rather than master to ensure the version you are compiling is stable.
+
 ## Requirements
 
 - **Rust & Cargo** Rust version 1.70.0 or newer is required in order to compile the server you can install both of these using Rustup which you can install using the guide [Here](https://www.rust-lang.org/learn/get-started)
