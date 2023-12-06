@@ -4,20 +4,19 @@ sidebar_position: 1
 
 # Creating a server
 
-Guide for creating your own **Pocket Relay** server
+Explore the guide to set up your personal **Pocket Relay** server.
 
-For normal server setup follow the [Executable](executable.mdx) guide. Alternatively if you would like to create a server running within Docker you can follow the [Docker](docker.md) guide.
+For a standard server setup, follow the [Executable](executable.mdx) guide. If you prefer running a server within Docker, refer to the [Docker](docker.md) guide.
 
-If you would like to compile the server executable yourself you can follow the [Manual Building](manual-building.md) guide.
+To compile the server executable yourself, check out the [Manual Building](manual-building.md) guide.
 
-Once you've setup your server check out [Configuration](configuration.md) to configure settings for your server.
+After setting up your server, head over to [Configuration](configuration.md) to customize settings.
 
 :::caution WAN Servers 
-If you intend to host a **WAN** server (a.k.a One where players outside of your local network can join and player together) its important that you view the [WAN](wan.md) guide
+If you plan to host a **WAN** server (where players outside of your local network can join and play together), it's crucial to review the [WAN](wan.md) guide.
 :::
 
 :::caution Reverse Proxy Setup
-If you intend to place your Pocket Relay server behind a reverse proxy be sure to follow the
-[Reverse Proxy](reverse-proxy.md) guide
+If you plan to place your Pocket Relay server behind a reverse proxy, make sure to follow the [Reverse Proxy](reverse-proxy.md) guide.
 :::
 

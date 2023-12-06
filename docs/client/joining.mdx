@@ -8,34 +8,32 @@ import TabItem from "@theme/TabItem";
 
 # Joining a server
 
-Guide for joining Pocket Relay servers
-
-If you have already downloaded **Pocket Relay Client** and patched your game before you can skip to [Connection URL](#4-connection-url)
+Welcome to Pocket Relay! This guide will walk you through joining Pocket Relay servers using the **Pocket Relay Client**. If you've already downloaded the client, you can skip to [Connection URL](#3-connection-url).
 
 :::info
-This guide is for the **Pocket Relay Client** which is a tool that requires administrator privilleges to run, it also requires that you
-keep the tool running while you play, There is an alternative ASI plugin version that doesn't require either of these you can find the
-guide for using that at [Plugin Client](plugin-client.mdx)
+This guide focuses on the **Pocket Relay Client**, a tool that requires administrator privileges and must run continuously while you play. There is an alternative client plugin version available which doesn't require admin privileges and can be closed once you are 
+connected. Check out the [Plugin Client Guide](plugin-client.mdx) for more details.
 :::
 
 ## Requirements
 
-In order to run **Pocket Relay Client** you must have the following
+To run the **Pocket Relay Client**, ensure you have the following:
 
-- Windows 10 or newer
-  - Client is untested on older versions but will likely run on Windows 7 and newer
-- Administrator privilleges
-  - In order to use the client you will need administrator privilleges
-- Mass Effect 3 is closed
-  - Pocket Relay must be running _before_ ME3 starts otherwise it will not work
+- **64bit Windows 10 or newer**
+  - The client may run on older versions of Windows, but it's untested.
+  - If you would like to run the client on a 32bit system you must compile it manually for that target, alternatively the client plugin version supports 32bit out of the box
+- **Administrator Privileges**
+  - You need admin privileges to use the client.
+- **Mass Effect 3**
+  - Start Pocket Relay before launching ME3 for it to work.
+
 
 ## 1) Download client
 
-Firstly, you must download the client program from one of the links below:
+Download the client from one of the links below:
 
 :::info
-The _Windows Native_ version of the client listed below is a lightweight variant that uses less
-resources and is smaller, however it is less aesthetically pleasing (RAM Usage: Normal ~30mb, Native ~3mb)
+The _Windows Native_ version is lighter in terms of file size but less visually appealing. 
 :::
 
 | Variant                       | Link                                                                                                      |
@@ -44,16 +42,16 @@ resources and is smaller, however it is less aesthetically pleasing (RAM Usage: 
 | <WindowsIcon/> Windows Native | [Download](https://github.com/PocketRelay/Client/releases/latest/download/pocket-relay-client-native.exe) |
 
 :::tip
-Make sure you keep this executable somewhere you will remember, as you will need to use this tool any time you want to connect to a Pocket Relay server
+Remember where you save the executable, as you'll need it whenever you want to connect to a Pocket Relay server.
 :::
 
-The client program will automatically update, so you don't need to repeat this step when a new version is released
+The client auto-updates, so no need to repeat this step for new versions.
 
 ---
 
 ## 2) Starting the client
 
-After you've downloaded the client, find the executable you've just downloaded and open it.
+After downloading, locate and open the executable.
 
 ### Windows Administrator
 
@@ -86,7 +84,7 @@ as Windows will remember your choice
 
 ### Launched
 
-After the above you should now see a window similar to the following:
+After the prompts, you should see a window like the one below:
 
 import clientBaseImage from "./img/client-base.png";
 import clientBaseNativeImage from "./img/client-base-native.png";
@@ -103,12 +101,12 @@ import clientBaseNativeImage from "./img/client-base-native.png";
 </Tabs>
 
 :::tip
-Click on the tab above to see the screenshot for your specific version
+Click on the tab above to view the screenshot for your specific version.
 :::
 
 ## 3) Connection URL
 
-In order to connect to a **Pocket Relay** server you must enter the "Connection URL" for the server into the input box.
+To connect to a **Pocket Relay** server, enter the "Connection URL" provided by the server into the input box.
 
 Enter your server connection URL into this box (You should have been provided this by the person running the server you are trying to connect to). If you
 are running your own server refer to the [Connection URL](../server/executable#4-connection-url) section in the server documentation for how to find it.
@@ -130,7 +128,7 @@ After you have entered the server connection URL into the box press the **"Set"*
 ## 4) Done
 
 After pressing "Set" the Pocket Relay Client should now show a "Connected: " message under the URL box this means you're now
-connected and you can go start **Mass Effect 3** to play on the server.
+connected and you can go start **Mass Effect 3** and play on the server.
 
 import clientConnectedImage from "./img/client-connected.png";
 import clientConnectedNativeImage from "./img/client-connected-native.png";
