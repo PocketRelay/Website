@@ -484,7 +484,7 @@ cost of additional latency that "Open" NAT players might not normally get
 }
 ```
 
-## Disabled
+### Disabled
 
 This option disabled tunneling, using this option may prevent those with stricter NATs from hosting games entirely
 
