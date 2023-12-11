@@ -53,7 +53,7 @@ The normal client implementation makes use of the Windows system [Hosts file](ht
 It does this by pointing the `gosredirector.ea.com` address to `127.0.0.1` (Localhost) rather than its actual address.
 
 :::tip Experimental Version
-There is an experimental version of the client named _Plugin Client_ which doesn't require admin privilleges you can view the documentation for it [Here](../client/plugin-client) this works by rather than modifying the hosts file it instead directly hooks into the games host resolution function through an ASI plugin
+There is an of the client named _Plugin Client_ which doesn't require admin privilleges you can view the documentation for it [Here](../client/plugin-client) this works by rather than modifying the hosts file it instead directly hooks into the games host resolution function through an ASI plugin
 :::
 
 ## Components
