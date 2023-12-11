@@ -46,7 +46,8 @@ You can find all the descriptions for each of the configuration options under th
     "enabled": true,
     "origin_fetch": true,
     "origin_fetch_data": true
-  }
+  },
+  "tunnel": "stricter"
 }
 ```
 
@@ -445,6 +446,51 @@ The player data is only copied over when the account is first authenticated, fut
   "retriever": {
     "origin_fetch_data": true
   }
+}
+```
+
+---
+
+## Tunnel
+
+> New server connection tunneling is a beta feature included in server version >= v0.6.0-beta and client version >= 0.4.0
+> for details about tunneling see https://github.com/PocketRelay/Server/issues/64
+
+Server network tunneling allows the clients to tunnel the game connection through the server by using the sevrer
+as a relay. This is enabled by default and set to "Stricter". Tunneling helps to avoid common pitfalls and connection
+issues that are encountered with stricter NATs
+
+### Stricter
+
+Using the "stricter" option will only tunnel connections when they are of a NAT type stricter than "Open" which is the 
+best default as people playing with "Open" NAT get the best latency from having a direct connection and those who have
+a stricter NAT who aren't normally able to play are now able to play
+
+```json
+{
+  "tunnel": "stricter"
+}
+```
+
+### Always
+
+This option *always* tunnels connections through the server. This can be good if you're looking to increase user privacy
+since it will hide the IP address of hosts from other players (They are normally exposed on the official servers), at the
+cost of additional latency that "Open" NAT players might not normally get
+
+```json
+{
+  "tunnel": "always"
+}
+```
+
+## Disabled
+
+This option disabled tunneling, using this option may prevent those with stricter NATs from hosting games entirely
+
+```json
+{
+  "tunnel": "disabled"
 }
 ```
 
