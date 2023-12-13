@@ -484,6 +484,10 @@ cost of additional latency that "Open" NAT players might not normally get
 }
 ```
 
+:::info
+When using this option you can choose to disable the QoS server entirely as it is not necessary when tunneling all users
+:::
+
 ### Disabled
 
 This option disabled tunneling, using this option may prevent those with stricter NATs from hosting games entirely
