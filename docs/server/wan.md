@@ -14,6 +14,9 @@ If you expose your Pocket Relay server to the internet, anyone with the Connecti
 If you would like to expose your server but only want authorized users to access it you can see the [Client Certificate Auth](./reverse-proxy.md#client-certificate-auth) section for how to use client certificates for cryptographic authentication.
 :::
 
+Its also possible to temporarily expose the server over WAN using [Ngrok](https://ngrok.com/) as a reverse proxy. You can find out how to 
+do this at [Ngrok Guide](./ngrok.md)
+
 ## Joining issues
 
 > There is new server connection tunneling which is a beta feature included in server version >= v0.6.0-beta and client version >= 0.4.0
