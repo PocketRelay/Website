@@ -4,6 +4,7 @@ sidebar_position: 9
 
 # Ngrok
 
+Make sure you enable the `reverse_proxy` mode in the server configuration file. [Server Config Reverse Proxy](./configuration.md#reverse-proxy)
 
 If you are on a network where you can't directly expose the server you can instead use `Ngrok` as a temporary reverse proxy. 
 You will need a free account in order to do this. (https://ngrok.com/)

@@ -21,6 +21,9 @@ If you would like to expose your server but only want authorized users to access
 
 ## Basic setup
 
+When using a reverse proxy make sure you enable the `reverse_proxy` mode in the server configuration file. [Server Config Reverse Proxy](./configuration.md#reverse-proxy)
+
+
 ### Configuring Nginx
 
 :::tip
