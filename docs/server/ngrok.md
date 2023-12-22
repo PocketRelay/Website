@@ -4,10 +4,12 @@ sidebar_position: 9
 
 # Ngrok
 
-Make sure you enable the `reverse_proxy` mode in the server configuration file. [Server Config Reverse Proxy](./configuration.md#reverse-proxy)
 
 :::tip
-If you indent to tunnel all traffic (Your users are unlikley to have an Open NAT type) then you can disable `reverse_proxy` and set `qos` to `disabled`
+
+If you want to allow Open NAT type users to bypass the tunneling then you should
+set `reverse_proxy` mode in the server config. [Server Config Reverse Proxy](./configuration.md#reverse-proxy)
+
 :::
 
 If you are on a network where you can't directly expose the server you can instead use `Ngrok` as a temporary reverse proxy. 
