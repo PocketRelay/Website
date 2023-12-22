@@ -13,6 +13,14 @@ set `reverse_proxy` mode in the server config. [Server Config Reverse Proxy](./c
 
 :::
 
+:::tip
+Ngrok is for more temporary setups and users who don't have access to their own domains. If 
+you have access to your own domain [Cloudflare Tunnels](./cloudflare_tunnel.md) might be a better option 
+for you.
+:::
+
+
+
 If you are on a network where you can't directly expose the server you can instead use `Ngrok` as a temporary reverse proxy. 
 You will need a free account in order to do this. (https://ngrok.com/)
 
