@@ -4,6 +4,7 @@ sidebar_position: 9
 
 # Ngrok
 
+Exposing the server to WAN through Ngrok
 
 :::tip
 
