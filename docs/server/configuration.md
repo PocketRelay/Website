@@ -485,7 +485,8 @@ cost of additional latency that "Open" NAT players might not normally get
 ```
 
 :::info
-When using this option you can choose to disable the QoS server entirely as it is not necessary when tunneling all users
+When using this option you can choose to disable the QoS server entirely as it is not used when
+tunneling is forced
 :::
 
 ### Disabled
