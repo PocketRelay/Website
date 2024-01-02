@@ -453,7 +453,7 @@ The player data is only copied over when the account is first authenticated, fut
 
 ## Tunnel
 
-> New server connection tunneling is a beta feature included in server version >= v0.6.0-beta and client version >= 0.4.0
+> New server connection tunneling is included in server version >= v0.6.0-beta and client version >= 0.4.0
 > for details about tunneling see https://github.com/PocketRelay/Server/issues/64
 
 Server network tunneling allows the clients to tunnel the game connection through the server by using the sevrer

@@ -19,12 +19,16 @@ do this at [Ngrok Guide](./ngrok.md)
 
 ## Joining issues
 
-> There is new server connection tunneling which is a beta feature included in server version >= v0.6.0-beta and client version >= 0.4.0
->
-> Tunneling solves the issue mentioned below so using the official QoS servers will likely no longer be required for
-> WAN servers in upcoming releases
->
-> For details about tunneling see https://github.com/PocketRelay/Server/issues/64
+:::note
+There is new server connection tunneling which is a feature included in server version >= v0.6.0 and client version >= 0.4.0
+
+Tunneling solves the issue mentioned below so using the official QoS servers will likely no longer be required for
+WAN servers in releases >= 0.6.0
+
+For details about tunneling see https://github.com/PocketRelay/Server/issues/64
+:::
+
+
 
 If you're hosting a **WAN (Wide Area Network)** server and some players experience issues joining each other in the game, particularly getting stuck in matchmaking indefinitely (while the server dashboard shows them as in the game), the problem may be related to the **QoS (Quality of Service)** server.
 

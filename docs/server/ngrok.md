@@ -27,9 +27,3 @@ After running this command you will be given a "Forwarding" URL (Underlined in r
 
 ![Ngrok](./img/ngrok.png)
 
-
-
-:::info
-The upcoming tunneling networking changes will likely further improve the connectivity between players when
-using this method
-:::
