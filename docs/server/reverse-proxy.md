@@ -39,7 +39,6 @@ In order to support HTTP Upgrades and X-Real-IP in your Nginx config you'll need
 
 
 ```conf
-      
 # Provide server with real IP address of clients
 proxy_set_header X-Real-IP $remote_addr;
 
@@ -47,6 +46,13 @@ proxy_set_header X-Real-IP $remote_addr;
 proxy_set_header Upgrade $http_upgrade;
 proxy_set_header Connection "upgrade";
 proxy_http_version 1.1;
+```
+
+Its also recommened that you disable proxy buffering in your nginx config for Pocket Relay. With the new tunneling system implemented in v0.6.0 the latency between players could be affected, greatly reducing your experience:
+
+```conf
+# Disable buffering (Buffering can affect network tunneling latency)
+proxy_buffering off;
 ```
 
 An example config using this is the following (This example is a modified version of the example found on https://www.nginx.com/blog/websocket-nginx/)
@@ -72,6 +78,9 @@ http {
             proxy_set_header Upgrade $http_upgrade;
             proxy_set_header Connection "upgrade";
             proxy_http_version 1.1;
+
+            # Disable buffering (Buffering can affect network tunneling latency)
+            proxy_buffering off;
         }
     }
 }
