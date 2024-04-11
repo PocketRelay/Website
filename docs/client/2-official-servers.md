@@ -1,5 +1,8 @@
 ---
 sidebar_position: 2
+pagination_prev: null
+pagination_next: null
+slug: "official-servers"
 ---
 
 # Official Servers

@@ -1,15 +1,19 @@
 ---
 sidebar_position: 8
+pagination_prev: null
+pagination_next: null
+slug: "binkw32"
 ---
 
 # Binkw32
 
+Binkw32 patch explanation and guide for applying
 
 :::info
-Below is an explaination of the `binkw32.dll` patch, you can skip to the content [Here](#applying)
+Below is an explanation of the `binkw32.dll` patch, you can skip to the content [Here](#applying)
 :::
 
-## Explaination
+## Explanation
 
 The `binkw32.dll` patch is a DLL that you add to your Mass Effect 3 installation to allow various features of **Pocket Relay** but it also has other use cases such as Modding
 
