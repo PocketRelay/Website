@@ -1,0 +1,60 @@
+---
+sidebar_position: 5
+pagination_prev: null
+pagination_next: null
+---
+
+# Common Issues
+
+This page contains some common issues that you might encounter along with the fixes for them.
+
+## "Unable to authorize the listed DLC"
+
+Some users will encounter this on the main menu, you can fix this by applying 
+the [Binkw32 Patch](./binkw32) which will bypass this verification step
+
+## Problems joining
+
+:::note
+If you are using a Steam copy of the game the standard client may cause connection 
+issues so its recommended that you use the [Plugin Client](./client/plugin-client) instead
+:::
+
+If you are having trouble joining other players please ensure the following:
+
+- You are using the latest version of the Pocket Relay server
+- Both you and the other players are using the latest version of the client
+- You are both connected to the same Pocket Relay server
+
+If you are using the latest version of **Pocket Relay** you will have the new 
+[Tunneled Networking Model](https://jacobtread.com/blog/pocket-relay-tunnel/) enabled 
+this gives a far higher guarantee. However, in some cases this may not be enabled if the
+game thinks you're networking is leanient enough for direct connections. You can force the server to use this networking model by using the "always" tunnel mode [Here](./server/configuration#always)
+
+## "The Mass Effect 3 server is unavailable at this time. Please try again later."
+
+For those using unlinked copies you'll likely encounter this message when you first go to the menu. 
+You can press the "OK" button and you should be able to connect normally from there. 
+
+:::info
+This is caused by the game attempting to login to the server using credentials that are meant for the official server. These credentials wont work which causes an error. You can simply press "OK" to close this error message after which you will be taken to the Main Menu
+:::
+
+## Player data missing
+
+For player data to carry over you must be using an official copy of the game running through EA/Origin. 
+Ensure that you do *not* create an account throught the dashboard first, if you've created an account on the
+dashboard you will need to delete it.
+
+Your data will be loaded the first time you enter multiplayer, if your data is still not loading ensure you 
+have all of the following settings enabled, they are enabled in the default configuration but check that you
+haven't changed that:
+- [Retriever Enabled](./server/configuration#enabled) 
+- [Origin Fetch](./server/configuration#origin-fetch) 
+- [Origin Fetch Data](./server/configuration#origin-fetch-data)
+
+Loading of player data from the official servers only happens **once** when the account is first created, if you 
+would like the data to be loaded again you must delete your account on Pocket Relay and reconnect.
+
+Pocket Relay does **not** sync any data back to the official servers so any progress made on Pocket Relay will not 
+carry over to the official servers. This will not be implemented for many reasons.
