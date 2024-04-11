@@ -55,8 +55,6 @@ sure that the checkbox under **Mass Effect 3** is checked:
 
 ![ME3 Tweaks Bink Bypass Menu](./img/me3-tweaks-bink.png)
 
-Once your game is patched you can continue this guide from [3) Download plugin](#3-download-plugin)
-
 ---
 
 ### Manual
