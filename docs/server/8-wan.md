@@ -1,5 +1,8 @@
 ---
 sidebar_position: 8
+pagination_prev: null
+pagination_next: null
+slug: "wan"
 ---
 
 # WAN
@@ -11,11 +14,11 @@ If you are exposing your Pocket Relay server to the internet you are expected to
 
 If you expose your Pocket Relay server to the internet, anyone with the Connection URL will be able to connect to it (unless you specifically prevent them with things such as firewalls or IP whitelisting on your server). 
 
-If you would like to expose your server but only want authorized users to access it you can see the [Client Certificate Auth](./reverse-proxy.md#client-certificate-auth) section for how to use client certificates for cryptographic authentication.
+If you would like to expose your server but only want authorized users to access it you can see the [Client Certificate Auth](./5-reverse-proxy.md#client-certificate-auth) section for how to use client certificates for cryptographic authentication.
 :::
 
 Its also possible to temporarily expose the server over WAN using [Ngrok](https://ngrok.com/) as a reverse proxy. You can find out how to 
-do this at [Ngrok Guide](./ngrok.md)
+do this at [Ngrok Guide](./9-ngrok.md)
 
 ## Joining issues
 
@@ -34,7 +37,7 @@ If you're hosting a **WAN (Wide Area Network)** server and some players experien
 
 This issue is a limitation of the current server setup.
 
-You can *resolve* this problem by instructing your server to use the *"official"* QoS server. Refer to the [Official](configuration.md#official) option under [QoS](configuration.md#qos). By default, this setting is "local" to avoid relying on official servers for general LAN usage. However, due to the current circumstances, it's necessary to switch to the "official" QoS servers to prevent joining issues for some WAN users.
+You can *resolve* this problem by instructing your server to use the *"official"* QoS server. Refer to the [Official](4-configuration.md#official) option under [QoS](4-configuration.md#qos). By default, this setting is "local" to avoid relying on official servers for general LAN usage. However, due to the current circumstances, it's necessary to switch to the "official" QoS servers to prevent joining issues for some WAN users.
 
 :::note QoS Configuration
 
@@ -54,4 +57,4 @@ Below is a snippet taken from the configuration section, your config should cont
 
 ## Reverse Proxy
 
-If you are using a reverse proxy in front of your server you should check out the [Reverse Proxy](reverse-proxy.md) guide
+If you are using a reverse proxy in front of your server you should check out the [Reverse Proxy](5-reverse-proxy.md) guide

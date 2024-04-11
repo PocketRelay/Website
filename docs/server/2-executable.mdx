@@ -1,5 +1,8 @@
 ---
 sidebar_position: 2
+pagination_prev: "server/creating"
+pagination_next: "server/configuration"
+slug: "executable"
 ---
 
 import Tabs from "@theme/Tabs";
@@ -15,7 +18,7 @@ Learn how to create a server using a server executable.
 First, download the server executable for your desired platform:
 
 :::info
-If you prefer to compile your own binary, follow the [Manual Building](manual-building.md) guide.
+If you prefer to compile your own binary, follow the [Manual Building](./6-manual-building.md) guide.
 :::
 
 import WindowsIcon from "../../src/components/icons/WindowsIcon";
@@ -55,7 +58,7 @@ The server will generate its own "data" folder in this folder
 The server uses port 80 by default, which may be in use on your system. Stop the other application using port 80 or change this port.
 On Linux, starting the application on port 80 requires using "sudo"
 
-To change this port, refer to [Configuration](configuration.md).
+To change this port, refer to [Configuration](./4-configuration.md).
 :::
 
 ## 4) Connection URL
@@ -95,8 +98,8 @@ like [ngrok](https://ngrok.com/) to do this instead.
 
 ## Done
 
-This is the end of the executable server setup guide. From here you can check out the [Configuration](configuration.md) guide to further configure your server
+This is the end of the executable server setup guide. From here you can check out the [Configuration](./4-configuration.md) guide to further configure your server
 
 :::info
-If you intend to host a WAN server (One where players outside of your local network can join and player together) see the [WAN](wan.md) guide
+If you intend to host a WAN server (One where players outside of your local network can join and player together) see the [WAN](./8-wan.md) guide
 :::

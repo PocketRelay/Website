@@ -1,5 +1,8 @@
 ---
 sidebar_position: 5
+pagination_prev: null
+pagination_next: null
+slug: "reverse-proxy"
 ---
 
 # Reverse Proxy
@@ -21,13 +24,13 @@ If you would like to expose your server but only want authorized users to access
 
 ## Basic setup
 
-When using a reverse proxy make sure you enable the `reverse_proxy` mode in the server configuration file. [Server Config Reverse Proxy](./configuration.md#reverse-proxy)
+When using a reverse proxy make sure you enable the `reverse_proxy` mode in the server configuration file. [Server Config Reverse Proxy](./4-configuration.md#reverse-proxy)
 
 
 ### Configuring Nginx
 
 :::tip
-If you are using the Nginx reverse proxy within Docker through docker-compose you can use the [Docker Compose Reverse Proxy](docker.md#docker-compose-reverse-proxy) example as a base for your setup
+If you are using the Nginx reverse proxy within Docker through docker-compose you can use the [Docker Compose Reverse Proxy](./3-docker.md#docker-compose-reverse-proxy) example as a base for your setup
 :::
 
 :::info

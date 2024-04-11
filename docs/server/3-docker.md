@@ -1,5 +1,8 @@
 ---
 sidebar_position: 3
+pagination_prev: "server/creating"
+pagination_next: "server/configuration"
+slug: "docker"
 ---
 
 # Docker
@@ -20,7 +23,7 @@ The Dockerfile used for this image can be found in the server repository [Here](
 You **MUST** create a config.json file before you run any of these docker script as otherwise you will run into an error where
 docker creates a folder named "config.json" rather than binding the to file.
 
-See [Configuration](configuration.md) for a default configuration
+See [Configuration](4-configuration.md) for a default configuration
 :::
 
 
@@ -122,7 +125,7 @@ http {
 }
 ```
 
-The server configuration file must be created in this same folder (If you haven't created one follow the [Configuration](./configuration) guide) and make sure the [Reverse Proxy](configuration.md#reverse-proxy) property is set to `true`
+The server configuration file must be created in this same folder (If you haven't created one follow the [Configuration](./4-configuration.md) guide) and make sure the [Reverse Proxy](4-configuration.md#reverse-proxy) property is set to `true`
 
 Below is an example configuration that only changes the required setting:
 

@@ -1,5 +1,8 @@
 ---
 sidebar_position: 9
+pagination_prev: null
+pagination_next: null
+slug: "ngrok"
 ---
 
 # Ngrok
@@ -9,7 +12,7 @@ Exposing the server to WAN through Ngrok
 :::tip
 
 If you want to allow Open NAT type users to bypass the tunneling then you should
-set `reverse_proxy` mode in the server config. [Server Config Reverse Proxy](./configuration.md#reverse-proxy)
+set `reverse_proxy` mode in the server config. [Server Config Reverse Proxy](./4-configuration.md#reverse-proxy)
 
 :::
 

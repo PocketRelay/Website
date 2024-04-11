@@ -1,5 +1,8 @@
 ---
 sidebar_position: 4
+pagination_prev: null
+pagination_next: null
+slug: "configuration"
 ---
 
 # Configuration
@@ -109,7 +112,7 @@ Changing this port will require that you specify the port in both the Connection
 
 This property configures whether the server is behind a reverse proxy or not. If you are using
 a reverse proxy you should set this to `true`. If you don't set this to `true` and you are using
-a reverse proxy clients will **NOT** be able to connect to eachother
+a reverse proxy clients will **NOT** be able to connect to each other
 
 ```json 
 {
@@ -204,7 +207,7 @@ Specifying the "qos" configuration below will treat the networking of clients as
 
 :::info
 Set the "host" field to be the Hamachi virtual address, visible for the person hosting the Hamachi network (They also need to be running the server), specifically the
-**IPv4** adddress **NOT** the IPv6 *(IPv6 is not supported by Pocket Relay)*
+**IPv4** address **NOT** the IPv6 *(IPv6 is not supported by Pocket Relay)*
 
 ![Hamachi virtual address](./img/config-hamachi.png)
 :::
@@ -225,10 +228,10 @@ Set the "host" field to be the Hamachi virtual address, visible for the person h
 
 ### Super Admin
 
-For the administrative portion of Pocket Relay (Editing inventories and managing players), you need to asssign a "Super Admin" account, this account is capable of managing the server with access to server logs and such, the Server Admin can then give out "Admin" role to other players on the server which is a role with slightly less permissions.
+For the administrative portion of Pocket Relay (Editing inventories and managing players), you need to assign a "Super Admin" account, this account is capable of managing the server with access to server logs and such, the Server Admin can then give out "Admin" role to other players on the server which is a role with slightly less permissions.
 
 :::info
-Super admins are **NOT** seperate accounts, they use the accounts that are created on the server so you must either create an account in-game or through the dashboard, in order for the server to give them super admin.
+Super admins are **NOT** separate accounts, they use the accounts that are created on the server so you must either create an account in-game or through the dashboard, in order for the server to give them super admin.
 :::
 
 :::info
@@ -265,7 +268,7 @@ If the account already exists the password will be applied the next time the ser
 
 ### Disable account registration
 
-You can use this property to disable registering accounts through the dashboard (Only allow player to create account in-game) this can be useful if you are running a public server and dont want people who arent using the server creating accounts
+You can use this property to disable registering accounts through the dashboard (Only allow player to create account in-game) this can be useful if you are running a public server and don't want people who aren't using the server creating accounts
 
 The default for this is `false` which allows users to create accounts through the dashboard. Setting this to `true` will prevent this behavior.
 
@@ -363,7 +366,7 @@ For normal usage you should ideally leave the server in "info" logging mode, as 
 :::
 
 :::caution
-Server log files can contain personal access tokens, so it is recommened you do **NOT** post them publicly anywhere, only sharing them with
+Server log files can contain personal access tokens, so it is recommend you do **NOT** post them publicly anywhere, only sharing them with
 the **Pocket Relay** developer if you need to debug an issue
 :::
 
@@ -456,7 +459,7 @@ The player data is only copied over when the account is first authenticated, fut
 > New server connection tunneling is included in server version >= v0.6.0-beta and client version >= 0.4.0
 > for details about tunneling see https://github.com/PocketRelay/Server/issues/64
 
-Server network tunneling allows the clients to tunnel the game connection through the server by using the sevrer
+Server network tunneling allows the clients to tunnel the game connection through the server by using the server
 as a relay. This is enabled by default and set to "Stricter". Tunneling helps to avoid common pitfalls and connection
 issues that are encountered with stricter NATs
 

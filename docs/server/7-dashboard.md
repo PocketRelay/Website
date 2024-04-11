@@ -1,5 +1,8 @@
 ---
 sidebar_position: 7
+pagination_prev: null
+pagination_next: null
+slug: "dashboard"
 ---
 
 # Dashboard
@@ -9,7 +12,7 @@ Information and guide relating to the server dashboard
 ## Visting the dashboard
 
 You can visit the dashboard using the Connection URL, the dashboard is publicly accessible for all users. If you are the
-server hoster you can find the Connection URL using the [Connection URL](executable#4-connection-url) section in the server documentation
+server hoster you can find the Connection URL using the [Connection URL](./2-executable.mdx#4-connection-url) section in the server documentation
 
 Upon your first visit, you'll encounter the login screen described in [Logging into an Account](#logging-into-an-account).
 
@@ -19,10 +22,10 @@ Upon visiting the dashboard, you'll encounter the following login screen:
 
 ![Dashboard Login](./img/dashboard-login.png)
 
-The dashboard uses the same password as your in-game account. If you've already created an account in-game with an [Unlinked Account](../client/unlinked-accounts.md), you can log in using the password you've set up.
+The dashboard uses the same password as your in-game account. If you've already created an account in-game with an [Unlinked Account](../client/9-unlinked-accounts.md), you can log in using the password you've set up.
 
 :::note
-If you are using an **Origin** account, it won't have a default password. If you are the server owner follow the [Super Admin Password](configuration.md#super-password) to set up a super-admin and password for your account. If you are not the server owner, someone with admin/super-admin permissions needs to set a password through the dashboard, which you can later change.
+If you are using an **Origin** account, it won't have a default password. If you are the server owner follow the [Super Admin Password](4-configuration.md#super-password) to set up a super-admin and password for your account. If you are not the server owner, someone with admin/super-admin permissions needs to set a password through the dashboard, which you can later change.
 :::
 
 ## Creating an account
@@ -58,7 +61,7 @@ If you want to manage player accounts, player inventories, and additional permis
 
 If you are the owner of the server you should give your account the super-admin role, this is the highest role available and allows full control over the server. You can use your super-admin account to give admin permissions to other accounts to allow them to do similar actions.
 
-To setup a super admin account follow: [Super Admin](configuration.md#super-admin)
+To setup a super admin account follow: [Super Admin](4-configuration.md#super-admin)
 
 **Admins** can:
 - Do everything normal users can
