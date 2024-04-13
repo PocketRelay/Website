@@ -58,7 +58,45 @@ The above command will only work if you run it in the same place that you've clo
 
 ---
 
-## 3) Compiling
+## 3) Include dashboard (Optional)
+
+The compiled dashboard is not included in the server repository, so if you want this available when manually building you will need to build this as well. 
+
+:::note
+
+Building the dashboard requires Node.js with a version >=18
+
+:::
+
+The dashboard source code can be found at https://github.com/PocketRelay/Dashboard 
+
+To install the dashboard first clone the repository
+
+```shell
+git clone --depth 1 https://github.com/PocketRelay/Dashboard dashboard
+```
+Enter the dashboard directory 
+
+```shell
+cd dashboard
+```
+
+Then install the npm dependencies:
+
+```shell
+npm install
+```
+
+Then build the dashboard
+
+```shell
+npm run build
+```
+
+After that you can copy all the files and folders from the `dist` folder that was created and paste the them into 
+the `src/resources/public` in the Pocket Relay server source
+
+## 4) Compiling
 
 Now, to compile the server source into a binary, run the following command:
 
@@ -68,7 +106,7 @@ cargo build --release
 
 ---
 
-## 4) Server Binary
+## 5) Server Binary
 
 Once the server building finishes, you can find the server executable in the following folder:
 
