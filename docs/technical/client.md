@@ -40,6 +40,10 @@ Pocket Relay uses this patch in order to disable the certificate verification of
 
 The patch included in the current Pocket Relay Client comes from https://github.com/Erik-JS/masseffect-binkw32 
 
+## Tunneling
+
+This section will be populated eventually but for now you can find the details on my blog: https://jacobtread.com/blog/pocket-relay-tunnel/
+
 ## Proxing
 
 Documentation unfinished
