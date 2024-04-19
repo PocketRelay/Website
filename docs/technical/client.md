@@ -14,16 +14,16 @@ The official servers are structured very differently than Pocket Relay as they h
 
 Keeping all this logic on the server-side can make the server difficulty to host due to all of the different ports and protocols.
 
-To counterract this Pocket Relay moves the handling and binding for all these ports over to the client-side instead opting for proxying all the traffic through improved/more secure protocols.
+To counteract this Pocket Relay moves the handling and binding for all these ports over to the client-side instead opting for proxying all the traffic through improved/more secure protocols.
 
 An example of this is the game is still stuck using the SSLv3 protocol which is very un-supported by most of the internet these days. The client combats this my locally handling the SSLv3 connections using the [blaze-ssl-async](https://github.com/jacobtread/blaze-ssl-async) library that was created for this purpose and then the client proxies the connection over TLSv3 using [Connection Upgrading](#connection-upgrading).
 
 
 ## Connection Upgrading
 
-In order to support the two-way communication that the BlazeSDK uses to communicate between the main server and the clients, without requiring binding a seperate port for the main server and HTTP server, The server and client make use of [HTTP Upgrades](https://www.rfc-editor.org/rfc/rfc9110#field.upgrade) in order to upgrade an HTTP connection.
+In order to support the two-way communication that the BlazeSDK uses to communicate between the main server and the clients, without requiring binding a separate port for the main server and HTTP server, The server and client make use of [HTTP Upgrades](https://www.rfc-editor.org/rfc/rfc9110#field.upgrade) in order to upgrade an HTTP connection.
 
-Rather than having a seperate server upgrading connections over HTTP to client streams allows the server to operate seemlessly over a single port, allows the server to be placed behind a reverse proxy which enables security through TLS, and prevents the server from needing to implement any extra SSL protocol logic.
+Rather than having a separate server upgrading connections over HTTP to client streams allows the server to operate seemlessly over a single port, allows the server to be placed behind a reverse proxy which enables security through TLS, and prevents the server from needing to implement any extra SSL protocol logic.
 
 The initial stages of this can be seen in my blog post of the migration to this new structure https://jacobtread.com/blog/pocket-relay-http/
 
@@ -60,7 +60,7 @@ The normal client implementation makes use of the Windows system [Hosts file](ht
 It does this by pointing the `gosredirector.ea.com` address to `127.0.0.1` (Localhost) rather than its actual address.
 
 :::tip Experimental Version
-There is an of the client named _Plugin Client_ which doesn't require admin privilleges you can view the documentation for it [Here](../client/plugin-client) this works by rather than modifying the hosts file it instead directly hooks into the games host resolution function through an ASI plugin
+There is an of the client named _Plugin Client_ which doesn't require admin privileges you can view the documentation for it [Here](../client/plugin-client) this works by rather than modifying the hosts file it instead directly hooks into the games host resolution function through an ASI plugin
 :::
 
 ## Components
@@ -98,7 +98,7 @@ Content: {
 }
 ```
 
-The redirector server then repsonds with:
+The redirector server then responds with:
 
 ```yaml
 Official: Receive
@@ -122,11 +122,11 @@ connects to the main server
 
 ### QOS
 
-With the official server there is not one but instead many different QOS servers in different regions. These servers are used both to measure connection speeds to different regions but also to determine the public address for clients so that clients can connect to eachother.
+With the official server there is not one but instead many different QOS servers in different regions. These servers are used both to measure connection speeds to different regions but also to determine the public address for clients so that clients can connect to each other.
 
 ### Telemetry
 
-The official server has telemetry servers that recieve client telemetry messages from the Mass Effect 3 game there are messages for all sorts of things like Killing Enemies, Viewing specific menus, Unlocking challenges, Changing Characters, Client loaded DLC, etc. 
+The official server has telemetry servers that receive client telemetry messages from the Mass Effect 3 game there are messages for all sorts of things like Killing Enemies, Viewing specific menus, Unlocking challenges, Changing Characters, Client loaded DLC, etc. 
 
 For **Pocket Relay** this special message format is handled locally and then forwarded-on to the server over an HTTP endpoint
 
