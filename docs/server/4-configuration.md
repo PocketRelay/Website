@@ -50,7 +50,11 @@ You can find all the descriptions for each of the configuration options under th
     "origin_fetch": true,
     "origin_fetch_data": true
   },
-  "tunnel": "stricter"
+  "tunnel": "stricter",
+  "api": {
+    "public_games": false,
+    "public_games_hide_players": true
+  }
 }
 ```
 
@@ -503,3 +507,55 @@ This option disabled tunneling, using this option may prevent those with stricte
 ```
 
 ---
+
+
+## API
+
+The API section handles various API related configurations
+
+
+```json
+{
+  "api": {
+      "public_games": false,
+      "public_games_hide_players": true
+  }
+}
+```
+
+### Public games API
+
+Normally, the games API at `/api/games` requires an authentication token to get the list of games. With this
+you can disable that requirement and allow the games list to be requested without requiring authentication.
+
+By default players are hidden from the games response when not authenticated but you can get the total players in the
+game using the `total_players` field in the response for each game. 
+
+To include players in authenticated responses see [Hide players from public games](#hide-players-from-public-games)
+
+This option is likely useful if you want to create a discord bot or some other display that doesn't want to deal with auth
+
+```json
+{
+  "public_games": false
+}
+```
+
+### Hide players from public games
+
+This option is enabled by default, it controls whether the player list should be hidden from unauthenticated requests to the games API. When `true` the list of players provided by the games API will be `null`. 
+
+
+```json
+{
+  "public_games_hide_players": true
+}
+```
+
+:::warning
+This is done for privacy purposes. Accounts created using the in-game account creation screen prior to `v0.6.1` of Pocket Relay would use
+their email address as the player name so any accounts that have not changed their username for these sorts of accounts will expose their
+email in this response (Origin accounts and those created/changed through the dashboard are not affected)
+
+If your database doesn't contain any of these types of accounts or if it was created with `v0.6.1` or greater (Random name generation was added in `v0.6.1` for in-game account creation) and you don't mind people seeing the names of who's in a game then you can set this to `false` to include the players list
+:::
