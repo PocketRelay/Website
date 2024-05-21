@@ -1,0 +1,8 @@
+{
+  "label": "Client",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "More in-depth overview of how Pocket Relay client works"
+  }
+}

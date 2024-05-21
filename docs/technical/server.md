@@ -6,4 +6,4 @@ pagination_next: null
 
 # Server
 
-This section is not finished but you can check out [Client Technical](./client.md)
+This section is not finished but you can check out [Client Technical](./client/intro.md)

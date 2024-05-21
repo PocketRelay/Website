@@ -10,7 +10,7 @@ slug: "reverse-proxy"
 Learn how to configure a reverse proxy to work with Pocket Relay.
 
 
-If you're utilizing a reverse proxy like [Nginx](https://nginx.org/en/), you'll need to adjust your server settings to enable HTTP Upgrades for Pocket Relay. The Pocket Relay Clients and server use HTTP Upgrades to connect game clients to the server (refer to [Technical Overview](../technical/client#connection-upgrading)). Most reverse proxies don't enable support for handling HTTP upgrades out of the box so this must be configured.
+If you're utilizing a reverse proxy like [Nginx](https://nginx.org/en/), you'll need to adjust your server settings to enable HTTP Upgrades for Pocket Relay. The Pocket Relay Clients and server use HTTP Upgrades to connect game clients to the server (refer to [Technical Overview](../technical/client/connection-upgrading.md)). Most reverse proxies don't enable support for handling HTTP upgrades out of the box so this must be configured.
 
 Currently, this guide provides examples for **Nginx** and **Traefik**. If you're using another proxy, suggest it on Discord or raise a GitHub issue to include an example.
 
