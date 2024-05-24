@@ -8,11 +8,11 @@ pagination_next: null
 
 See the links below for details
 
-- [Official Servers](./official-servers.md)
-- [Connection Upgrading](./connection-upgrading.md)
-- [Bink Patch](./bink-patch.md)
-- [Tunneling](./tunneling.md)
-- [Hosts File](./hosts-file.md)
-- [Redirector](./redirector.md)
-- [QoS](./qos.md)
-- [Telemetry](./telemetry.md)
+- [Official Servers](./official-servers.md) - Details about the official servers
+- [Connection Upgrading](./connection-upgrading.md) - Connection upgrading and how we use it
+- [Bink Patch](./bink-patch.md) - The binkw32 patch and what it does
+- [Tunneling](./tunneling.md) - The tunneled networking approach
+- [Hosts File](./hosts-file.md) - The host file and why the standalone version modifies it
+- [Redirector](./redirector.md) - The redirector server
+- [QoS](./qos.md) - The Quality of Service server
+- [Telemetry](./telemetry.md)  - The telemetry server
