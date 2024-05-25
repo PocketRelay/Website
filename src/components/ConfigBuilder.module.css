@@ -1,0 +1,39 @@
+.inputLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.input {
+  display: block;
+  padding: 0.5rem;
+  border: none;
+  width: 100%;
+  border-radius: 0.125rem;
+  border: 1px solid #444;
+}
+
+.checkbox {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.select {
+  display: block;
+  padding: 0.5rem;
+  background-color: #333;
+  border: none;
+}
+
+.description {
+  margin: 1rem 0;
+  border: 1px solid #444;
+  padding: 1rem;
+}
+
+.moreInfo {
+  margin: 0 0.5rem;
+
+  font-weight: normal;
+}
