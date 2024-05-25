@@ -1,4 +1,10 @@
-import React, { ChangeEvent, FormEvent, useMemo, useState } from "react";
+import React, {
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+  useMemo,
+  useState,
+} from "react";
 import styles from "./ConfigBuilder.module.css";
 import CodeBlock from "@theme/CodeBlock";
 import CodeInline from "@theme/CodeInline";
@@ -13,6 +19,11 @@ export type Config = Partial<{
     super_email: string;
     super_password: string;
     disable_registration: boolean;
+  }>;
+  qos: Partial<{
+    type: "local" | "official" | "custom" | "disabled" | "hamachi";
+    host: string;
+    port: number;
   }>;
   menu_message: string;
   galaxy_at_war: Partial<{
@@ -39,6 +50,9 @@ const DEFAULT_CONFIG: Config = {
   dashboard: {
     disable_registration: false,
   },
+  qos: {
+    type: "local",
+  },
   menu_message:
     "<font color='#B2B2B2'>Pocket Relay</font> - <font color='#FFFF66'>Logged as: {n}</font>",
   galaxy_at_war: {
@@ -57,6 +71,56 @@ const DEFAULT_CONFIG: Config = {
     public_games_hide_players: true,
   },
 };
+
+function createConfigOutput(input: Config) {
+  // Create a deep copy of the config data
+  const copied: Config = {
+    ...input,
+    dashboard: { ...input.dashboard },
+    galaxy_at_war: { ...input.galaxy_at_war },
+    retriever: { ...input.retriever },
+    api: { ...input.api },
+  };
+
+  // Remove empty super email
+  if (
+    copied.dashboard.super_email !== undefined &&
+    copied.dashboard.super_email.length === 0
+  ) {
+    delete copied.dashboard.super_email;
+  }
+
+  // Remove empty super password
+  if (
+    copied.dashboard.super_password !== undefined &&
+    copied.dashboard.super_password.length === 0
+  ) {
+    delete copied.dashboard.super_password;
+  }
+
+  console.log(copied.port);
+
+  // Remove invalid ports
+  if (copied.port !== undefined && Number.isNaN(copied.port)) {
+    delete copied.port;
+  }
+
+  if (copied.qos !== undefined) {
+    if (copied.qos.type === "custom") {
+      // Remove invalid ports
+      if (copied.qos.port !== undefined && Number.isNaN(copied.qos.port)) {
+        delete copied.qos.port;
+      }
+    } else if (copied.qos.type === "hamachi") {
+      delete copied.qos.port;
+    } else {
+      delete copied.qos.host;
+      delete copied.qos.port;
+    }
+  }
+
+  return copied;
+}
 
 export default function ConfigBuilder() {
   const [config, setConfig] = useState(DEFAULT_CONFIG);
@@ -183,15 +247,47 @@ export default function ConfigBuilder() {
     }));
   };
 
+  const onChangeQoSType = (event: ChangeEvent<HTMLSelectElement>) => {
+    setConfig((config) => ({
+      ...config,
+      qos: {
+        type: event.target.value as any,
+      },
+    }));
+  };
+
+  const onChangeQoSHost = (event: ChangeEvent<HTMLInputElement>) => {
+    setConfig((config) => ({
+      ...config,
+      qos: {
+        ...config.qos,
+        host: event.target.value,
+      },
+    }));
+  };
+
+  const onChangeQoSPort = (event: ChangeEvent<HTMLInputElement>) => {
+    setConfig((config) => ({
+      ...config,
+      qos: {
+        ...config.qos,
+        port: parseInt(event.target.value),
+      },
+    }));
+  };
+
+  const onReset = useCallback(() => {
+    setConfig(DEFAULT_CONFIG);
+  }, [setConfig]);
+
   const configOutput = useMemo(
-    () => JSON.stringify(config, undefined, 2),
+    () => JSON.stringify(createConfigOutput(config), undefined, 2),
     [config]
   );
 
-  return (
-    <div>
-      <h2>Server Connection</h2>
-      <div className="field">
+  const renderHost = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
         <label htmlFor="host" className={styles.inputLabel}>
           Host
           <Link
@@ -201,6 +297,9 @@ export default function ConfigBuilder() {
             View Documentation
           </Link>
         </label>
+      </div>
+
+      <div className="card__body">
         <input
           className={styles.input}
           id="host"
@@ -213,10 +312,15 @@ export default function ConfigBuilder() {
           Usually you won't need to change this, this is the local network
           interface IP that the server will bind on and accept connections from.
           If you don't know what this is you should probably leave it as{" "}
-          <CodeInline>0.0.0.0</CodeInline>
+          <CodeInline>0.0.0.0</CodeInline>. Must be a valid IP address
         </p>
       </div>
-      <div className="field">
+    </div>
+  );
+
+  const renderPort = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
         <label htmlFor="port" className={styles.inputLabel}>
           Port
           <Link
@@ -226,6 +330,9 @@ export default function ConfigBuilder() {
             View Documentation
           </Link>
         </label>
+      </div>
+
+      <div className="card__body">
         <input
           className={styles.input}
           id="port"
@@ -239,8 +346,12 @@ export default function ConfigBuilder() {
           also need to include the new port in the server connection URL
         </p>
       </div>
-      <h2>Dashboard</h2>
-      <div className="field">
+    </div>
+  );
+
+  const renderSuperEmail = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
         <label htmlFor="super-email" className={styles.inputLabel}>
           Super Email
           <Link
@@ -250,6 +361,9 @@ export default function ConfigBuilder() {
             View Documentation
           </Link>
         </label>
+      </div>
+
+      <div className="card__body">
         <input
           className={styles.input}
           id="super-email"
@@ -265,38 +379,48 @@ export default function ConfigBuilder() {
           email if you are the server owner)
         </p>
       </div>
-      {config.dashboard.super_email !== undefined &&
-        config.dashboard.super_email.length > 0 && (
-          <div className="field">
-            <label htmlFor="super-email" className={styles.inputLabel}>
-              Super Password
-              <Link
-                className={styles.moreInfo}
-                href="/docs/server/configuration#super-admin"
-              >
-                View Documentation
-              </Link>
-            </label>
-            <input
-              className={styles.input}
-              id="super-email"
-              name="super-email"
-              type="text"
-              value={config.dashboard.super_password}
-              onChange={onChangeSuperPassword}
-            />
+    </div>
+  );
 
-            <p className={styles.description}>
-              The password specified here will override the password for the
-              super admin account. Useful if you are using an Origin/EA account
-              as your super admin since they don't have a password so you won't
-              be able to login
-            </p>
-          </div>
-        )}
+  const renderSuperPassword = config.dashboard.super_email !== undefined &&
+    config.dashboard.super_email.length > 0 && (
+      <div className="card margin-bottom--md">
+        <div className="card__header">
+          <label htmlFor="super-email" className={styles.inputLabel}>
+            Super Password
+            <Link
+              className={styles.moreInfo}
+              href="/docs/server/configuration#super-admin"
+            >
+              View Documentation
+            </Link>
+          </label>
+        </div>
 
-      <div className="field">
-        <label htmlFor="super-email" className={styles.inputLabel}>
+        <div className="card__body">
+          <input
+            className={styles.input}
+            id="super-email"
+            name="super-email"
+            type="text"
+            value={config.dashboard.super_password}
+            onChange={onChangeSuperPassword}
+          />
+
+          <p className={styles.description}>
+            The password specified here will override the password for the super
+            admin account. Useful if you are using an Origin/EA account as your
+            super admin since they don't have a password so you won't be able to
+            login
+          </p>
+        </div>
+      </div>
+    );
+
+  const renderDisableRegistration = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
+        <label htmlFor="disable-registration" className={styles.inputLabel}>
           Disable Registration
           <Link
             className={styles.moreInfo}
@@ -305,20 +429,26 @@ export default function ConfigBuilder() {
             View Documentation
           </Link>
         </label>
+      </div>
+      <div className="card__body">
         <input
           className={styles.checkbox}
-          id="super-email"
-          name="super-email"
+          id="disable-registration"
+          name="disable-registration"
           type="checkbox"
           checked={config.dashboard.disable_registration}
           onChange={onChangeDisableRegistration}
         />
-
         <p className={styles.description}>
           Disable creating accounts through the dashboard
         </p>
       </div>
-      <div className="field">
+    </div>
+  );
+
+  const renderMenuMessage = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
         <label htmlFor="menu-message" className={styles.inputLabel}>
           Menu Message
           <Link
@@ -328,6 +458,8 @@ export default function ConfigBuilder() {
             View Documentation
           </Link>
         </label>
+      </div>
+      <div className="card__body">
         <textarea
           className={styles.input}
           id="menu-message"
@@ -343,9 +475,13 @@ export default function ConfigBuilder() {
           details.
         </p>
       </div>
-      <h2>Galaxy at War</h2>
-      <div className="field">
-        <label htmlFor="port" className={styles.inputLabel}>
+    </div>
+  );
+
+  const renderDecayRate = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
+        <label htmlFor="decay-rate" className={styles.inputLabel}>
           Decay Rate
           <Link
             className={styles.moreInfo}
@@ -354,10 +490,12 @@ export default function ConfigBuilder() {
             View Documentation
           </Link>
         </label>
+      </div>
+      <div className="card__body">
         <input
           className={styles.input}
-          id="port"
-          name="port"
+          id="decay-rate"
+          name="decay-rate"
           type="number"
           step={0.1}
           value={config.galaxy_at_war.decay}
@@ -369,7 +507,12 @@ export default function ConfigBuilder() {
           which doesn’t decay at all.
         </p>
       </div>
-      <div className="field">
+    </div>
+  );
+
+  const renderPromotions = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
         <label htmlFor="promotions" className={styles.inputLabel}>
           Promotions
           <Link
@@ -379,6 +522,8 @@ export default function ConfigBuilder() {
             View Documentation
           </Link>
         </label>
+      </div>
+      <div className="card__header">
         <input
           className={styles.checkbox}
           id="promotions"
@@ -388,13 +533,16 @@ export default function ConfigBuilder() {
           onChange={onChangePromotions}
         />
         <p className={styles.description}>
-          This property determines whether your total character promotions is
-          included as a Galaxy At War asset
+          Include total character promotions as a Galaxy At War asset
         </p>
       </div>
-      <h2>Logging</h2>
-      <div className="field">
-        <label htmlFor="menu-message" className={styles.inputLabel}>
+    </div>
+  );
+
+  const renderLogging = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
+        <label htmlFor="logging" className={styles.inputLabel}>
           Logging Level
           <Link
             className={styles.moreInfo}
@@ -403,7 +551,8 @@ export default function ConfigBuilder() {
             View Documentation
           </Link>
         </label>
-
+      </div>
+      <div className="card__body">
         <select
           className={styles.input}
           name="logging"
@@ -427,8 +576,12 @@ export default function ConfigBuilder() {
           solve an issue then you may be asked to use the <b>Debug</b> level
         </p>
       </div>
-      <h2>Retriever</h2>
-      <div className="field">
+    </div>
+  );
+
+  const renderRetrieverEnabled = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
         <label htmlFor="retriever-enabled" className={styles.inputLabel}>
           Retriever Enabled
           <Link
@@ -438,6 +591,8 @@ export default function ConfigBuilder() {
             View Documentation
           </Link>
         </label>
+      </div>
+      <div className="card__body">
         <input
           className={styles.checkbox}
           id="retriever-enabled"
@@ -453,72 +608,82 @@ export default function ConfigBuilder() {
           player data)
         </p>
       </div>
-      {config.retriever.enabled && (
-        <>
-          <div className="field">
-            <label
-              htmlFor="retriever-origin-fetch"
-              className={styles.inputLabel}
+    </div>
+  );
+
+  const renderOriginFetch = config.retriever.enabled && (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
+        <label htmlFor="retriever-origin-fetch" className={styles.inputLabel}>
+          Origin Fetch
+          <Link
+            className={styles.moreInfo}
+            href="/docs/server/configuration#origin-fetch"
+          >
+            View Documentation
+          </Link>
+        </label>
+      </div>
+      <div className="card__body">
+        <input
+          className={styles.checkbox}
+          id="retriever-origin-fetch"
+          name="retriever-origin-fetch"
+          type="checkbox"
+          checked={config.retriever.origin_fetch}
+          onChange={onChangeRetrieverOriginFetch}
+        />
+        <p className={styles.description}>
+          Allow authenticating EA/Origin accounts using the official servers.
+          Disabling this will prevent anyone using EA/Origin from playing on
+          your server without{" "}
+          <Link href="/docs/client/unlinked-accounts">
+            Unlinking their account.
+          </Link>
+          .
+        </p>
+      </div>
+    </div>
+  );
+
+  const renderOriginFetchData = config.retriever.enabled &&
+    config.retriever.origin_fetch && (
+      <div className="card margin-bottom--md">
+        <div className="card__header">
+          <label
+            htmlFor="retriever-origin-fetch-data"
+            className={styles.inputLabel}
+          >
+            Origin Fetch Data
+            <Link
+              className={styles.moreInfo}
+              href="/docs/server/configuration#origin-fetch-data"
             >
-              Origin Fetch
-              <Link
-                className={styles.moreInfo}
-                href="/docs/server/configuration#origin-fetch"
-              >
-                View Documentation
-              </Link>
-            </label>
-            <input
-              className={styles.checkbox}
-              id="retriever-origin-fetch"
-              name="retriever-origin-fetch"
-              type="checkbox"
-              checked={config.retriever.origin_fetch}
-              onChange={onChangeRetrieverOriginFetch}
-            />
-            <p className={styles.description}>
-              Allow authenticating EA/Origin accounts using the official
-              servers. Disabling this will prevent anyone using EA/Origin from
-              playing on your server without{" "}
-              <Link href="/docs/client/unlinked-accounts">
-                Unlinking their account.
-              </Link>
-              .
-            </p>
-          </div>
-          {config.retriever.origin_fetch && (
-            <div className="field">
-              <label
-                htmlFor="retriever-origin-fetch-data"
-                className={styles.inputLabel}
-              >
-                Origin Fetch Data
-                <Link
-                  className={styles.moreInfo}
-                  href="/docs/server/configuration#origin-fetch-data"
-                >
-                  View Documentation
-                </Link>
-              </label>
-              <input
-                className={styles.checkbox}
-                id="retriever-origin-fetch-data"
-                name="retriever-origin-fetch-data"
-                type="checkbox"
-                checked={config.retriever.origin_fetch_data}
-                onChange={onChangeRetrieverOriginFetchData}
-              />
-              <p className={styles.description}>
-                Allow loading player data of EA/Origin players from the official
-                servers, disable this if you don't want existing player data to
-                be loaded.
-              </p>
-            </div>
-          )}
-        </>
-      )}
-      <h2>Tunneling</h2>
-      <div className="field">
+              View Documentation
+            </Link>
+          </label>
+        </div>
+        <div className="card__body">
+          <input
+            className={styles.checkbox}
+            id="retriever-origin-fetch-data"
+            name="retriever-origin-fetch-data"
+            type="checkbox"
+            checked={config.retriever.origin_fetch_data}
+            onChange={onChangeRetrieverOriginFetchData}
+          />
+          <p className={styles.description}>
+            Allow loading player data of EA/Origin players from the official
+            servers, disable this if you don't want existing player data to be
+            loaded.
+          </p>
+        </div>
+      </div>
+    );
+
+  const renderTunneling = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
         <label htmlFor="tunnel" className={styles.inputLabel}>
           Tunneling
           <Link
@@ -528,7 +693,9 @@ export default function ConfigBuilder() {
             View Documentation
           </Link>
         </label>
+      </div>
 
+      <div className="card__body">
         <select
           className={styles.select}
           name="tunnel"
@@ -549,10 +716,13 @@ export default function ConfigBuilder() {
           will likely only work if you have a valid QoS server configured
         </p>
       </div>
+    </div>
+  );
 
-      <h2>API</h2>
-      <div className="field">
-        <label htmlFor="retriever-enabled" className={styles.inputLabel}>
+  const renderPublicGames = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
+        <label htmlFor="public-games" className={styles.inputLabel}>
           Public Games
           <Link
             className={styles.moreInfo}
@@ -561,47 +731,270 @@ export default function ConfigBuilder() {
             View Documentation
           </Link>
         </label>
+      </div>
+      <div className="card__body">
         <input
           className={styles.checkbox}
-          id="retriever-enabled"
-          name="retriever-enabled"
+          id="public-games"
+          name="public-games"
           type="checkbox"
           checked={config.api.public_games}
           onChange={onChangeAPIPublicGames}
         />
         <p className={styles.description}>
-          Whether to allow public access to the games API
+          Allow the games API to be publicly accessible, you can enable this if
+          you want to create a bot or something and want to access the games
+          list API without requiring authentication
         </p>
       </div>
-      {config.api.public_games && (
-        <>
-          <div className="field">
-            <label
-              htmlFor="retriever-origin-fetch"
-              className={styles.inputLabel}
-            >
-              Public Games Hide Players
+    </div>
+  );
+
+  const renderPublicGamesHidePlayers = config.api.public_games && (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
+        <label
+          htmlFor="public-games-hide-players"
+          className={styles.inputLabel}
+        >
+          Public Games Hide Players
+          <Link
+            className={styles.moreInfo}
+            href="/docs/server/configuration#hide-players-from-public-games"
+          >
+            View Documentation
+          </Link>
+        </label>
+      </div>
+      <div className="card__body">
+        <input
+          className={styles.checkbox}
+          id="public-games-hide-players"
+          name="public-games-hide-players"
+          type="checkbox"
+          checked={config.api.public_games_hide_players}
+          onChange={onChangeAPIPublicGamesHidePlayers}
+        />
+        <p className={styles.description}>
+          Hide the list of players from the publicly accessible games API
+        </p>
+      </div>
+    </div>
+  );
+
+  const renderQosType = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
+        <label htmlFor="qos-type" className={styles.inputLabel}>
+          QoS type
+          <Link
+            className={styles.moreInfo}
+            href="/docs/server/configuration#qos"
+          >
+            View Documentation
+          </Link>
+        </label>
+      </div>
+      <div className="card__body">
+        <select
+          className={styles.input}
+          name="qos-type"
+          id="qos-type"
+          value={config.qos.type ?? "local"}
+          onChange={onChangeQoSType}
+        >
+          <option value="official">
+            Official - Use the official game QoS servers, these are the ones
+            most likely to work
+          </option>
+          <option value="local">
+            Local - Use a local emulated QoS server, will not work for most LAN
+            options
+          </option>
+          <option value="custom">
+            Custom - Use a custom specified host and port for QoS
+          </option>
+          <option value="disabled">Disabled - Disable QoS networking</option>
+          <option value="hamachi">
+            Hamachi - Configure for a Hamachi-like setup
+          </option>
+        </select>
+        <p className={styles.description}>
+          The type of QoS configuration you would like, using "Official" can be
+          good if you want players who have Open NAT types to directly connect
+          to each other.
+          <br />
+          The Hamachi is specifically for virtual LAN type networks.
+          <br />
+          The recommended choice is "Official" combined with the "Stricter"
+          tunneling option
+        </p>
+      </div>
+    </div>
+  );
+
+  const renderQoSCustom = config.qos !== undefined &&
+    config.qos.type === "custom" && (
+      <>
+        <div className="card margin-bottom--md">
+          <div className="card__header">
+            <label htmlFor="super-email" className={styles.inputLabel}>
+              QoS Custom Host
               <Link
                 className={styles.moreInfo}
-                href="/docs/server/configuration#hide-players-from-public-games"
+                href="/docs/server/configuration#custom"
               >
                 View Documentation
               </Link>
             </label>
+          </div>
+
+          <div className="card__body">
             <input
-              className={styles.checkbox}
-              id="retriever-origin-fetch"
-              name="retriever-origin-fetch"
-              type="checkbox"
-              checked={config.api.public_games_hide_players}
-              onChange={onChangeAPIPublicGamesHidePlayers}
+              className={styles.input}
+              id="qos-host"
+              name="qos-host"
+              type="text"
+              value={config.qos.host ?? ""}
+              onChange={onChangeQoSHost}
             />
             <p className={styles.description}>
-              Whether to hide players from the public games API
+              The IP address of the custom QoS server
             </p>
           </div>
-        </>
-      )}
+        </div>
+        <div className="card margin-bottom--md">
+          <div className="card__header">
+            <label htmlFor="super-email" className={styles.inputLabel}>
+              QoS Custom Port
+              <Link
+                className={styles.moreInfo}
+                href="/docs/server/configuration#custom"
+              >
+                View Documentation
+              </Link>
+            </label>
+          </div>
+
+          <div className="card__body">
+            <input
+              className={styles.input}
+              id="qos-host"
+              name="qos-host"
+              type="number"
+              value={config.qos.port ?? ""}
+              onChange={onChangeQoSPort}
+            />
+            <p className={styles.description}>
+              The port of the custom QoS server
+            </p>
+          </div>
+        </div>
+      </>
+    );
+
+  const renderQoSHamachi = config.qos !== undefined &&
+    config.qos.type === "hamachi" && (
+      <div className="card margin-bottom--md">
+        <div className="card__header">
+          <label htmlFor="super-email" className={styles.inputLabel}>
+            QoS Hamachi Host
+            <Link
+              className={styles.moreInfo}
+              href="/docs/server/configuration#hamachi"
+            >
+              View Documentation
+            </Link>
+          </label>
+        </div>
+
+        <div className="card__body">
+          <input
+            className={styles.input}
+            id="qos-host"
+            name="qos-host"
+            type="text"
+            value={config.qos.host ?? ""}
+            onChange={onChangeQoSHost}
+          />
+          <p className={styles.description}>
+            Set this to be the Hamachi virtual address, visible for the person
+            hosting the Hamachi network (They also need to be running the
+            server), specifically the IPv4 address <b>NOT</b> the IPv6 (IPv6 is
+            not supported by Pocket Relay)
+          </p>
+        </div>
+      </div>
+    );
+
+  return (
+    <div>
+      <button
+        className="button button--secondary margin-bottom--md"
+        onClick={onReset}
+      >
+        Reset to Default
+      </button>
+
+      <div>
+        <h2>Server Connection</h2>
+
+        {renderHost}
+        {renderPort}
+      </div>
+
+      <div className="">
+        <h2>Dashboard</h2>
+
+        {renderSuperEmail}
+        {renderSuperPassword}
+        {renderDisableRegistration}
+      </div>
+
+      <div>
+        <h2>Menu</h2>
+        {renderMenuMessage}
+      </div>
+
+      <div>
+        <h2>Galaxy at War</h2>
+
+        {renderDecayRate}
+        {renderPromotions}
+      </div>
+
+      <div>
+        <h2>Logging</h2>
+        {renderLogging}
+      </div>
+
+      <div>
+        <h2>Retriever</h2>
+
+        {renderRetrieverEnabled}
+        {renderOriginFetch}
+        {renderOriginFetchData}
+      </div>
+
+      <div>
+        <h2>QoS</h2>
+        {renderQosType}
+        {renderQoSCustom}
+        {renderQoSHamachi}
+      </div>
+
+      <div>
+        <h2>Tunneling</h2>
+        {renderTunneling}
+      </div>
+
+      <div>
+        <h2>API</h2>
+
+        {renderPublicGames}
+        {renderPublicGamesHidePlayers}
+      </div>
+
       <Admonition type="info">Below is your generated config</Admonition>
       <CodeBlock language="json" title="config.json" children={configOutput} />
     </div>
