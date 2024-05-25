@@ -19,7 +19,9 @@ The server configuration is loaded from a file named **config.json** this file i
 
 This configuration file will **NOT** be created for you. You will have to manually create the config.json file on your own.
 
-
+:::tip
+You can now generate a config using the [Configuration Builder](./configuration-builder.mdx) tool rather than typing out the options manually
+:::
 
 ## Default Configuration
 
