@@ -98,8 +98,6 @@ function createConfigOutput(input: Config) {
     delete copied.dashboard.super_password;
   }
 
-  console.log(copied.port);
-
   // Remove invalid ports
   if (copied.port !== undefined && Number.isNaN(copied.port)) {
     delete copied.port;
