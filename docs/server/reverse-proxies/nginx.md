@@ -5,7 +5,7 @@ This guide is for configuring Nginx for use with Pocket Relay.
 
 ## Setup
 
-When using a reverse proxy make sure you enable the `reverse_proxy` mode in the server configuration file. [Server Config Reverse Proxy](./4-configuration.md#reverse-proxy)
+When using a reverse proxy make sure you enable the `reverse_proxy` mode in the server configuration file. [Server Config Reverse Proxy](../4-configuration.md#reverse-proxy)
 
 :::tip
 If you are using the Nginx reverse proxy within Docker through docker-compose you can use the [Docker Compose Reverse Proxy](../3-docker.md#docker-compose-reverse-proxy) example as a base for your setup

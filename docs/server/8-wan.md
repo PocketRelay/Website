@@ -14,7 +14,7 @@ If you are exposing your Pocket Relay server to the internet you are expected to
 
 If you expose your Pocket Relay server to the internet, anyone with the Connection URL will be able to connect to it (unless you specifically prevent them with things such as firewalls or IP whitelisting on your server). 
 
-If you would like to expose your server but only want authorized users to access it you can see the [Client Certificate Auth](./5-reverse-proxy.md#client-certificate-auth) section for how to use client certificates for cryptographic authentication.
+If you would like to expose your server but only want authorized users to access it you can see the [Client Certificate Auth](./reverse-proxies/nginx.md#client-certificate-auth) section for how to use client certificates for cryptographic authentication.
 :::
 
 Its also possible to temporarily expose the server over WAN using [Ngrok](https://ngrok.com/) as a reverse proxy. You can find out how to 

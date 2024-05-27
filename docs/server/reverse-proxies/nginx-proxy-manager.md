@@ -5,7 +5,7 @@ This guide is for configuring Nginx Proxy Manager for use with Pocket Relay.
 
 ## Setup
 
-When using a reverse proxy make sure you enable the `reverse_proxy` mode in the server configuration file. [Server Config Reverse Proxy](./4-configuration.md#reverse-proxy)
+When using a reverse proxy make sure you enable the `reverse_proxy` mode in the server configuration file. [Server Config Reverse Proxy](../4-configuration.md#reverse-proxy)
 
 This guide only includes a more basic setup, if you are looking for a more advanced Nginx setup you can find the configuration details in [Nginx](./nginx.md)
 
