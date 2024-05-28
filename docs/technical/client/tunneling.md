@@ -18,7 +18,7 @@ Follow along below with my journey of discovering how I could solve this issue
 
 ### Uncovering the dedicated topology
 
-While experimenting with game setup packets, I discovered an "Game network topology" enum field, defaulting to `0x0` for the `PEER_HOSTED` network topology. Contrary to my previous assumptions, the game does infact supports a `0x1` aka `DEDICATED` mode.
+While experimenting with game setup packets, I discovered an "Game network topology" enum field, defaulting to `0x0` for the `PEER_HOSTED` network topology. Contrary to my previous assumptions, the game does in fact supports a `0x1` aka `DEDICATED` mode.
 
 In the official server, when the `PEER_HOSTED` game network topology is set, game clients connect to the host player using information shared by the game server. However, in `DEDICATED` mode, clients attempt to connect to an address provided in a packet field named "HNET" (Host networking).
 
@@ -32,7 +32,7 @@ Clients successfully connected through the testing server, confirming the implem
 
 ### Making use of this topology
 
-Discovering the dedicated server topology alone wasn't enough to solve the issue. Since Mass Effect 3 doesn't support running in a dedicated server mode, creating a server capable of handling game logic and state would be far too difficult/time consming. However, having access to this topology allows instructing clients to directly connect to a specific address and port, bypassing the host player's address.
+Discovering the dedicated server topology alone wasn't enough to solve the issue. Since Mass Effect 3 doesn't support running in a dedicated server mode, creating a server capable of handling game logic and state would be far too difficult/time consuming. However, having access to this topology allows instructing clients to directly connect to a specific address and port, bypassing the host player's address.
 
 ## Preparing the solution
 

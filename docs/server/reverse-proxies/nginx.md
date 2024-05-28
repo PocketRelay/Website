@@ -29,7 +29,7 @@ proxy_set_header Connection "upgrade";
 proxy_http_version 1.1;
 ```
 
-Its also recommened that you disable proxy buffering in your nginx config for Pocket Relay. With the new tunneling system implemented in v0.6.0 the latency between players could be affected, greatly reducing your experience:
+Its also recommended that you disable proxy buffering in your nginx config for Pocket Relay. With the new tunneling system implemented in v0.6.0 the latency between players could be affected, greatly reducing your experience:
 
 ```conf
 # Disable buffering (Buffering can affect network tunneling latency)

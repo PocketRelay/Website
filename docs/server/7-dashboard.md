@@ -9,7 +9,7 @@ slug: "dashboard"
 
 Information and guide relating to the server dashboard
 
-## Visting the dashboard
+## Visiting the dashboard
 
 You can visit the dashboard using the Connection URL, the dashboard is publicly accessible for all users. If you are the
 server hoster you can find the Connection URL using the [Connection URL](./2-executable.mdx#4-connection-url) section in the server documentation
