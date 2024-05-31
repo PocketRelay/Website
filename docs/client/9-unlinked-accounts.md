@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 9
 pagination_prev: null
 pagination_next: null
 slug: "unlinked-accounts"
@@ -48,6 +48,11 @@ your new account and then press **"Accept"** to create your account
 
 After pressing **"Accept"** you will be taken to a screen that asks you to accept the **"EA Terms of Service and Privacy Policy"** for
 Mass Effect 3, you must accept the terms using **"I Have Read and Accept Both Documents"** in order to create an account
+
+:::note
+When creating accounts in-game they will be given a randomly generated username (Because the game has no username input). You can change this
+later through the [Dashboard](../server/7-dashboard.md)
+:::
 
 ![Accept screen](./img/me-accept.png)
 
