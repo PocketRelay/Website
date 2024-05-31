@@ -36,7 +36,7 @@ Once you've unlinked from Origin check out the [Unlinked Accounts](./9-unlinked-
 Documentation for manually applying this plugin is not yet added
 
 
-## 1) Patching
+### 1) Patching
 
 In order to use the plugin client your game must be patched with a "Bink Bypass" because this allows loading plugins. 
 For instructions on how to apply this patch you can check out [Binkw32](./8-binkw32.md)
@@ -46,13 +46,13 @@ If you have already previously patched your game using **Pocket Relay** client, 
 to [2) Download plugin](#2-download-plugin)
 :::
 
-## 2) Download plugin
+### 2) Download plugin
 
 Once you've patched your game you can download the Origin unlinker plugin:
 
 [Download](https://github.com/Erik-JS/ME3-ASI/raw/master/ME3OriginUnlinker/Release/ME3OriginUnlinker.asi)
 
-## 3) Adding plugin
+### 3) Adding plugin
 
 Once you've download the plugin head over to the folder containing `MassEffect3.exe` which should look similar to the following
 
@@ -65,6 +65,11 @@ If your folder **doesn't** contain a `asi` folder you will need to create a new 
 Place the `ME3OriginUnlinker.asi` file that you have downloaded into the `asi` folder
 
 All done, you can now start Mass Effect 3 and you will not be linked to an Origin account
+
+
+### Removing plugin
+
+If you would like to go back to your normal account, simply delete the `ME3OriginUnlinker.asi` file from the `asi` folder and you will be using your Origin/EA account like normal
 
 ## ME3 Tweaks Mod Manager
 
