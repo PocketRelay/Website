@@ -272,6 +272,10 @@ This field is optional but it's helpful if you are using an **Origin** account f
 If the account already exists the password will be applied the next time the server restarts, otherwise it will be applied when the account is created
 :::
 
+:::warning
+If you don't want to use this then remove the field from your JSON config entirely, don't set it to blank as that will simply assign the user a blank password. (This has been fixed in a yet to be released version so is a problem for now)
+:::
+
 ### Disable account registration
 
 You can use this property to disable registering accounts through the dashboard (Only allow player to create account in-game) this can be useful if you are running a public server and don't want people who aren't using the server creating accounts
