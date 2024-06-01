@@ -9,6 +9,9 @@ slug: "origin-unlinking"
 
 Guide for un-linking your game from Origin to allow creating accounts in-game
 
+If you are looking to have your player data pulled over from the official servers you must first login without unlinking, because unlinked accounts operate completely
+independently of the official servers so they have no player data associated to them by default.
+
 :::note
 Unlinking from Origin doesn't disable DRM or remove the requirement for launching from EA/Origin. These
 are still required if you are using a Stream/Origin/EA copy. Unlinking from Origin just disconnects your 
