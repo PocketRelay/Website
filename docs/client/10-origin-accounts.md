@@ -47,10 +47,16 @@ If you are the owner of the server you'll need to have a super admin account to 
 
 You have the two options below for assigning a password as the server owner:
 
-### Using your Origin/EA as the super admin account
+### A) Using your Origin/EA as the super admin account
 
-You can assign your Origin/EA account as the super admin and use the [super password](../server/4-configuration.md#super-password) setting to override the super admin account password (Setting the Origin/Ea account password)
+1. Assign your Origin/EA email address the super admin role [super admin](../server/4-configuration.md#super-admin)
+2. Setup up a [super password](../server/4-configuration.md#super-password) to override the super admin account password (Setting the Origin/EA account password, since Origin accounts don't have a password)
+3. Restart the server if its running and your Origin account will now have the password you assigned
+4. Login and optionally change the password (Remove the super password from your configuration before your next restart otherwise your password will change back again)
 
-### Creating a separate super admin account
+### B) Creating a separate super admin account
 
-You can use the dashboard to create an account with a password (Use a different email to your Origin account) and assign that [super admin](../server/4-configuration.md#super-admin) then use that to assign your Origin/EA account a password
+1. Set up the [super admin](../server/4-configuration.md#super-admin) email (Make sure its different from your Origin/EA account email)
+2. Restart your server if its running 
+3. Open the dashboard and create an account with the super email you set
+4. Find the Origin/EA account in the dashboard and assign it a password
