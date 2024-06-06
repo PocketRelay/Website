@@ -32,7 +32,7 @@ If you are using ME3 Tweaks Mod Manager see [ME3 Tweaks Mod Manager](#me3-tweaks
 
 
 
-Once you've unlinked from Origin check out the [Unlinked Accounts](./9-unlinked-accounts.md) guide for creating and logging into unlinked accounts
+Once you've unlinked from Origin check out the [Unlinked Accounts](./8-unlinked-accounts.md) guide for creating and logging into unlinked accounts
 
 ## Manual Guide
 
@@ -42,7 +42,7 @@ Documentation for manually applying this plugin is not yet added
 ### 1) Patching
 
 In order to use the plugin client your game must be patched with a "Bink Bypass" because this allows loading plugins. 
-For instructions on how to apply this patch you can check out [Binkw32](./8-binkw32.md)
+For instructions on how to apply this patch you can check out [Binkw32](./7-binkw32.md)
 
 :::info
 If you have already previously patched your game using **Pocket Relay** client, manually, or using some other tool you can skip

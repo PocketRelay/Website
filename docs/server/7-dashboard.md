@@ -22,7 +22,7 @@ Upon visiting the dashboard, you'll encounter the following login screen:
 
 ![Dashboard Login](./img/dashboard-login.png)
 
-The dashboard uses the same password as your in-game account. If you've already created an account in-game with an [Unlinked Account](../client/9-unlinked-accounts.md), you can log in using the password you've set up.
+The dashboard uses the same password as your in-game account. If you've already created an account in-game with an [Unlinked Account](../client/8-unlinked-accounts.md), you can log in using the password you've set up.
 
 :::note
 If you are using an **Origin** account, it won't have a default password. If you are the server owner follow the [Super Admin Password](4-configuration.md#super-password) to set up a super-admin and password for your account. If you are not the server owner, someone with admin/super-admin permissions needs to set a password through the dashboard, which you can later change.
