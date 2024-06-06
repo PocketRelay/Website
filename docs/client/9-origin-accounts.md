@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 9
 pagination_prev: null
 pagination_next: null
 slug: "origin-accounts"
