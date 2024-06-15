@@ -7,19 +7,48 @@ slug: "creating"
 
 # Creating a server
 
-Explore the guide to set up your personal **Pocket Relay** server.
+Create up your own **Pocket Relay** server using one of the guides below.
 
-For a standard server setup, follow the [Executable](./2-executable.mdx) guide. If you prefer running a server within Docker, refer to the [Docker](./3-docker.md) guide.
+<div class="row margin-bottom--lg margin-top--md">
+    <div class="col">
+        <div class="card">
+            <div class="card__header">
+                <h3>I want to run my server using an executable </h3>
+            </div>
+            <div class="card__body">
+            <p>
+                This is the standard setup is usually the best option for most users
+                if you haven't used docker before or don't want to use docker and just want to quickly setup a server
+            </p>
+            </div>
+            <div class="card__footer">
+                <a class="button button--secondary button--block" href="/docs/server/executable">View Guide</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card__header">
+                <h3>I want to run my server within Docker</h3>
+            </div>
+            <div class="card__body">
+                <p>
+                    This is intended for those who already have docker setup and would like to run Pocket Relay as a container rather than an executable
+                </p>
+            </div>
+            <div class="card__footer">
+                <a class="button button--secondary button--block" href="/docs/server/docker">View Guide</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-To compile the server executable yourself, check out the [Manual Building](./6-manual-building.md) guide.
-
-After setting up your server, head over to [Configuration](./4-configuration.md) to customize settings.
+After setting up your server you can check out the [Configuration Builder](./configuration-builder.mdx) and [Configuration](./4-configuration.md) documentation to configure your server to your liking
 
 :::caution WAN Servers 
-If you plan to host a **WAN** server (where players outside of your local network can join and play together), it's crucial to review the [WAN](./8-wan.md) guide.
+If you plan to host a **WAN** server aka a server that you are exposing to users outside of your local network, it's crucial to review the [WAN](./8-wan.md) guide.
 :::
 
 :::caution Reverse Proxy Setup
-If you plan to place your Pocket Relay server behind a reverse proxy, make sure to follow the [Reverse Proxy](./5-reverse-proxy.md) guide.
+Pocket Relay works behind reverse proxies, if you intend on using one make sure you follow the  [Reverse Proxy](./5-reverse-proxy.md) guide.
 :::
-
