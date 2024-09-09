@@ -68,6 +68,32 @@ http {
 
 ```
 
+## UDP Tunnel
+
+:::tip[Only available in beta 0.7]
+
+For newer releases beta v0.7 and above there is an alternative network tunnel implementation that enables faster connectivity, if you have this enabled you
+will need to add the configuration below in order to forward those packets
+through NGINX
+
+This block is at the top level like the http block in the previous step
+:::
+
+```conf
+stream {
+    server {
+        # Update port 8081 with the `external_port` you've specified in your
+        # udp_tunnel configuration
+        listen 8081 udp;
+
+        # Update port 9032 with the `port` specified in your udp_tunnel configuration
+        proxy_pass server:9032;
+    }
+}
+```
+
+This requires the NGINX [Stream Core Module](https://www.slingacademy.com/article/nginx-stream-core-module-complete-guide/) this should come by default if you are using the NGINX docker image, otherwise you may need to find a guide for installing a version of NGINX with the module.
+
 ## Sub directories
 
 If you'd like to host the server within a subdirectory you can change the location portion to look like this:
