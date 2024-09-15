@@ -53,6 +53,10 @@ You can find all the descriptions for each of the configuration options under th
     "origin_fetch_data": true
   },
   "tunnel": "stricter",
+  "udp_tunnel": {
+    "port": 9032,
+    "external_port": 9032
+  },
   "api": {
     "public_games": false,
     "public_games_hide_players": true

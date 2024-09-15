@@ -41,6 +41,8 @@ services:
     ports:
       # Server port
       - 80:80/tcp
+      # UDP tunnel server port
+      - 9032:9032/udp
     image: jacobtread/pocket-relay:latest
     volumes:
       # Bind the server config to a local config.json file
@@ -55,11 +57,13 @@ Once you've created the above docker-compose.yml file you can use the following 
 docker-compose up
 ```
 
-If you change the server port in the config.json file make sure to change the docker-compose file port exposing
+If you change the server port in the config.json file make sure to change the docker-compose file port exposing, you will need to do the same for the UDP tunnel port
 ```yml
   ports:
     # Server port
     - {NEW PORT}:{NEW PORT}/tcp
+    # UDP tunnel server port
+    - {NEW UDP TUNNEL PORT}:{NEW UDP TUNNEL PORT}/udp
 ```
 
 ## Docker Compose Reverse Proxy
@@ -90,7 +94,10 @@ services:
     restart: unless-stopped
     image: nginx
     ports:
-      - "80:80/tcp"
+      # Server port
+      - 80:80/tcp
+      # UDP tunnel server port
+      - 8081:8081/udp
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on: 
@@ -123,6 +130,15 @@ http {
         }
     }
 }
+
+
+stream {
+    # Proxy traffic to the tunnel V2 which is a faster UDP tunnel
+    server {
+        listen 8081 udp;
+        proxy_pass server:9032;
+    }
+}
 ```
 
 The server configuration file must be created in this same folder (If you haven't created one follow the [Configuration](./4-configuration.md) guide) and make sure the [Reverse Proxy](4-configuration.md#reverse-proxy) property is set to `true`
@@ -131,9 +147,16 @@ Below is an example configuration that only changes the required setting:
 
 ```json title=config.json
 {
-  "reverse_proxy": true
+  "reverse_proxy": true,
+  "udp_tunnel": {
+    "port": 9032,
+    "external_port": 8081
+  }
 }
 ```
+
+> Ensure the UDP tunnel ports align with the ports specified in NGINX, the `external_port` should 
+> be the one NGINX is set to listen on and the `port` should be the one proxy_pass is pointing to
 
 After creating all the above files your folder should look like the following:
 
