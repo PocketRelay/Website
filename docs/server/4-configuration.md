@@ -515,6 +515,46 @@ This option disabled tunneling, using this option may prevent those with stricte
 ---
 
 
+## UDP Tunnel
+
+> This is a new tunnel implementation for server versions >=0.7.0-beta which will perform better than the previous tunnel in multiple scenarios. It will respect the "Tunnel" option above but has some additional configuration below
+
+```json
+{
+  "udp_tunnel": {
+    "port": 9032,
+    "external_port": 9032
+  }
+}
+```
+
+### UDP Tunnel Port
+
+
+The UDP tunnel server requires an additional bound port, this option specifies which port on the system should be used for this server. Ensure you do not have any other services on this port
+
+```json
+{
+  "udp_tunnel": {
+    "port": 9032,
+  }
+}
+```
+
+### UDP Tunnel External Port
+
+If you are running your server behind a reverse proxy you will likely be exposing different ports to the internet or in a situation where the port users have access to is different to the bound port, in order for the UDP tunnel to work properly you will also need to specify the `external_port` this is the 
+port that people on the other side of the reverse proxy/port binding will see.
+
+```json
+{
+  "udp_tunnel": {
+    "external_port": 9032,
+  }
+}
+```
+
+
 ## API
 
 The API section handles various API related configurations

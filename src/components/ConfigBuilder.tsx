@@ -37,6 +37,10 @@ export type Config = Partial<{
     origin_fetch_data: boolean;
   }>;
   tunnel: string;
+  udp_tunnel: {
+    port: number;
+    external_port: number;
+  };
   api: Partial<{
     public_games: boolean;
     public_games_hide_players: boolean;
@@ -66,6 +70,10 @@ const DEFAULT_CONFIG: Config = {
     origin_fetch_data: true,
   },
   tunnel: "stricter",
+  udp_tunnel: {
+    port: 9032,
+    external_port: 9032,
+  },
   api: {
     public_games: false,
     public_games_hide_players: true,
@@ -80,6 +88,7 @@ function createConfigOutput(input: Config) {
     galaxy_at_war: { ...input.galaxy_at_war },
     retriever: { ...input.retriever },
     api: { ...input.api },
+    udp_tunnel: { ...input.udp_tunnel },
   };
 
   // Remove empty super email
@@ -101,6 +110,20 @@ function createConfigOutput(input: Config) {
   // Remove invalid ports
   if (copied.port !== undefined && Number.isNaN(copied.port)) {
     delete copied.port;
+  }
+
+  if (
+    copied.udp_tunnel.port !== undefined &&
+    Number.isNaN(copied.udp_tunnel.port)
+  ) {
+    delete copied.udp_tunnel.port;
+  }
+
+  if (
+    copied.udp_tunnel.external_port !== undefined &&
+    Number.isNaN(copied.udp_tunnel.external_port)
+  ) {
+    delete copied.udp_tunnel.external_port;
   }
 
   if (copied.qos !== undefined) {
@@ -277,6 +300,28 @@ export default function ConfigBuilder() {
   const onReset = useCallback(() => {
     setConfig(DEFAULT_CONFIG);
   }, [setConfig]);
+
+  const onChangeUdpTunnelPort = (event: ChangeEvent<HTMLInputElement>) => {
+    setConfig((config) => ({
+      ...config,
+      udp_tunnel: {
+        ...config.udp_tunnel,
+        port: parseInt(event.target.value),
+      },
+    }));
+  };
+
+  const onChangeUdpTunnelExternalPort = (
+    event: ChangeEvent<HTMLInputElement>
+  ) => {
+    setConfig((config) => ({
+      ...config,
+      udp_tunnel: {
+        ...config.udp_tunnel,
+        external_port: parseInt(event.target.value),
+      },
+    }));
+  };
 
   const configOutput = useMemo(
     () => JSON.stringify(createConfigOutput(config), undefined, 2),
@@ -925,6 +970,69 @@ export default function ConfigBuilder() {
       </div>
     );
 
+  const renderUdpTunnelPort = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
+        <label htmlFor="port" className={styles.inputLabel}>
+          UDP Tunnel Port
+          <Link
+            className={styles.moreInfo}
+            href="/docs/server/configuration#udp-tunnel-port"
+          >
+            View Documentation
+          </Link>
+        </label>
+      </div>
+
+      <div className="card__body">
+        <input
+          className={styles.input}
+          id="port"
+          name="port"
+          type="number"
+          value={config.udp_tunnel.port}
+          onChange={onChangeUdpTunnelPort}
+        />
+        <p className={styles.description}>
+          This is the port the UDP tunnel server will bind to
+        </p>
+      </div>
+    </div>
+  );
+
+  const renderUdpTunnelExternalPort = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
+        <label htmlFor="port" className={styles.inputLabel}>
+          UDP Tunnel External Port
+          <Link
+            className={styles.moreInfo}
+            href="/docs/server/configuration#udp-tunnel-external-port"
+          >
+            View Documentation
+          </Link>
+        </label>
+      </div>
+
+      <div className="card__body">
+        <input
+          className={styles.input}
+          id="port"
+          name="port"
+          type="number"
+          value={config.udp_tunnel.external_port}
+          onChange={onChangeUdpTunnelExternalPort}
+        />
+        <p className={styles.description}>
+          This is the external facing port for the UDP tunnel, ensure this is
+          the same as the UDP tunnel port, if you are using a reverse proxy or
+          binding a different docker port this should be the external facing
+          port used by your reverse proxy / docker port binding
+        </p>
+      </div>
+    </div>
+  );
+
   return (
     <div>
       <button
@@ -984,6 +1092,8 @@ export default function ConfigBuilder() {
       <div>
         <h2>Tunneling</h2>
         {renderTunneling}
+        {renderUdpTunnelPort}
+        {renderUdpTunnelExternalPort}
       </div>
 
       <div>
