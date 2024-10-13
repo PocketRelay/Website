@@ -12,149 +12,116 @@ import TabItem from "@theme/TabItem";
 
 # Joining a server
 
-Welcome to Pocket Relay! This guide will walk you through joining Pocket Relay servers using the **Pocket Relay Client**. If you've already downloaded the client, you can skip to [Connection URL](#3-connection-url).
+Welcome to Pocket Relay! This guide will walk you through joining Pocket Relay servers using the **Pocket Relay Plugin Client**.
 
 :::info
-This guide focuses on the **Pocket Relay Client**, a tool that requires administrator privileges and must run continuously while you play. There is an alternative client plugin version available which doesn't require admin privileges and can be closed once you are 
-connected. Check out the [Plugin Client Guide](./4-plugin-client.mdx) for more details.
+
+This guide focuses on the **Pocket Relay Plugin Client** which is now considered the recommended way of using **Pocket Relay**. This
+guide references using the Installer, if you would prefer to manually add the plugin you can follow the [Plugin Client Manual Install Guide](11-plugin-client-manual.mdx)
+
+You can find a guide for using the standalone version of **Pocket Relay** [Here](./1-joining.mdx). However, this is not recommended as it will 
+not receive the same level of support and future updates that the plugin client will get it also requires  administrator privileges and must run continuously while you play.
 :::
 
-:::tip
-If you are using the **Steam** version of Mass Effect 3 you may run into connection issues if you're trying 
-to play with others on Pocket Relay Client, if run into connection issues try using the [Plugin Client Guide](./4-plugin-client.mdx) instead
+## 1) Download the installer
 
-In the future the plugin client will likely become the default version gaining more features that require deeper access to the games internals
-:::
-
-
-## Requirements
-
-To run the **Pocket Relay Client**, ensure you have the following:
-
-- **64bit Windows 10 or newer**
-  - The client may run on older versions of Windows, but it's untested.
-  - If you would like to run the client on a 32bit system you must compile it manually for that target, alternatively the client plugin version supports 32bit out of the box
-- **Administrator Privileges**
-  - You need admin privileges to use the client.
-- **Mass Effect 3**
-  - Start Pocket Relay before launching ME3 for it to work.
-
-
-## 1) Download client
-
-Download the client from one of the links below:
-
-:::info
-The _Windows Native_ version is lighter in terms of file size but less visually appealing. 
-:::
+Download the installer from the link for your platform below:
 
 | Variant                       | Link                                                                                                      |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------- |
-| <WindowsIcon /> Windows        | [Download](https://github.com/PocketRelay/Client/releases/latest/download/pocket-relay-client.exe)        |
-| <WindowsIcon /> Windows Native | [Download](https://github.com/PocketRelay/Client/releases/latest/download/pocket-relay-client-native.exe) |
-| <LinuxIcon /> Linux | [Download](https://github.com/PocketRelay/Client/releases/latest/download/pocket-relay-client-linux) |
+| <WindowsIcon /> Windows        | [Download](https://github.com/PocketRelay/PocketRelayPluginInstaller/releases/latest/download/pocket-relay-plugin-installer.exe)        |
+| <LinuxIcon /> Linux | [Download](https://github.com/PocketRelay/PocketRelayPluginInstaller/releases/latest/download/pocket-relay-plugin-installer) |
 
-:::tip
-Remember where you save the executable, as you'll need it whenever you want to connect to a Pocket Relay server.
-:::
-
-The client auto-updates, so no need to repeat this step for new versions.
 
 ---
 
-## 2) Starting the client
+## 2) Select game path
 
-After downloading, locate and open the executable.
+After downloading, locate and open the executable. You should see this first screen asking you to choose the game path:
 
-### Windows Administrator
+![Pick game path](./img/installer-pick-path.png)
 
-Windows will prompt you _"Do you want to allow this app to make changes to your device?"_. This is because the current version of Pocket Relay requires modifying a system
-file in order to redirect the game traffic see the [Client Technical Overview](../technical/client/hosts-file.md) to
-see what is happening behind the scenes
+Click the "Choose game path" button. Navigate to your Mass Effect 3 install and head into the "Binaries" then "Win32" folder to find your "MassEffect3.exe" file and select that.
 
-To this prompt you must press **"Yes"** otherwise the app will not launch
+![Picked game path](./img/installer-pick-path-done.png)
 
-![UAC Prompt](./img/uac-prompt.png)
+---
+
+## 3) Apply Patch
+
+After you've selected the path you should see the following screen:
+
+![Installer apply patch](./img/installer-picked-path.png)
+
+From here you can press "Apply Patch", then it should change to "Patch successfully installed.". 
+
+:::note
+If you already have a patch applied and it says "Remove Patch" you can skip this step, you will
+likely already be patched if you have modded the game previously.
+:::
+
+![Patch successfully installed](./img/installer-patched.png)
 
 :::info
-The above screenshot is of the Windows 11 prompt, this may look slightly different on older versions of Windows
+This patch will allow the game to load the plugin for **Pocket Relay** for more technical details about the patch check out [Bink Patch](../technical/client/bink-patch.md)
 :::
 
-### Windows Firewall
+---
 
-When launching the client for the first time you will see a message similar to the following from **Windows Defender Firewall** saying that it has blocked some features of the app.
+## 4) Add Plugin
 
-This message appears because the client locally runs a server and Windows Firewall is preventing other devices on your network from accessing the client-side server _(This is okay and usually the ideal behavior for a Pocket Relay Client as theres no need for other devices on your network to access your client)_
+After you've applied the patch you can install the plugin. Press the "Add Plugin" button to install the plugin
 
-For this prompt you can either press **"Cancel"** or **"Allow access"** as this has no affect on the client
+![Patch successfully installed](./img/installer-patched.png)
 
-![Windows Firewall](./img/windows-firewall.png)
 
-:::info
-This message will only appear when you launch the client for the first time, you shouldn't see it again
-as Windows will remember your choice
+:::note
+You can optionally press the selector next to "Add Plugin" to choose between the "Stable" and "Beta" releases of the plugin
 :::
 
-### Launched
+After installing you should see "Pocket realy client plugin successfully installed."
 
-After the prompts, you should see a window like the one below:
+![Patch successfully installed](./img/installer-plugin-installed.png)
 
-import clientBaseImage from "./img/client-base.png";
-import clientBaseNativeImage from "./img/client-base-native.png";
+---
 
-> As new versions are released the appearance may differ
+## 5) Connecting
 
-<Tabs groupId="client-variant">
-  <TabItem value="client" label="Client" default>
-    <img src={clientBaseImage} alt="Client home screen"></img>
-  </TabItem>
-  <TabItem value="client-native" label="Native Client">
-    <img src={clientBaseNativeImage} alt="Native client home screen"></img>
-  </TabItem>
-</Tabs>
+When you next start Mass Effect 3 you will see the following window appear:
 
-:::tip
-Click on the tab above to view the screenshot for your specific version.
-:::
-
-## 3) Connection URL
-
-To connect to a **Pocket Relay** server, enter the "Connection URL" provided by the server into the input box.
+![Plugin Client](./img/plugin-client.png)
 
 Enter your server connection URL into this box (You should have been provided this by the person running the server you are trying to connect to). If you
 are running your own server refer to the [Connection URL](../server/2-executable.mdx#4-connection-url) section in the server documentation for how to find it.
 
-import clientUrlImage from "./img/client-url.png";
-import clientUrlNativeImage from "./img/client-url-native.png";
+![Plugin Client](./img/plugin-client-url.png)
 
-<Tabs groupId="client-variant">
-  <TabItem value="client" label="Client" default>
-    <img src={clientUrlImage} alt="Client url input"></img>
-  </TabItem>
-  <TabItem value="client-native" label="Native Client">
-    <img src={clientUrlNativeImage} alt="Native client url input"></img>
-  </TabItem>
-</Tabs>
+Once you've entered the Connection URL press the **"Connect"** button to connect to the server. 
 
-After you have entered the server connection URL into the box press the **"Set"** button and you should connect to the server.
+---
 
-## 4) Done
+## 6) Done
 
-After pressing "Set" the Pocket Relay Client should now show a "Connected: " message under the URL box this means you're now
-connected and you can go start **Mass Effect 3** and play on the server.
+Once you connect the the server you should see the following:
 
-import clientConnectedImage from "./img/client-connected.png";
-import clientConnectedNativeImage from "./img/client-connected-native.png";
+![Plugin Client](./img/plugin-client-connected.png)
 
-<Tabs groupId="client-variant">
-  <TabItem value="client" label="Client" default>
-    <img src={clientConnectedImage} alt="Client connected"></img>
-  </TabItem>
-  <TabItem value="client-native" label="Native Client">
-    <img src={clientConnectedNativeImage} alt="Native client connected"></img>
-  </TabItem>
-</Tabs>
+At this point you are now connected to the server and can play the game normally. Once you are connected to a server you can safely close the "Pocket Relay Client Plugin" window
+and you will stay connected to the server.
+
+
+After pressing "Connect" the game will now start normally. If you'd like to connect to the official servers instead, press the close button on the window and the game will start 
+normally connected to the official servers.
 
 :::tip
 If you are using an "Unofficial" copy of the game you should also check out the [Unlinked Accounts](./8-unlinked-accounts.md) guide
 :::
+
+---
+
+## 7) Playing without Pocket Relay
+
+If you would like to play on the official servers you don't need to remove this plugin, simply close the Pocket Relay Client Plugin window when the game 
+starts and you'll connect to the official servers instead
+
+---

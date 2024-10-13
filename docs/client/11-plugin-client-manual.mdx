@@ -1,0 +1,95 @@
+---
+sidebar_position: 11
+pagination_prev: null
+pagination_next: null
+slug: "plugin-client-manual"
+---
+
+# Plugin Client Manual Install
+
+Once you have applied to plugin to your game a window will appear every time your game starts:
+
+![Plugin Client](./img/plugin-client.png)
+
+With this window you can enter the Connection URL of the server that you want to connect to then
+
+:::info
+When using the **Plugin Client** you do **NOT** need to remove the plugin if you want to play on the official servers, instead
+if you don't want to connect to a **Pocket Relay** server you can simply ignore/close the window that pops up
+:::
+
+Once you are connected a server you can freely close the popup window and continue playing like normal
+
+---
+
+## 1) Patching
+
+In order to use the plugin client your game must be patched with a "Bink Bypass" because this allows loading plugins. 
+For instructions on how to apply this patch you can check out [Binkw32](./7-binkw32.md)
+
+:::info
+If you have already previously patched your game using **Pocket Relay** client, manually, or using some other tool you can skip
+to [2) Download plugin](#2-download-plugin)
+:::
+
+## 2) Download plugin
+
+Once you've patched your game you can download the client plugin:
+
+[Download](https://github.com/PocketRelay/PocketRelayClientPlugin/releases/latest/download/pocket-relay-plugin.asi)
+
+## 3) Adding plugin
+
+Once you've download the plugin head over to the folder containing `MassEffect3.exe` which should look similar to the following
+
+> If you haven't added any other plugins previously then you might not have the "asi" folder
+
+![Game folder with patch](./img/me3-folder-patched.png)
+
+If your folder **doesn't** contain a `asi` folder you will need to create a new folder, ensure that you name it `asi` (Exactly)
+
+Place the `pocket-relay-plugin.asi` file that you have downloaded into the `asi` folder
+
+:::caution IMPORTANT
+
+Ensure that you do **NOT** rename `pocket-relay-plugin.asi` to anything else as renaming the file will break the auto updating and will cause
+issues if you try to update the plugin
+
+:::
+
+All done, you can now start Mass Effect 3 and you will see the **Pocket Relay** window appear
+
+## 4) Connecting
+
+When you next start Mass Effect 3 you will see the following window appear:
+
+![Plugin Client](./img/plugin-client.png)
+
+Enter your server connection URL into this box (You should have been provided this by the person running the server you are trying to connect to). If you
+are running your own server refer to the [Connection URL](../server/2-executable.mdx#4-connection-url) section in the server documentation for how to find it.
+
+![Plugin Client](./img/plugin-client-url.png)
+
+Once you've entered the Connection URL press the **"Connect"** button to connect to the server. 
+
+## 5) Done
+
+Once you connect the the server you should see the following:
+
+![Plugin Client](./img/plugin-client-connected.png)
+
+At this point you are now connected to the server and can play the game normally. Once you are connected to a server you can safely close the "Pocket Relay Client Plugin" window
+and you will stay connected to the server.
+
+
+After pressing "Connect" the game will now start normally. If you'd like to connect to the official servers instead, press the close button on the window and the game will start 
+normally connected to the official servers.
+
+:::tip
+If you are using an "Unofficial" copy of the game you should also check out the [Unlinked Accounts](./8-unlinked-accounts.md) guide
+:::
+
+## 6) Playing without Pocket Relay
+
+If you would like to play on the official servers you don't need to remove this plugin, simply close the Pocket Relay Client Plugin window when the game 
+starts and you'll connect to the official servers instead
