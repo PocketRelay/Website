@@ -40,6 +40,7 @@ export type Config = Partial<{
   udp_tunnel: {
     port: number;
     external_port: number;
+    enabled: boolean;
   };
   api: Partial<{
     public_games: boolean;
@@ -73,6 +74,7 @@ const DEFAULT_CONFIG: Config = {
   udp_tunnel: {
     port: 9032,
     external_port: 9032,
+    enabled: true,
   },
   api: {
     public_games: false,
@@ -213,6 +215,16 @@ export default function ConfigBuilder() {
       ...config,
       retriever: {
         ...config.retriever,
+        enabled: event.target.checked,
+      },
+    }));
+  };
+
+  const onChangeUDPTunnelEnabled = (event: ChangeEvent<HTMLInputElement>) => {
+    setConfig((config) => ({
+      ...config,
+      udp_tunnel: {
+        ...config.udp_tunnel,
         enabled: event.target.checked,
       },
     }));
@@ -1033,6 +1045,35 @@ export default function ConfigBuilder() {
     </div>
   );
 
+  const renderUdpTunnelEnabled = (
+    <div className="card margin-bottom--md">
+      <div className="card__header">
+        <label htmlFor="retriever-origin-fetch" className={styles.inputLabel}>
+          UDP Tunnel Enabled
+          <Link
+            className={styles.moreInfo}
+            href="/docs/server/configuration#udp-tunnel-enabled"
+          >
+            View Documentation
+          </Link>
+        </label>
+      </div>
+      <div className="card__body">
+        <input
+          className={styles.checkbox}
+          id="retriever-origin-fetch"
+          name="retriever-origin-fetch"
+          type="checkbox"
+          checked={config.udp_tunnel.enabled}
+          onChange={onChangeUDPTunnelEnabled}
+        />
+        <p className={styles.description}>
+          Allow disabling the UDP tunnel entirely
+        </p>
+      </div>
+    </div>
+  );
+
   return (
     <div>
       <button
@@ -1094,6 +1135,7 @@ export default function ConfigBuilder() {
         {renderTunneling}
         {renderUdpTunnelPort}
         {renderUdpTunnelExternalPort}
+        {renderUdpTunnelEnabled}
       </div>
 
       <div>

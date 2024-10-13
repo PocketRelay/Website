@@ -55,7 +55,8 @@ You can find all the descriptions for each of the configuration options under th
   "tunnel": "stricter",
   "udp_tunnel": {
     "port": 9032,
-    "external_port": 9032
+    "external_port": 9032,
+    "enabled": true
   },
   "api": {
     "public_games": false,
@@ -554,6 +555,18 @@ port that people on the other side of the reverse proxy/port binding will see.
 {
   "udp_tunnel": {
     "external_port": 9032,
+  }
+}
+```
+
+### UDP Tunnel Enabled
+
+You can disable the UDP tunnel completely by setting this option to false
+
+```json
+{
+  "udp_tunnel": {
+    "enabled": true,
   }
 }
 ```
