@@ -24,10 +24,14 @@ If you prefer to compile your own binary, follow the [Manual Building](./6-manua
 import WindowsIcon from "../../src/components/icons/WindowsIcon";
 import LinuxIcon from "../../src/components/icons/LinuxIcon";
 
-| Variant                | Link                                                                                                |
-| ---------------------- | --------------------------------------------------------------------------------------------------- |
-| <WindowsIcon /> Windows | [Download](https://github.com/PocketRelay/Server/releases/latest/download/pocket-relay-windows.exe) |
-| <LinuxIcon /> Linux     | [Download](https://github.com/PocketRelay/Server/releases/latest/download/pocket-relay-linux)       |
+| Variant                   | Link                                                                                                            |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| <WindowsIcon /> Windows   | [Download](https://github.com/PocketRelay/Server/releases/latest/download/pocket-relay-x86_64-windows-msvc.exe) |
+| <LinuxIcon /> Linux       | [Download](https://github.com/PocketRelay/Server/releases/latest/download/pocket-relay-x86_64-linux-musl)       |
+| <LinuxIcon /> Linux (ARM) | [Download](https://github.com/PocketRelay/Server/releases/latest/download/pocket-relay-aarch64-linux-musl)      |
+
+_For the highest compatibility the Linux binaries provided above are compiled against MUSL, visit the [Releases](https://github.com/PocketRelay/Server/releases) page
+directly for glibc binaries, system compatibility may vary glibc binaries can offer a _
 
 ## 2) Creating a server folder
 
@@ -44,6 +48,7 @@ The server will generate its own "data" folder in this folder
                 </p>
     <CodeBlock language="sh">./pocket-relay.exe</CodeBlock>
           </TabItem>
+
   <TabItem value="linux" label="Linux">
           <p>
 
@@ -63,7 +68,7 @@ To change this port, refer to [Configuration](./4-configuration.md).
 
 ## 4) Connection URL
 
-Once your server is running, it will output possible **Connection URLs**. These URLs will also appear in the server log file (server.log). 
+Once your server is running, it will output possible **Connection URLs**. These URLs will also appear in the server log file (server.log).
 You will need to provide one of these Connection URLs to anyone you want to join the server.
 
 You can find the server log file at the following path (relative to the folder where the server executable is stored):
@@ -73,7 +78,7 @@ data/server.log
 ```
 
 :::caution
-Server log files may contain personal access tokens, so it is recommended **NOT** to post them publicly. 
+Server log files may contain personal access tokens, so it is recommended **NOT** to post them publicly.
 Share them only with the **Pocket Relay** developer if its required for debugging.
 :::
 
