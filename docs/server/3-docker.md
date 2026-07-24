@@ -58,6 +58,7 @@ docker-compose up
 ```
 
 If you change the server port in the config.json file make sure to change the docker-compose file port exposing, you will need to do the same for the UDP tunnel port
+
 ```yml
   ports:
     # Server port
@@ -174,6 +175,7 @@ Once you've created the above docker-compose.yml file you can use the following 
 docker-compose up
 ```
 
+Check out [Joining](/docs/client/joining) for how to join your server
 
 ## Docker Run
 
@@ -185,6 +187,7 @@ This version doesn't support locally binding a configuration file, so you will b
 docker run -d -p 80:80/tcp -v ./data:/app/data jacobtread/pocket-relay:latest
 ```
 
+Check out [Joining](/docs/client/joining) for how to join your server
 
 ## Updating
 
