@@ -7,7 +7,7 @@ slug: "configuration"
 
 # Configuration
 
-Configure your server 
+Configure your server
 
 :::note
 **Every**time you change the configuration you must restart the server before the changes will be applied
@@ -33,35 +33,38 @@ You can find all the descriptions for each of the configuration options under th
 
 ```json title=config.json
 {
-  "host": "0.0.0.0",
-  "port": 80,
-  "reverse_proxy": false,
-  "dashboard": {
-    "super_email": "",
-    "super_password": "",
-    "disable_registration": false
-  },
-  "menu_message": "<font color='#B2B2B2'>Pocket Relay</font> - <font color='#FFFF66'>Logged as: {n}</font>",
-  "galaxy_at_war": {
-    "decay": 0.0,
-    "promotions": true
-  },
-  "logging": "info",
-  "retriever": {
-    "enabled": true,
-    "origin_fetch": true,
-    "origin_fetch_data": true
-  },
-  "tunnel": "stricter",
-  "udp_tunnel": {
-    "port": 9032,
-    "external_port": 9032,
-    "enabled": true
-  },
-  "api": {
-    "public_games": false,
-    "public_games_hide_players": true
-  }
+    "host": "0.0.0.0",
+    "port": 80,
+    "reverse_proxy": false,
+    "dashboard": {
+        "super_email": "",
+        "super_password": "",
+        "disable_registration": false
+    },
+    "menu_message": "<font color='#B2B2B2'>Pocket Relay</font> - <font color='#FFFF66'>Logged as: {n}</font>",
+    "galaxy_at_war": {
+        "decay": 0.0,
+        "promotions": true
+    },
+    "logging": "info",
+    "retriever": {
+        "enabled": true,
+        "origin_fetch": true,
+        "origin_fetch_data": true
+    },
+    "tunnel": "stricter",
+    "udp_tunnel": {
+        "port": 9032,
+        "external_port": 9032,
+        "enabled": true
+    },
+    "api": {
+        "public_games": false,
+        "public_games_hide_players": true
+    },
+    "database": {
+        "wal": true
+    }
 }
 ```
 
@@ -77,6 +80,7 @@ This variable accepts the raw JSON and not a path to a file. i.e the following
 ```env
 PR_CONFIG_JSON={"port": 80}
 ```
+
 :::
 
 ---
@@ -85,13 +89,13 @@ PR_CONFIG_JSON={"port": 80}
 
 > Requires upcoming server version v0.5.11
 
-The server host property configures which address the server will listen for connections on, by default 
+The server host property configures which address the server will listen for connections on, by default
 the server will listen for connections on any interface using 0.0.0.0, you can change this by specifying
 the specific IP to listen on.
 
-```json 
+```json
 {
-  "host": "0.0.0.0"
+    "host": "0.0.0.0"
 }
 ```
 
@@ -101,9 +105,9 @@ the specific IP to listen on.
 
 The server port property configures which port the server will be running on
 
-```json 
+```json
 {
-  "port": 80
+    "port": 80
 }
 ```
 
@@ -114,7 +118,7 @@ Using any server port below 1024 on Linux will require that you launch the serve
 :::
 
 :::note
-Changing this port will require that you specify the port in both the Connection URL and when accessing the dashboard from the browser 
+Changing this port will require that you specify the port in both the Connection URL and when accessing the dashboard from the browser
 :::
 
 ---
@@ -125,9 +129,9 @@ This property configures whether the server is behind a reverse proxy or not. If
 a reverse proxy you should set this to `true`. If you don't set this to `true` and you are using
 a reverse proxy clients will **NOT** be able to connect to each other
 
-```json 
+```json
 {
-  "reverse_proxy": false
+    "reverse_proxy": false
 }
 ```
 
@@ -145,19 +149,18 @@ to connect to each-other if you don't use the "official" QoS servers due to a cu
 server limitation
 :::
 
-
 ### Official
 
 Specifying the "qos" configuration below will tell clients to use the official QoS server, you will
-likely want to use this option if you are hosting a **WAN** server (Theres no reason to use the official server if you are hosting a **LAN** or **Extended LAN** network) 
+likely want to use this option if you are hosting a **WAN** server (Theres no reason to use the official server if you are hosting a **LAN** or **Extended LAN** network)
 
 Using the official QoS server fixes a bug that prevents some players from joining each other on your server.
 
 ```json
 {
-  "qos": {
-    "type": "official"
-  }
+    "qos": {
+        "type": "official"
+    }
 }
 ```
 
@@ -167,22 +170,23 @@ Specifying the "qos" configuration below will tell clients to use the built in Q
 
 ```json
 {
-  "qos": {
-    "type": "local"
-  }
+    "qos": {
+        "type": "local"
+    }
 }
 ```
+
 ### Custom
 
 Specifying the "qos" configuration below will tell clients to use the provided custom QoS server. This is undocumented and only added for future use or a fallback if the official server address becomes unavailable
 
 ```json
 {
-  "qos": {
-    "type": "custom",
-    "host": "example.com",
-    "port": 17899
-  }
+    "qos": {
+        "type": "custom",
+        "host": "example.com",
+        "port": 17899
+    }
 }
 ```
 
@@ -194,9 +198,9 @@ Specifying the "qos" configuration below will tell clients not to use a QoS serv
 
 ```json
 {
-  "qos": {
-    "type": "disabled"
-  }
+    "qos": {
+        "type": "disabled"
+    }
 }
 ```
 
@@ -206,34 +210,31 @@ Specifying the "qos" configuration below will tell clients not to use a QoS serv
 
 Specifying the "qos" configuration below will treat the networking of clients as one which is within a Hamachi virtual network. You cannot use this option if you want anyone to connect from outside hamachi as they won't be able to join other players.
 
-
 ```json
 {
-  "qos": {
-    "type": "hamachi",
-    "host": "25.54.101.58"
-  }
+    "qos": {
+        "type": "hamachi",
+        "host": "25.54.101.58"
+    }
 }
 ```
 
 :::info
 Set the "host" field to be the Hamachi virtual address, visible for the person hosting the Hamachi network (They also need to be running the server), specifically the
-**IPv4** address **NOT** the IPv6 *(IPv6 is not supported by Pocket Relay)*
+**IPv4** address **NOT** the IPv6 _(IPv6 is not supported by Pocket Relay)_
 
 ![Hamachi virtual address](./img/config-hamachi.png)
 :::
-
-
 
 ## Dashboard
 
 ```json
 {
-  "dashboard": {
-    "super_email": "example@example.com",
-    "super_password": "password",
-    "disable_registration": false
-  }
+    "dashboard": {
+        "super_email": "example@example.com",
+        "super_password": "password",
+        "disable_registration": false
+    }
 }
 ```
 
@@ -246,18 +247,18 @@ Super admins are **NOT** separate accounts, they use the accounts that are creat
 :::
 
 :::info
-The super admin role is checked and assigned every time the server restarts and when accounts are created 
+The super admin role is checked and assigned every time the server restarts and when accounts are created
 :::
 
-#### Super Email 
+#### Super Email
 
 The super email field is used to set the email of the account that should be given the super admin role:
 
 ```json
 {
-  "dashboard": {
-    "super_email": "example@example.com"
-  }
+    "dashboard": {
+        "super_email": "example@example.com"
+    }
 }
 ```
 
@@ -267,9 +268,9 @@ This field is optional but it's helpful if you are using an **Origin** account f
 
 ```json
 {
-  "dashboard": {
-    "super_password": "password"
-  }
+    "dashboard": {
+        "super_password": "password"
+    }
 }
 ```
 
@@ -289,9 +290,9 @@ The default for this is `false` which allows users to create accounts through th
 
 ```json
 {
-  "dashboard": {
-    "disable_registration": false
-  }
+    "dashboard": {
+        "disable_registration": false
+    }
 }
 ```
 
@@ -303,7 +304,7 @@ The menu message configuration contains the message that will be displayed on th
 
 ```json
 {
-  "menu_message": "<font color='#B2B2B2'>Pocket Relay</font> - <font color='#FFFF66'>Logged as: {n}</font>"
+    "menu_message": "<font color='#B2B2B2'>Pocket Relay</font> - <font color='#FFFF66'>Logged as: {n}</font>"
 }
 ```
 
@@ -326,10 +327,10 @@ The menu message also has some placeholder variables that you can use. The serve
 
 ```json
 {
-  "galaxy_at_war": {
-    "decay": 0.0,
-    "promotions": true
-  }
+    "galaxy_at_war": {
+        "decay": 0.0,
+        "promotions": true
+    }
 }
 ```
 
@@ -343,12 +344,11 @@ In the default server configuration your Galaxy At War progress will not decay a
 
 Setting this to 0.0 will prevent any decay from happening
 
-
 ```json
 {
-  "galaxy_at_war": {
-    "decay": 0.0
-  }
+    "galaxy_at_war": {
+        "decay": 0.0
+    }
 }
 ```
 
@@ -358,9 +358,9 @@ This property determines whether your total character promotions is included as 
 
 ```json
 {
-  "galaxy_at_war": {
-    "promotions": true
-  }
+    "galaxy_at_war": {
+        "promotions": true
+    }
 }
 ```
 
@@ -372,7 +372,7 @@ This logging configuration tells the server what level of logging it should show
 
 ```json
 {
-  "logging": "info"
+    "logging": "info"
 }
 ```
 
@@ -391,7 +391,7 @@ The server log file is stored in the following file:
 data/server.log
 ```
 
-The following is a list of available logging levels 
+The following is a list of available logging levels
 
 :::info
 Every level inherits all the logging from the level below it i.e debug inherits all logging from info and warn
@@ -413,11 +413,11 @@ The retriever section contains settings for how the server will handle needing t
 
 ```json
 {
-  "retriever": {
-    "enabled": true,
-    "origin_fetch": true,
-    "origin_fetch_data": true
-  }
+    "retriever": {
+        "enabled": true,
+        "origin_fetch": true,
+        "origin_fetch_data": true
+    }
 }
 ```
 
@@ -431,9 +431,9 @@ This setting determines whether fetching data from the official servers is allow
 
 ```json
 {
-  "retriever": {
-    "enabled": true
-  }
+    "retriever": {
+        "enabled": true
+    }
 }
 ```
 
@@ -443,13 +443,13 @@ This setting determines whether fetching data from the official servers is allow
 If you disable this setting players using an **Origin** account will not be able to connect to your server without [Unlinking from Origin](../client/origin-unlinking)
 :::
 
-This setting determines whether the server is allowed to use the official server to authenticate **Origin** accounts. 
+This setting determines whether the server is allowed to use the official server to authenticate **Origin** accounts.
 
 ```json
 {
-  "retriever": {
-    "origin_fetch": true,
-  }
+    "retriever": {
+        "origin_fetch": true
+    }
 }
 ```
 
@@ -461,9 +461,9 @@ The player data is only copied over when the account is first authenticated, fut
 
 ```json
 {
-  "retriever": {
-    "origin_fetch_data": true
-  }
+    "retriever": {
+        "origin_fetch_data": true
+    }
 }
 ```
 
@@ -480,25 +480,25 @@ issues that are encountered with stricter NATs
 
 ### Stricter
 
-Using the "stricter" option will only tunnel connections when they are of a NAT type stricter than "Open" which is the 
+Using the "stricter" option will only tunnel connections when they are of a NAT type stricter than "Open" which is the
 best default as people playing with "Open" NAT get the best latency from having a direct connection and those who have
 a stricter NAT who aren't normally able to play are now able to play
 
 ```json
 {
-  "tunnel": "stricter"
+    "tunnel": "stricter"
 }
 ```
 
 ### Always
 
-This option *always* tunnels connections through the server. This can be good if you're looking to increase user privacy
+This option _always_ tunnels connections through the server. This can be good if you're looking to increase user privacy
 since it will hide the IP address of hosts from other players (They are normally exposed on the official servers), at the
 cost of additional latency that "Open" NAT players might not normally get
 
 ```json
 {
-  "tunnel": "always"
+    "tunnel": "always"
 }
 ```
 
@@ -513,12 +513,11 @@ This option disabled tunneling, using this option may prevent those with stricte
 
 ```json
 {
-  "tunnel": "disabled"
+    "tunnel": "disabled"
 }
 ```
 
 ---
-
 
 ## UDP Tunnel
 
@@ -526,36 +525,35 @@ This option disabled tunneling, using this option may prevent those with stricte
 
 ```json
 {
-  "udp_tunnel": {
-    "port": 9032,
-    "external_port": 9032
-  }
+    "udp_tunnel": {
+        "port": 9032,
+        "external_port": 9032
+    }
 }
 ```
 
 ### UDP Tunnel Port
 
-
 The UDP tunnel server requires an additional bound port, this option specifies which port on the system should be used for this server. Ensure you do not have any other services on this port
 
 ```json
 {
-  "udp_tunnel": {
-    "port": 9032,
-  }
+    "udp_tunnel": {
+        "port": 9032
+    }
 }
 ```
 
 ### UDP Tunnel External Port
 
-If you are running your server behind a reverse proxy you will likely be exposing different ports to the internet or in a situation where the port users have access to is different to the bound port, in order for the UDP tunnel to work properly you will also need to specify the `external_port` this is the 
+If you are running your server behind a reverse proxy you will likely be exposing different ports to the internet or in a situation where the port users have access to is different to the bound port, in order for the UDP tunnel to work properly you will also need to specify the `external_port` this is the
 port that people on the other side of the reverse proxy/port binding will see.
 
 ```json
 {
-  "udp_tunnel": {
-    "external_port": 9032,
-  }
+    "udp_tunnel": {
+        "external_port": 9032
+    }
 }
 ```
 
@@ -565,24 +563,22 @@ You can disable the UDP tunnel completely by setting this option to false
 
 ```json
 {
-  "udp_tunnel": {
-    "enabled": true,
-  }
+    "udp_tunnel": {
+        "enabled": true
+    }
 }
 ```
-
 
 ## API
 
 The API section handles various API related configurations
 
-
 ```json
 {
-  "api": {
-      "public_games": false,
-      "public_games_hide_players": true
-  }
+    "api": {
+        "public_games": false,
+        "public_games_hide_players": true
+    }
 }
 ```
 
@@ -592,7 +588,7 @@ Normally, the games API at `/api/games` requires an authentication token to get 
 you can disable that requirement and allow the games list to be requested without requiring authentication.
 
 By default players are hidden from the games response when not authenticated but you can get the total players in the
-game using the `total_players` field in the response for each game. 
+game using the `total_players` field in the response for each game.
 
 To include players in authenticated responses see [Hide players from public games](#hide-players-from-public-games)
 
@@ -600,18 +596,17 @@ This option is likely useful if you want to create a discord bot or some other d
 
 ```json
 {
-  "public_games": false
+    "public_games": false
 }
 ```
 
 ### Hide players from public games
 
-This option is enabled by default, it controls whether the player list should be hidden from unauthenticated requests to the games API. When `true` the list of players provided by the games API will be `null`. 
-
+This option is enabled by default, it controls whether the player list should be hidden from unauthenticated requests to the games API. When `true` the list of players provided by the games API will be `null`.
 
 ```json
 {
-  "public_games_hide_players": true
+    "public_games_hide_players": true
 }
 ```
 
@@ -622,3 +617,40 @@ email in this response (Origin accounts and those created/changed through the da
 
 If your database doesn't contain any of these types of accounts or if it was created with `v0.6.1` or greater (Random name generation was added in `v0.6.1` for in-game account creation) and you don't mind people seeing the names of who's in a game then you can set this to `false` to include the players list
 :::
+
+## Database
+
+> Database options are only available as of `v0.8.5`
+
+Configure database options. As of `v0.8.5`, Pocket Relay now supports two database targets, the first being `SQLite` (Default) and the second being `PostgreSQL` which can be configured with the connection URL config option.
+
+```json
+{
+    "database": {
+        "wal": true,
+        "connection_url": "custom connection url"
+    }
+}
+```
+
+### WAL
+
+This option specifies wether [WAL mode](https://sqlite.org/wal.html) should be used when using SQLite, it is highly recommended to leave this option
+as true as it can greatly improve performance and reduce the disk IO performed
+
+```json
+{
+    "wal": true
+}
+```
+
+### Connection URL
+
+This option can be used to specify a custom connection URL for pocket relay, use this when you are trying to connect
+to a `PostgreSQL` database.
+
+```json
+{
+    "connection_url": "postgresql://postgres:mysecretpassword@myhost:myport/mydb"
+}
+```
